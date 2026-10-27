@@ -476,6 +476,44 @@ class TestCrossNodeGatingAndStatus:
         assert g1.passed is False
         assert g1.status == "OUT_OF_BOUNDS"
 
+    def test_onset_refinement_bounded_by_matched_burst_end_time(self):
+        """Refinement scan must not adopt a deviation past the matched burst end_time."""
+        t0 = datetime(2026, 1, 1, 0, 0, 50, tzinfo=timezone.utc)
+        evt_a = EventRecord("Node_A", Modality.PRESSURE, t0, "if", -0.2, Provenance.SYNTHETIC, end_time=t0 + timedelta(seconds=40))
+        # Target burst starts at t0 and ends at t0 + 30s (00:01:20)
+        evt_b = EventRecord("Node_B", Modality.PRESSURE, t0, "if", -0.2, Provenance.SYNTHETIC, end_time=t0 + timedelta(seconds=30))
+
+        ts = [t0 + timedelta(seconds=i * 10) for i in range(10)]
+        # Flat inside burst (indices 0..3), jump at index 4 (00:01:30, after burst end)
+        raw_vals = [10.0, 10.0, 10.0, 10.0, 25.0, 25.0, 25.0, 25.0, 25.0, 25.0]
+
+        res_a = NodeDetectionResult("Node_A", "if", [t0], [1.0], [-0.2], 0.0, [True], 1, [evt_a], t0, "")
+        res_b = NodeDetectionResult("Node_B", "if", ts, raw_vals, [-0.2] * 10, 0.0, [True] * 10, 10, [evt_b], t0, "")
+
+        # Must not raise ValueError (end_time cannot be earlier than onset_time)
+        analysis = evaluate_cross_node_relationship(res_a, res_b)
+        assert analysis.target_event is not None
+        assert analysis.target_event.onset_time <= analysis.target_event.end_time
+        # Refinement outside burst was rejected, retaining original burst onset (t0)
+        assert analysis.target_event.onset_time == t0
+        assert analysis.delta_t_s == pytest.approx(0.0)
+
+    def test_scenario_4_negative_control_isolation_forest_end_to_end(self):
+        """End-to-end regression test: scenario_4_negative_control with Isolation Forest must not raise ValueError."""
+        tel_a = load_synthetic_benchmark_telemetry("scenario_4_negative_control", "Node_A")
+        tel_b = load_synthetic_benchmark_telemetry("scenario_4_negative_control", "Node_B")
+        res_a = run_node_detection(tel_a, detector_type="isolation_forest")
+        res_b = run_node_detection(tel_b, detector_type="isolation_forest")
+
+        analysis = evaluate_cross_node_relationship(res_a, res_b, override_delay_bounds=(10.0, 20.0))
+        assert analysis.overall_status is not None
+        assert analysis.target_event is not None
+        assert analysis.target_event.onset_time <= analysis.target_event.end_time
+        assert analysis.overall_status in (
+            PresentationStatus.UNCONFIRMED,
+            PresentationStatus.BOTH_NODES_ANOMALOUS,
+        )
+
 
 class TestExportSerialization:
     """Tests covering experiment records and CSV downloads."""

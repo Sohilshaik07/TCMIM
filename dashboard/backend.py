@@ -688,31 +688,46 @@ def evaluate_cross_node_relationship(
             matched_burst = candidates[0]
             t_b_onset = matched_burst.onset_time
             # If burst began before evt_a because of coarse windowing, resolve the actual response onset after evt_a
+            # strictly within the matched burst's duration.
             if t_b_onset <= evt_a.onset_time and target_result.raw_values and len(target_result.timestamps) > 1:
                 t_arr = target_result.timestamps
                 v_arr = np.array(target_result.raw_values, dtype=float)
                 after_mask = [ts >= evt_a.onset_time for ts in t_arr]
                 if any(after_mask):
                     idx_start = after_mask.index(True)
-                    base_v = float(np.median(v_arr[max(0, idx_start - 10):idx_start])) if idx_start > 0 else v_arr[0]
-                    sub_v = v_arr[idx_start:min(len(v_arr), idx_start + 60)]
-                    span_v = float(np.ptp(sub_v)) if len(sub_v) > 0 else 0.0
-                    thresh_drop = max(1e-4, 0.10 * span_v)
-                    dev_idx = np.where(np.abs(sub_v - base_v) >= thresh_drop)[0]
-                    if len(dev_idx) > 0:
-                        t_b_onset = t_arr[idx_start + int(dev_idx[0])]
+                    # Bound refinement search to the matched burst's end_time
+                    if matched_burst.end_time is not None:
+                        end_mask = [ts <= matched_burst.end_time for ts in t_arr]
+                        idx_max = max(i for i, b in enumerate(end_mask) if b) + 1 if any(end_mask) else idx_start
+                    else:
+                        idx_max = min(len(v_arr), idx_start + 60)
 
-            evt_b = EventRecord(
-                machine_id=matched_burst.machine_id,
-                modality=matched_burst.modality,
-                onset_time=t_b_onset,
-                detector=matched_burst.detector,
-                score=matched_burst.score,
-                provenance=matched_burst.provenance,
-                end_time=matched_burst.end_time,
-                window_count=matched_burst.window_count,
-                event_id=matched_burst.event_id,
-            )
+                    if idx_max > idx_start:
+                        base_v = float(np.median(v_arr[max(0, idx_start - 10):idx_start])) if idx_start > 0 else v_arr[0]
+                        sub_v = v_arr[idx_start:idx_max]
+                        span_v = float(np.ptp(sub_v)) if len(sub_v) > 0 else 0.0
+                        thresh_drop = max(1e-4, 0.10 * span_v)
+                        dev_idx = np.where(np.abs(sub_v - base_v) >= thresh_drop)[0]
+                        if len(dev_idx) > 0:
+                            cand_onset = t_arr[idx_start + int(dev_idx[0])]
+                            # Accept refinement only if it lies within the matched burst boundary
+                            if matched_burst.end_time is None or cand_onset <= matched_burst.end_time:
+                                t_b_onset = cand_onset
+
+            if t_b_onset != matched_burst.onset_time:
+                evt_b = EventRecord(
+                    machine_id=matched_burst.machine_id,
+                    modality=matched_burst.modality,
+                    onset_time=t_b_onset,
+                    detector=matched_burst.detector,
+                    score=matched_burst.score,
+                    provenance=matched_burst.provenance,
+                    end_time=matched_burst.end_time,
+                    window_count=matched_burst.window_count,
+                    event_id=matched_burst.event_id,
+                )
+            else:
+                evt_b = matched_burst
         else:
             evt_b = target_result.event_records[0]
     elif target_result.event_records:

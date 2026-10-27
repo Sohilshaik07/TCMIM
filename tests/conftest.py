@@ -22,16 +22,21 @@ from tcmim.schemas import Provenance
 
 # ---- MetroPT-3 CSV discovery ----------------------------------------
 
+_ENV_METROPT3_PATH = os.environ.get("TCMIM_METROPT3_PATH")
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
 _CSV_CANDIDATES = [
-    Path(__file__).parent.parent / "MetroPT3(AirCompressor).csv",
-    Path(__file__).parent.parent.parent / "MetroPT3(AirCompressor).csv",
+    Path(_ENV_METROPT3_PATH) if _ENV_METROPT3_PATH else None,
     Path("data/raw/MetroPT3(AirCompressor).csv"),
+    _PROJECT_ROOT / "data" / "raw" / "MetroPT3(AirCompressor).csv",
+    Path("MetroPT3(AirCompressor).csv"),
+    _PROJECT_ROOT / "MetroPT3(AirCompressor).csv",
 ]
 
 
 def _find_metropt3_csv() -> Path | None:
     for p in _CSV_CANDIDATES:
-        if p.exists():
+        if p is not None and p.exists():
             return p
     return None
 
@@ -41,7 +46,10 @@ def metropt3_csv_path():
     """Return the MetroPT-3 CSV path, or skip the test if not found."""
     path = _find_metropt3_csv()
     if path is None:
-        pytest.skip("MetroPT-3 CSV not found — skipping real-data test.")
+        pytest.skip(
+            "MetroPT-3 CSV not found in data/raw/ or configured path — skipping real-data test. "
+            "To enable, place MetroPT3(AirCompressor).csv in data/raw/ or set TCMIM_METROPT3_PATH."
+        )
     return path
 
 

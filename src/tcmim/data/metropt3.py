@@ -45,6 +45,7 @@ Usage
 from __future__ import annotations
 
 import logging
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -103,6 +104,35 @@ PHYSICAL_RANGES: Dict[str, tuple] = {
 
 MACHINE_ID = "metropt3_compressor"
 SOURCE_ID  = "metropt3_uci"
+
+
+def resolve_metropt3_path(explicit_path: Optional[str | Path] = None) -> Optional[Path]:
+    """Resolve the MetroPT-3 CSV path from an explicit argument, environment, or repository standard locations.
+
+    Priority order:
+    1. explicit_path (if provided and exists)
+    2. TCMIM_METROPT3_PATH environment variable (if set and exists)
+    3. data/raw/MetroPT3(AirCompressor).csv (relative to current working directory)
+    4. MetroPT3(AirCompressor).csv (repository root)
+    """
+    if explicit_path is not None:
+        p = Path(explicit_path)
+        return p if p.exists() else None
+
+    env_path = os.environ.get("TCMIM_METROPT3_PATH")
+    if env_path:
+        p = Path(env_path)
+        if p.exists():
+            return p
+
+    candidates = [
+        Path("data/raw/MetroPT3(AirCompressor).csv"),
+        Path("MetroPT3(AirCompressor).csv"),
+    ]
+    for c in candidates:
+        if c.exists():
+            return c
+    return None
 
 
 def load_metropt3(

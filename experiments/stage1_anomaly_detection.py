@@ -91,18 +91,24 @@ def resolve_metropt3_path(cli_path: Optional[str]) -> Path:
             return p
         raise FileNotFoundError(f"Specified CSV path does not exist: {cli_path}")
 
+    env_path = os.environ.get("TCMIM_METROPT3_PATH")
+    if env_path:
+        p = Path(env_path)
+        if p.exists():
+            return p.resolve()
+
     candidates = [
-        Path("../MetroPT3(AirCompressor).csv"),
-        Path("MetroPT3(AirCompressor).csv"),
         Path("data/raw/MetroPT3(AirCompressor).csv"),
-        Path(__file__).parent.parent.parent / "MetroPT3(AirCompressor).csv",
+        Path("MetroPT3(AirCompressor).csv"),
+        Path(__file__).resolve().parent.parent / "data" / "raw" / "MetroPT3(AirCompressor).csv",
+        Path(__file__).resolve().parent.parent / "MetroPT3(AirCompressor).csv",
     ]
     for c in candidates:
         if c.exists():
             return c.resolve()
     raise FileNotFoundError(
-        "MetroPT-3 CSV not found in standard candidate locations. "
-        "Please provide --csv-path <path_to_csv>."
+        "MetroPT-3 CSV not found in data/raw/ or configured paths. "
+        "Please provide --csv-path <path_to_csv> or set TCMIM_METROPT3_PATH."
     )
 
 

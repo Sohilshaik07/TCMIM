@@ -13,6 +13,7 @@ INTEGRITY NOTES
   execution on real sensor data.
 """
 
+import os
 from pathlib import Path
 
 import numpy as np
@@ -31,16 +32,24 @@ from tcmim.ml.anomaly_detector import (
 from tcmim.ml.event_adapter import AnomalyToEventAdapter, EventAdapterConfig
 from tcmim.schemas import AnomalyRecord, EventRecord, Modality, Provenance
 
+_ENV_METROPT3_PATH = os.environ.get("TCMIM_METROPT3_PATH")
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+
 _CSV_CANDIDATES = [
-    Path(__file__).parent.parent.parent.parent / "MetroPT3(AirCompressor).csv",
+    Path(_ENV_METROPT3_PATH) if _ENV_METROPT3_PATH else None,
     Path("data/raw/MetroPT3(AirCompressor).csv"),
-    Path("../MetroPT3(AirCompressor).csv"),
+    _PROJECT_ROOT / "data" / "raw" / "MetroPT3(AirCompressor).csv",
+    Path("MetroPT3(AirCompressor).csv"),
+    _PROJECT_ROOT / "MetroPT3(AirCompressor).csv",
 ]
-METROPT3_CSV = next((p for p in _CSV_CANDIDATES if p.exists()), None)
+METROPT3_CSV = next((p for p in _CSV_CANDIDATES if p is not None and p.exists()), None)
 
 skip_if_no_csv = pytest.mark.skipif(
     METROPT3_CSV is None,
-    reason="MetroPT-3 CSV not found — skipping real-data integration test.",
+    reason=(
+        "MetroPT-3 CSV not found in data/raw/ or configured path — skipping real-data integration test. "
+        "To enable, place MetroPT3(AirCompressor).csv in data/raw/ or set TCMIM_METROPT3_PATH."
+    ),
 )
 
 

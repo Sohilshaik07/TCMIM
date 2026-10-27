@@ -135,6 +135,9 @@ streamlit run dashboard/app.py
 ```
 *(Default server runs locally at `http://localhost:8501`)*
 
+> [!NOTE]
+> **Mode 2: Controlled Synthetic Benchmark** and **Mode 3: User CSV Upload** operate completely offline without requiring external research datasets. **Mode 1: Real SWaT Physical Nodes (Verified Testbed)** replays recorded industrial telemetry and requires the July 2019 SWaT workbook.
+
 ---
 
 ## 5. Dataset Documentation
@@ -144,8 +147,10 @@ Raw sensor data files must **never** be committed to version control. Download r
 ### 5.1 MetroPT-3 (Air Compressor Dataset)
 - **Source**: UCI Machine Learning Repository (sampled at ~1 Hz / ~10 s intervals, single compressor).
 - **Expected Local Paths** (checked in order by loader):
-  - `MetroPT3(AirCompressor).csv` (repository root)
+  - Environment variable `TCMIM_METROPT3_PATH` (if configured)
   - `data/raw/MetroPT3(AirCompressor).csv`
+  - `MetroPT3(AirCompressor).csv` (repository root)
+- **Status**: Optional. When absent, real-data integration tests in `tests/integration/test_metropt3_pipeline.py` skip gracefully without failing the suite.
 - **Integrity Rule**: MetroPT-3 is from a **single machine**. It is used exclusively to evaluate single-machine health indicator baselines, pressure/temperature feature extraction, and CUSUM alerting. It must **not** be used to claim cross-machine failure propagation.
 
 ### 5.2 SWaT A4/A5 July 2019 Telemetry
@@ -154,10 +159,11 @@ Raw sensor data files must **never** be committed to version control. Download r
 - **Expected Local Path**:
   - `data/raw/SWAT_A4_A5_JULY_2019/SWaT_dataset_Jul 19 v2.xlsx`
 - **Coverage**: Process Stages P1 through P6, 51 registered sensor/actuator tags.
+- **Status**: Required for Dashboard Mode 1 and raw dynamic validation tests. When absent, raw fingerprint tests skip gracefully.
 
 ### 5.3 Legacy SWaT 2015 Attack Dataset
 - **Expected Local Path**: `data/raw/SWaT_Dataset_Attack_v0.csv` (or configured via environment variable `TCMIM_SWAT_DATA_PATH`).
-- **Status**: Optional. When absent, the seven integration tests in `tests/integration/test_swat_pipeline.py` skip gracefully without failing the suite.
+- **Status**: Optional. When absent, the seven integration tests in `tests/integration/test_swat_pipeline.py` skip gracefully pending academic access approval without failing the suite.
 
 ---
 

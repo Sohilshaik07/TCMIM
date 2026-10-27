@@ -42,7 +42,16 @@ _validation_dir = (
 
 EXPECTED_RAW_SHA256 = "39ea28e3d0e5ba1507ba551630bee232ce2cf66abdc9da978391dc00a989bbdc"
 
+skip_if_no_raw_workbook = pytest.mark.skipif(
+    not _raw_data_path.exists(),
+    reason=(
+        "Raw SWaT July 2019 workbook not found at data/raw/SWAT_A4_A5_JULY_2019/SWaT_dataset_Jul 19 v2.xlsx — "
+        "skipping raw dataset fingerprint verification. To run, place the workbook in data/raw/."
+    ),
+)
 
+
+@skip_if_no_raw_workbook
 class TestRawDatasetIntegrity:
     """Verify raw dataset presence and SHA-256 fingerprint."""
 

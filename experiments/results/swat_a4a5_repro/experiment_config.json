@@ -1,0 +1,12 @@
+{
+  "data_dir": "C:\\Users\\SKSOH\\OneDrive\\Desktop\\Project1-new\\tcmim\\data\\raw\\SWAT_A4_A5_JULY_2019",
+  "output_dir": "experiments\\results\\swat_a4a5_repro",
+  "protocol": "protocol_a",
+  "dry_run": false,
+  "window_seconds": 30.0,
+  "step_seconds": 30.0,
+  "max_gap_s": 15.0,
+  "contamination": 0.05,
+  "seed": 42,
+  "provenance": "public_dataset"
+}

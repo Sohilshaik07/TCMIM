@@ -1,0 +1,147 @@
+{
+  "audit_metadata": {
+    "title": "Stage 2 G0 Accepted Observations Delay Resolution Audit",
+    "dataset": "SWaT A4/A5 July 2019",
+    "date_utc": "2026-10-26T14:20:00+00:00",
+    "scope": "Time resolution analysis of 22 candidate observations surviving G0"
+  },
+  "sampling_and_windowing_parameters": {
+    "raw_telemetry_sampling_rate_hz": 1.0,
+    "raw_sampling_interval_seconds": 1.0,
+    "feature_window_duration_seconds": 30.0,
+    "feature_window_step_seconds": 30.0,
+    "anomaly_burst_max_gap_seconds": 60.0,
+    "matcher_delay_bounds_seconds": [
+      0.0,
+      600.0
+    ],
+    "gating_require_positive_dt": true
+  },
+  "delay_quantization_analysis": {
+    "delay_measurement_basis": "window_start_timestamp_difference",
+    "effective_delay_resolution_seconds": 30.0,
+    "quantization_grid_seconds": [
+      30.0,
+      60.0,
+      90.0,
+      120.0,
+      150.0,
+      180.0,
+      210.0,
+      240.0,
+      270.0,
+      300.0,
+      330.0,
+      360.0,
+      390.0,
+      420.0,
+      450.0,
+      480.0,
+      510.0,
+      540.0,
+      570.0,
+      600.0
+    ],
+    "simultaneous_event_rejection": {
+      "total_candidates_with_dt_zero": 10,
+      "gate_responsible": "G2_ORDERING",
+      "reject_reason": "\u0394t=0.00s <= 0: target did not follow source."
+    },
+    "quantization_jitter_error": "\u00b115.0 seconds discretization jitter relative to true physical onset"
+  },
+  "physical_vs_reported_delay_comparison": {
+    "MV201_to_FIT201": {
+      "reported_delays_seconds": [
+        30.0,
+        180.0,
+        450.0
+      ],
+      "raw_1hz_physical_step_up_delay_seconds": {
+        "mean": 10.5,
+        "median": 9.5,
+        "interpretation": "Motorized valve opening stroke transit time"
+      },
+      "raw_1hz_physical_step_down_delay_seconds": {
+        "mean": 3.25,
+        "median": 1.5,
+        "interpretation": "Valve closing seating time"
+      },
+      "discrepancy_explanation": "Reported delays of 180s and 450s reflect multi-burst anomaly pairing across prolonged operational cycles rather than physical fluid transit"
+    },
+    "P101_to_FIT101": {
+      "reported_delays_seconds": [
+        120.0,
+        240.0,
+        300.0
+      ],
+      "raw_1hz_physical_step_up_delay_seconds": {
+        "mean": 0.0,
+        "median": 0.0,
+        "interpretation": "Instantaneous inline discharge surge (<1.0s)"
+      },
+      "raw_1hz_physical_step_down_delay_seconds": {
+        "mean": 13.33,
+        "median": 9.5,
+        "interpretation": "Pump coastdown and line drainage"
+      },
+      "discrepancy_explanation": "Pump ran for minutes before anomalous flow deviation was flagged by detector, inflating window-level onset delta"
+    },
+    "FIT501_to_FIT502": {
+      "reported_delays_seconds": [
+        60.0,
+        120.0,
+        180.0,
+        360.0,
+        420.0,
+        510.0,
+        540.0,
+        600.0
+      ],
+      "raw_1hz_physical_delay_seconds": {
+        "baseline_cross_correlation_lag": 96.0,
+        "baseline_max_correlation": 0.1374,
+        "evaluation_cross_correlation_lag": -4.0,
+        "evaluation_max_correlation": 0.9657,
+        "interpretation": "Concurrent system shutdown with zero physical transport lag"
+      },
+      "discrepancy_explanation": "10 candidate edges represent repeated combinations of 10 micro-bursts of FIT501 against only 2 physical target episodes in FIT502"
+    },
+    "P301_to_DPIT301": {
+      "reported_delays_seconds": [
+        60.0,
+        150.0,
+        420.0,
+        540.0,
+        570.0
+      ],
+      "raw_1hz_physical_step_up_delay_seconds": {
+        "mean": 34.43,
+        "median": 39.0,
+        "interpretation": "Membrane vessel hydraulic pressurization time"
+      },
+      "raw_1hz_physical_step_down_delay_seconds": {
+        "mean": 5.83,
+        "median": 6.0,
+        "interpretation": "Membrane depressurization relaxation time"
+      },
+      "discrepancy_explanation": "Delays of 420s to 570s reflect pairing of early P301 pump events to subsequent multi-stage shutdown depressurization"
+    },
+    "P205_to_AIT203": {
+      "reported_delays_seconds": [
+        30.0
+      ],
+      "raw_1hz_physical_delay_seconds": {
+        "baseline_cross_correlation_lag": 120.0,
+        "baseline_max_correlation": 0.6772,
+        "evaluation_cross_correlation_lag": 120.0,
+        "evaluation_max_correlation": 0.634,
+        "interpretation": "Consistent 120s pipe transit and ORP chemical probe response lag"
+      },
+      "discrepancy_explanation": "Window-level onset quantization flagged source at 08:27:30 and target at 08:28:00 (dt=30s), underestimating the true 120s chemical transport delay"
+    }
+  },
+  "conclusions_and_recommendations": {
+    "is_window_level_delay_sufficient_for_dynamic_modeling": false,
+    "recommendation": "Dynamic modeling must extract raw 1Hz time series around identified candidate intervals to estimate true continuous-time transfer functions and physical delay bounds"
+  }
+}

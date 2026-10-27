@@ -1,0 +1,144 @@
+{
+  "audit_timestamp_utc": "2026-10-26T16:44:54.358848+00:00",
+  "stage4_manifest_path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage4/change_manifest.json",
+  "stage4_artifacts": {
+    "operating_state_evaluation.csv": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage4/operating_state_evaluation.csv",
+      "expected_sha256": "19c6e57a5c4870e3d8af116244158d4382e144049d23d9f7ba64f60fd8f18df6",
+      "observed_sha256": "19c6e57a5c4870e3d8af116244158d4382e144049d23d9f7ba64f60fd8f18df6",
+      "size_bytes": 4306,
+      "status": "VERIFIED_MATCH"
+    },
+    "operating_state_resolver_spec.md": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage4/operating_state_resolver_spec.md",
+      "expected_sha256": "59a3a304c34334ecaf49f84ec821e79eb3c89e88533e300b36cdaa696fb76b0d",
+      "observed_sha256": "59a3a304c34334ecaf49f84ec821e79eb3c89e88533e300b36cdaa696fb76b0d",
+      "size_bytes": 6968,
+      "status": "VERIFIED_MATCH"
+    },
+    "stage4_design_note.md": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage4/stage4_design_note.md",
+      "expected_sha256": "5aade20e2a1a793d6307fe07bbe80fc566298eae21c67a82a99c69a52588f03e",
+      "observed_sha256": "5aade20e2a1a793d6307fe07bbe80fc566298eae21c67a82a99c69a52588f03e",
+      "size_bytes": 7746,
+      "status": "VERIFIED_MATCH"
+    },
+    "test_results.txt": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage4/test_results.txt",
+      "expected_sha256": "309ab5ab57ccbd59b9094d338011092af7795253ddcce9803e25096676c77308",
+      "observed_sha256": "309ab5ab57ccbd59b9094d338011092af7795253ddcce9803e25096676c77308",
+      "size_bytes": 25928,
+      "status": "VERIFIED_MATCH"
+    }
+  },
+  "historical_artifacts": {
+    "stage3_3_dynamic_validation_eligibility_audit.csv": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage3_3_audit/dynamic_validation_eligibility_audit.csv",
+      "expected_sha256": "b6ecfd30b0837f594ee4b6f9a1a9419335b202edde9b113bbdd3bf0b80e65e14",
+      "observed_sha256": "b6ecfd30b0837f594ee4b6f9a1a9419335b202edde9b113bbdd3bf0b80e65e14",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_3_gate_path_audit.csv": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage3_3_audit/gate_path_audit.csv",
+      "expected_sha256": "cf530b91cdfc5957df0431a5c4f797bafde089945617cdc89b94e594e23df400",
+      "observed_sha256": "cf530b91cdfc5957df0431a5c4f797bafde089945617cdc89b94e594e23df400",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_3_implementation_audit.md": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage3_3_audit/implementation_audit.md",
+      "expected_sha256": "9d8c449d38f0975f75fef1a6b442964e162aa8f411773ec24c241a6d2622e9b2",
+      "observed_sha256": "9d8c449d38f0975f75fef1a6b442964e162aa8f411773ec24c241a6d2622e9b2",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_3_metric_reproduction_audit.csv": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage3_3_audit/metric_reproduction_audit.csv",
+      "expected_sha256": "02d2d03305eed20839fea1b9f7b911db300b693a79e36f8091cabe65a1aeb78b",
+      "observed_sha256": "02d2d03305eed20839fea1b9f7b911db300b693a79e36f8091cabe65a1aeb78b",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_3_test_coverage_gaps.md": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage3_3_audit/test_coverage_gaps.md",
+      "expected_sha256": "c36f99b3927cd1ce15ad30aa8026c5e04490d95757f03983566043bc925e8f83",
+      "observed_sha256": "c36f99b3927cd1ce15ad30aa8026c5e04490d95757f03983566043bc925e8f83",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_3_test_results.txt": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage3_3_audit/test_results.txt",
+      "expected_sha256": "37bdf55a9369cbcbb3ac90f55bcaa64095f69295dd7faf8a632e274ced322a38",
+      "observed_sha256": "37bdf55a9369cbcbb3ac90f55bcaa64095f69295dd7faf8a632e274ced322a38",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_2_structural_mask.py": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/src/tcmim/gating/structural_mask.py",
+      "expected_sha256": "2a17d0b015d5c3e04517f841ee6e32cfcdf5e9465ce77f20c309fc983d73f9c2",
+      "observed_sha256": "2a17d0b015d5c3e04517f841ee6e32cfcdf5e9465ce77f20c309fc983d73f9c2",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_2_gates.py": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/src/tcmim/gating/gates.py",
+      "expected_sha256": "0052ec8c5fa3140dd557714bdd3b043f9f2d06d3961b3359e30bc4055f56e10a",
+      "observed_sha256": "0052ec8c5fa3140dd557714bdd3b043f9f2d06d3961b3359e30bc4055f56e10a",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_2_test_swat_a4a5_stage3.py": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/tests/unit/test_swat_a4a5_stage3.py",
+      "expected_sha256": "d1e782ebf9e25b97c5801674cc65222a9017650373e1bc9466bbf02e4e09ef69",
+      "observed_sha256": "d1e782ebf9e25b97c5801674cc65222a9017650373e1bc9466bbf02e4e09ef69",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_2_test_swat_a4a5_stage3_2.py": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/tests/unit/test_swat_a4a5_stage3_2.py",
+      "expected_sha256": "f127a96518d2b7ba051abbba22783e2a499c1fa664d841e3d43c830cd88ed15e",
+      "observed_sha256": "f127a96518d2b7ba051abbba22783e2a499c1fa664d841e3d43c830cd88ed15e",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_2_proposed_connectivity_register_stage3_2.csv": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage3_2/proposed_connectivity_register_stage3_2.csv",
+      "expected_sha256": "c2b6d46407c85cea79a3d8cb3f80ecf7e0608999bd2ba719b3a6e03b672b4dd0",
+      "observed_sha256": "c2b6d46407c85cea79a3d8cb3f80ecf7e0608999bd2ba719b3a6e03b672b4dd0",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_2_corrected_scientific_report.md": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage3_2/corrected_scientific_report.md",
+      "expected_sha256": "4cd122b4d32237cfb2f833bca77a4240d8cb8909be1fabccbbb18b72fffbb88e",
+      "observed_sha256": "4cd122b4d32237cfb2f833bca77a4240d8cb8909be1fabccbbb18b72fffbb88e",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_2_corrected_model_evaluation.csv": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage3_2/corrected_model_evaluation.csv",
+      "expected_sha256": "3e2079af4f180e3b53ae5bd69ffe9df3759c4432fd850f45ca1e86fe7b78d21c",
+      "observed_sha256": "3e2079af4f180e3b53ae5bd69ffe9df3759c4432fd850f45ca1e86fe7b78d21c",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_2_corrected_relationship_decisions.csv": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage3_2/corrected_relationship_decisions.csv",
+      "expected_sha256": "e897511ee72416debbf082aeda95dd6e57070d4e8e63b62d05e1256287ce2d30",
+      "observed_sha256": "e897511ee72416debbf082aeda95dd6e57070d4e8e63b62d05e1256287ce2d30",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_2_validation_status_register.csv": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage3_2/validation_status_register.csv",
+      "expected_sha256": "b2b4b7bfd10143c056bb059fc807586a5645f281881397713b71db27d5e15fdc",
+      "observed_sha256": "b2b4b7bfd10143c056bb059fc807586a5645f281881397713b71db27d5e15fdc",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_2_conditional_gate_design.md": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage3_2/conditional_gate_design.md",
+      "expected_sha256": "52ac9ec6686e4a8449926b0bb261835690abcbc0a98225358b3be541128d9171",
+      "observed_sha256": "52ac9ec6686e4a8449926b0bb261835690abcbc0a98225358b3be541128d9171",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_2_test_coverage_update.md": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage3_2/test_coverage_update.md",
+      "expected_sha256": "7152a235cf06a129835f2b4c35719cb7cd8e17dc2c04285510b0126a551c1b3c",
+      "observed_sha256": "7152a235cf06a129835f2b4c35719cb7cd8e17dc2c04285510b0126a551c1b3c",
+      "status": "VERIFIED_UNMODIFIED"
+    },
+    "stage3_2_test_results.txt": {
+      "path": "C:/Users/SKSOH/OneDrive/Desktop/Project1-new/tcmim/experiments/results/swat_a4a5_stage3_2/test_results.txt",
+      "expected_sha256": "636ce2001c87dae23c9888ebc991e95e372f0e3b06036562caf37dc149bd92b8",
+      "observed_sha256": "636ce2001c87dae23c9888ebc991e95e372f0e3b06036562caf37dc149bd92b8",
+      "status": "VERIFIED_UNMODIFIED"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+method,attack_id,target_tags,target_stages,duration_seconds,overlapping_windows_count,flagged_windows_count,detected,first_alarm_window_id,first_alarm_timestamp_utc,start_based_delay_seconds,end_based_delay_seconds,alarm_timing_relative_to_attack,channel_attribution_verified
+Multivariate Isolation Forest (Existing),A1,FIT401,P4,105.0,5,0,False,,,,,No alarm,False
+Multivariate Isolation Forest (Existing),A2,LIT301,P3,272.0,10,0,False,,,,,No alarm,False
+Multivariate Isolation Forest (Existing),A3,P601,P6,231.0,9,1,True,SWAT_A4A5_w_000358,2019-07-20T07:29:00+00:00,123.0,153.0,During attack,False
+Multivariate Isolation Forest (Existing),A4,MV201;P101,P2;P1,450.0,16,1,True,SWAT_A4A5_w_000389,2019-07-20T07:44:30+00:00,340.0,370.0,During attack,False
+Multivariate Isolation Forest (Existing),A5,MV501,P5,120.0,4,3,True,SWAT_A4A5_w_000408,2019-07-20T07:54:00+00:00,0.0,30.0,Instantaneous,False
+Multivariate Isolation Forest (Existing),A6,P301,P3,802.0,28,1,True,SWAT_A4A5_w_000450,2019-07-20T08:15:00+00:00,724.0,754.0,During attack,False
+CUSUM Detector on Mean Absolute Z-Scores (Partition Reset),A1,FIT401,P4,105.0,5,0,False,,,,,No alarm,False
+CUSUM Detector on Mean Absolute Z-Scores (Partition Reset),A2,LIT301,P3,272.0,10,0,False,,,,,No alarm,False
+CUSUM Detector on Mean Absolute Z-Scores (Partition Reset),A3,P601,P6,231.0,9,0,False,,,,,No alarm,False
+CUSUM Detector on Mean Absolute Z-Scores (Partition Reset),A4,MV201;P101,P2;P1,450.0,16,1,True,SWAT_A4A5_w_000385,2019-07-20T07:42:30+00:00,220.0,250.0,During attack,False
+CUSUM Detector on Mean Absolute Z-Scores (Partition Reset),A5,MV501,P5,120.0,4,3,True,SWAT_A4A5_w_000408,2019-07-20T07:54:00+00:00,0.0,30.0,Instantaneous,False
+CUSUM Detector on Mean Absolute Z-Scores (Partition Reset),A6,P301,P3,802.0,28,4,True,SWAT_A4A5_w_000430,2019-07-20T08:05:00+00:00,124.0,154.0,During attack,False
+Per-Channel Max-Z (Baseline Calibrated),A1,FIT401,P4,105.0,5,2,True,SWAT_A4A5_w_000317,2019-07-20T07:08:30+00:00,0.0,14.0,Instantaneous,False
+Per-Channel Max-Z (Baseline Calibrated),A2,LIT301,P3,272.0,10,2,True,SWAT_A4A5_w_000335,2019-07-20T07:17:30+00:00,150.0,180.0,During attack,False
+Per-Channel Max-Z (Baseline Calibrated),A3,P601,P6,231.0,9,9,True,SWAT_A4A5_w_000353,2019-07-20T07:26:30+00:00,0.0,3.0,Instantaneous,False
+Per-Channel Max-Z (Baseline Calibrated),A4,MV201;P101,P2;P1,450.0,16,16,True,SWAT_A4A5_w_000377,2019-07-20T07:38:30+00:00,0.0,10.0,Instantaneous,False
+Per-Channel Max-Z (Baseline Calibrated),A5,MV501,P5,120.0,4,4,True,SWAT_A4A5_w_000408,2019-07-20T07:54:00+00:00,0.0,30.0,Instantaneous,False
+Per-Channel Max-Z (Baseline Calibrated),A6,P301,P3,802.0,28,28,True,SWAT_A4A5_w_000425,2019-07-20T08:02:30+00:00,0.0,4.0,Instantaneous,False
+Per-Channel Shewhart (Fixed 3-Sigma),A1,FIT401,P4,105.0,5,5,True,SWAT_A4A5_w_000317,2019-07-20T07:08:30+00:00,0.0,14.0,Instantaneous,False
+Per-Channel Shewhart (Fixed 3-Sigma),A2,LIT301,P3,272.0,10,3,True,SWAT_A4A5_w_000335,2019-07-20T07:17:30+00:00,150.0,180.0,During attack,False
+Per-Channel Shewhart (Fixed 3-Sigma),A3,P601,P6,231.0,9,9,True,SWAT_A4A5_w_000353,2019-07-20T07:26:30+00:00,0.0,3.0,Instantaneous,False
+Per-Channel Shewhart (Fixed 3-Sigma),A4,MV201;P101,P2;P1,450.0,16,16,True,SWAT_A4A5_w_000377,2019-07-20T07:38:30+00:00,0.0,10.0,Instantaneous,False
+Per-Channel Shewhart (Fixed 3-Sigma),A5,MV501,P5,120.0,4,4,True,SWAT_A4A5_w_000408,2019-07-20T07:54:00+00:00,0.0,30.0,Instantaneous,False
+Per-Channel Shewhart (Fixed 3-Sigma),A6,P301,P3,802.0,28,28,True,SWAT_A4A5_w_000425,2019-07-20T08:02:30+00:00,0.0,4.0,Instantaneous,False

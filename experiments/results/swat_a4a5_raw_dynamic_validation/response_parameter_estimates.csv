@@ -1,0 +1,10 @@
+relationship,direction,operating_state,parameter,estimate,units,uncertainty,effective_sample_size,estimation_method
+P301 -> DPIT301,STARTUP,PUMP_START (1 -> 2),response_onset_delay_s,3.0,seconds,±0.47s (std),3,10% span onset threshold on 1Hz raw data
+P301 -> DPIT301,STARTUP,PUMP_START (1 -> 2),rise_time_s,53.0,seconds,±0.47s (std),3,10% to 90% rise time
+P301 -> DPIT301,STARTUP,PUMP_START (1 -> 2),fopdt_dead_time_td_s,20.0,seconds,FOPDT curve_fit estimate,3,Least-squares FOPDT step optimization
+P301 -> DPIT301,SHUTDOWN,PUMP_STOP (2 -> 1),response_onset_delay_s,3.0,seconds,±0.00s (std),3,10% drop threshold on 1Hz raw data
+P301 -> DPIT301,SHUTDOWN,PUMP_STOP (2 -> 1),decay_time_s,9.0,seconds,±0.00s (std),3,90% to 10% fall time
+MV201 -> FIT201,OPENING,VALVE_OPEN (1 -> 0 -> 2),response_onset_delay_s,13.0,seconds,±0.82s (std),3,10% span onset threshold on 1Hz raw data
+MV201 -> FIT201,OPENING,VALVE_OPEN (1 -> 0 -> 2),fopdt_dead_time_td_s,12.89,seconds,FOPDT curve_fit estimate,3,Least-squares FOPDT optimization
+MV201 -> FIT201,CLOSING,VALVE_CLOSE (2 -> 0 -> 1),response_onset_delay_s,3.0,seconds,±0.43s (std),4,10% drop threshold on 1Hz raw data
+P101 -> FIT101,ALL,PUMP_START_STOP,response_onset_delay_s,,seconds,N/A (NON_RESPONSIVE),0,Non-identifiable: zero direct physical coupling in raw telemetry

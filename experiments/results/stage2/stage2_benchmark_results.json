@@ -1,0 +1,435 @@
+{
+  "timestamp": "2026-10-25T15:48:55.842243+00:00",
+  "random_seed": 42,
+  "configuration_name": "default",
+  "metrics": {
+    "total_scenarios": 7,
+    "mean_precision": 0.3476,
+    "mean_recall": 1.0,
+    "mean_f1": 0.7542,
+    "mean_fpr": 0.4762,
+    "overall_tp": 9,
+    "overall_fp": 18,
+    "overall_fn": 0,
+    "overall_tn": 17,
+    "overall_precision": 0.3333,
+    "overall_recall": 1.0,
+    "overall_f1": 0.5,
+    "mean_lag_mae_s": 28.278,
+    "mean_lag_rmse_s": 28.582,
+    "total_eligible_lags": 9,
+    "total_finite_lags": 9,
+    "overall_missing_lag_rate": 0.0,
+    "total_runtime_s": 0.0168,
+    "total_filtered_edges": 0,
+    "configuration_name": "default",
+    "n_scenarios_precision_defined": 7,
+    "n_scenarios_precision_undefined": 0,
+    "n_scenarios_recall_defined": 4,
+    "n_scenarios_recall_undefined": 3,
+    "n_scenarios_f1_defined": 4,
+    "n_scenarios_f1_undefined": 3
+  },
+  "scenarios": [
+    {
+      "scenario_id": "scenario_1_chain",
+      "scenario_name": "Linear Chain (A -> B -> C)",
+      "ground_truth_edges": [
+        "A->B",
+        "B->C"
+      ],
+      "predicted_edges": [
+        "A->B",
+        "A->C",
+        "B->C"
+      ],
+      "true_positives": [
+        "A->B",
+        "B->C"
+      ],
+      "false_positives": [
+        "A->C"
+      ],
+      "false_negatives": [],
+      "true_negatives": [
+        "B->A",
+        "C->A",
+        "C->B"
+      ],
+      "n_possible_pairs": 6,
+      "tp": 2,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1_score": 0.8,
+      "fpr": 0.25,
+      "eligible_lag_edges": 2,
+      "finite_lag_estimates": 2,
+      "missing_lag_estimates": 0,
+      "missing_lag_rate": 0.0,
+      "lag_mae_s": 0.0,
+      "lag_rmse_s": 0.0,
+      "edge_delay_errors": {
+        "A->B": {
+          "true_delay_s": 60.0,
+          "estimated_delay_s": 60.0,
+          "error_s": 0.0,
+          "abs_error_s": 0.0
+        },
+        "B->C": {
+          "true_delay_s": 90.0,
+          "estimated_delay_s": 90.0,
+          "error_s": 0.0,
+          "abs_error_s": 0.0
+        }
+      },
+      "occcd_summary": {
+        "PROPAGATION_CANDIDATE": 18
+      },
+      "execution_time_s": 0.0069,
+      "random_seed": 42,
+      "filtered_edge_count": 0,
+      "configuration_name": "default"
+    },
+    {
+      "scenario_id": "scenario_2_branching",
+      "scenario_name": "Branching Fork (A -> B and A -> C)",
+      "ground_truth_edges": [
+        "A->B",
+        "A->C"
+      ],
+      "predicted_edges": [
+        "A->B",
+        "A->C",
+        "B->C"
+      ],
+      "true_positives": [
+        "A->B",
+        "A->C"
+      ],
+      "false_positives": [
+        "B->C"
+      ],
+      "false_negatives": [],
+      "true_negatives": [
+        "B->A",
+        "C->A",
+        "C->B"
+      ],
+      "n_possible_pairs": 6,
+      "tp": 2,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1_score": 0.8,
+      "fpr": 0.25,
+      "eligible_lag_edges": 2,
+      "finite_lag_estimates": 2,
+      "missing_lag_estimates": 0,
+      "missing_lag_rate": 0.0,
+      "lag_mae_s": 0.0,
+      "lag_rmse_s": 0.0,
+      "edge_delay_errors": {
+        "A->B": {
+          "true_delay_s": 45.0,
+          "estimated_delay_s": 45.0,
+          "error_s": 0.0,
+          "abs_error_s": 0.0
+        },
+        "A->C": {
+          "true_delay_s": 80.0,
+          "estimated_delay_s": 80.0,
+          "error_s": 0.0,
+          "abs_error_s": 0.0
+        }
+      },
+      "occcd_summary": {
+        "COMMON_CAUSE_CANDIDATE": 18
+      },
+      "execution_time_s": 0.0019,
+      "random_seed": 43,
+      "filtered_edge_count": 0,
+      "configuration_name": "default"
+    },
+    {
+      "scenario_id": "scenario_3_ring",
+      "scenario_name": "Feedback Ring (A -> B -> C -> A)",
+      "ground_truth_edges": [
+        "A->B",
+        "B->C",
+        "C->A"
+      ],
+      "predicted_edges": [
+        "A->B",
+        "A->C",
+        "B->A",
+        "B->C",
+        "C->A"
+      ],
+      "true_positives": [
+        "A->B",
+        "B->C",
+        "C->A"
+      ],
+      "false_positives": [
+        "A->C",
+        "B->A"
+      ],
+      "false_negatives": [],
+      "true_negatives": [
+        "C->B"
+      ],
+      "n_possible_pairs": 6,
+      "tp": 3,
+      "fp": 2,
+      "fn": 0,
+      "tn": 1,
+      "precision": 0.6,
+      "recall": 1.0,
+      "f1_score": 0.75,
+      "fpr": 0.6667,
+      "eligible_lag_edges": 3,
+      "finite_lag_estimates": 3,
+      "missing_lag_estimates": 0,
+      "missing_lag_rate": 0.0,
+      "lag_mae_s": 0.0,
+      "lag_rmse_s": 0.0,
+      "edge_delay_errors": {
+        "A->B": {
+          "true_delay_s": 50.0,
+          "estimated_delay_s": 50.0,
+          "error_s": 0.0,
+          "abs_error_s": 0.0
+        },
+        "B->C": {
+          "true_delay_s": 50.0,
+          "estimated_delay_s": 50.0,
+          "error_s": 0.0,
+          "abs_error_s": 0.0
+        },
+        "C->A": {
+          "true_delay_s": 50.0,
+          "estimated_delay_s": 50.0,
+          "error_s": 0.0,
+          "abs_error_s": 0.0
+        }
+      },
+      "occcd_summary": {
+        "COMMON_CAUSE_CANDIDATE": 20
+      },
+      "execution_time_s": 0.0016,
+      "random_seed": 44,
+      "filtered_edge_count": 0,
+      "configuration_name": "default"
+    },
+    {
+      "scenario_id": "scenario_4_negative_control",
+      "scenario_name": "Negative Control (Independent Streams)",
+      "ground_truth_edges": [],
+      "predicted_edges": [
+        "M1->M2",
+        "M1->M3",
+        "M1->M4",
+        "M2->M4",
+        "M3->M1",
+        "M3->M2",
+        "M3->M4",
+        "M4->M2"
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "M1->M2",
+        "M1->M3",
+        "M1->M4",
+        "M2->M4",
+        "M3->M1",
+        "M3->M2",
+        "M3->M4",
+        "M4->M2"
+      ],
+      "false_negatives": [],
+      "true_negatives": [
+        "M2->M1",
+        "M2->M3",
+        "M4->M1",
+        "M4->M3"
+      ],
+      "n_possible_pairs": 12,
+      "tp": 0,
+      "fp": 8,
+      "fn": 0,
+      "tn": 4,
+      "precision": 0.0,
+      "recall": null,
+      "f1_score": null,
+      "fpr": 0.6667,
+      "eligible_lag_edges": 0,
+      "finite_lag_estimates": 0,
+      "missing_lag_estimates": 0,
+      "missing_lag_rate": 0.0,
+      "lag_mae_s": NaN,
+      "lag_rmse_s": NaN,
+      "edge_delay_errors": {},
+      "occcd_summary": {
+        "PROPAGATION_CANDIDATE": 4,
+        "COMMON_CAUSE_CANDIDATE": 9
+      },
+      "execution_time_s": 0.0019,
+      "random_seed": 45,
+      "filtered_edge_count": 0,
+      "configuration_name": "default"
+    },
+    {
+      "scenario_id": "scenario_5_reversed_order",
+      "scenario_name": "Reversed Temporal Order (Target Precedes Source)",
+      "ground_truth_edges": [],
+      "predicted_edges": [
+        "B->A"
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "B->A"
+      ],
+      "false_negatives": [],
+      "true_negatives": [
+        "A->B"
+      ],
+      "n_possible_pairs": 2,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 1,
+      "precision": 0.0,
+      "recall": null,
+      "f1_score": null,
+      "fpr": 0.5,
+      "eligible_lag_edges": 0,
+      "finite_lag_estimates": 0,
+      "missing_lag_estimates": 0,
+      "missing_lag_rate": 0.0,
+      "lag_mae_s": NaN,
+      "lag_rmse_s": NaN,
+      "edge_delay_errors": {},
+      "occcd_summary": {
+        "PROPAGATION_CANDIDATE": 6
+      },
+      "execution_time_s": 0.0006,
+      "random_seed": 46,
+      "filtered_edge_count": 0,
+      "configuration_name": "default"
+    },
+    {
+      "scenario_id": "scenario_6_common_cause",
+      "scenario_name": "Common Cause Disturbance (Shared Environmental Shock)",
+      "ground_truth_edges": [],
+      "predicted_edges": [
+        "M1->M2",
+        "M1->M3",
+        "M2->M3"
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "M1->M2",
+        "M1->M3",
+        "M2->M3"
+      ],
+      "false_negatives": [],
+      "true_negatives": [
+        "M2->M1",
+        "M3->M1",
+        "M3->M2"
+      ],
+      "n_possible_pairs": 6,
+      "tp": 0,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3,
+      "precision": 0.0,
+      "recall": null,
+      "f1_score": null,
+      "fpr": 0.5,
+      "eligible_lag_edges": 0,
+      "finite_lag_estimates": 0,
+      "missing_lag_estimates": 0,
+      "missing_lag_rate": 0.0,
+      "lag_mae_s": NaN,
+      "lag_rmse_s": NaN,
+      "edge_delay_errors": {},
+      "occcd_summary": {
+        "COMMON_CAUSE_CANDIDATE": 18
+      },
+      "execution_time_s": 0.0013,
+      "random_seed": 47,
+      "filtered_edge_count": 0,
+      "configuration_name": "default"
+    },
+    {
+      "scenario_id": "scenario_7_noisy",
+      "scenario_name": "Noisy Cascade (Jitter, Dropout, Spurious Events)",
+      "ground_truth_edges": [
+        "A->B",
+        "B->C"
+      ],
+      "predicted_edges": [
+        "A->B",
+        "A->C",
+        "B->C",
+        "C->B"
+      ],
+      "true_positives": [
+        "A->B",
+        "B->C"
+      ],
+      "false_positives": [
+        "A->C",
+        "C->B"
+      ],
+      "false_negatives": [],
+      "true_negatives": [
+        "B->A",
+        "C->A"
+      ],
+      "n_possible_pairs": 6,
+      "tp": 2,
+      "fp": 2,
+      "fn": 0,
+      "tn": 2,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.6667,
+      "fpr": 0.5,
+      "eligible_lag_edges": 2,
+      "finite_lag_estimates": 2,
+      "missing_lag_estimates": 0,
+      "missing_lag_rate": 0.0,
+      "lag_mae_s": 113.112,
+      "lag_rmse_s": 114.3281,
+      "edge_delay_errors": {
+        "A->B": {
+          "true_delay_s": 65.0,
+          "estimated_delay_s": 194.743,
+          "error_s": 129.743,
+          "abs_error_s": 129.743
+        },
+        "B->C": {
+          "true_delay_s": 85.0,
+          "estimated_delay_s": 181.481,
+          "error_s": 96.481,
+          "abs_error_s": 96.481
+        }
+      },
+      "occcd_summary": {
+        "PROPAGATION_CANDIDATE": 17,
+        "COMMON_CAUSE_CANDIDATE": 4
+      },
+      "execution_time_s": 0.0016,
+      "random_seed": 48,
+      "filtered_edge_count": 0,
+      "configuration_name": "default"
+    }
+  ]
+}

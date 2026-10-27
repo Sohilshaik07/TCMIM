@@ -1,0 +1,153 @@
+{
+  "isolation_forest": {
+    "method_name": "Multivariate Isolation Forest (Existing)",
+    "model_family": "Unsupervised Tree Ensemble",
+    "parameters": {
+      "contamination": 0.05,
+      "n_estimators": 100,
+      "random_state": 42,
+      "fitted_features": 150,
+      "excluded_constant_features": 185
+    },
+    "usable_windows": 220,
+    "excluded_windows": 0,
+    "in_sample_baseline_fpr": 0.0519,
+    "in_sample_baseline_fp": 14,
+    "pre_baseline_buffer_fp": 10,
+    "held_out_metrics": {
+      "n_windows": 220,
+      "n_pos": 66,
+      "n_neg": 154,
+      "tp": 6,
+      "fp": 11,
+      "tn": 143,
+      "fn": 60,
+      "accuracy": 0.6773,
+      "precision": 0.3529,
+      "recall": 0.0909,
+      "f1": 0.1446,
+      "fpr": 0.0714,
+      "null_accuracy": 0.7,
+      "false_alarms_per_hour": 6.0
+    },
+    "episode_detection": {
+      "episodes_total": 6,
+      "episodes_detected": 4,
+      "detection_rate": 0.6667,
+      "mean_start_based_delay_seconds": 296.8,
+      "mean_end_based_delay_seconds": 326.8
+    }
+  },
+  "cusum_mean_abs_z": {
+    "method_name": "CUSUM Detector on Mean Absolute Z-Scores",
+    "model_family": "Sequential Change-Point Detection",
+    "parameters": {
+      "k_allowance": 0.7977,
+      "h_threshold": 5.8909,
+      "calibration": "Baseline 95th percentile cumulative score",
+      "reset_on_alarm": true
+    },
+    "usable_windows": 220,
+    "excluded_windows": 0,
+    "in_sample_baseline_fpr": 0.0037,
+    "in_sample_baseline_fp": 1,
+    "pre_baseline_buffer_fp": 2,
+    "held_out_metrics": {
+      "n_windows": 220,
+      "n_pos": 66,
+      "n_neg": 154,
+      "tp": 8,
+      "fp": 20,
+      "tn": 134,
+      "fn": 58,
+      "accuracy": 0.6455,
+      "precision": 0.2857,
+      "recall": 0.1212,
+      "f1": 0.1702,
+      "fpr": 0.1299,
+      "null_accuracy": 0.7,
+      "false_alarms_per_hour": 10.91
+    },
+    "episode_detection": {
+      "episodes_total": 6,
+      "episodes_detected": 3,
+      "detection_rate": 0.5,
+      "mean_start_based_delay_seconds": 114.7,
+      "mean_end_based_delay_seconds": 144.7
+    }
+  },
+  "per_channel_max_z_calibrated": {
+    "method_name": "Per-Channel Max-Z (Baseline Calibrated)",
+    "model_family": "Extreme Value Statistical Envelope",
+    "parameters": {
+      "tau_threshold": 7.8792,
+      "calibration": "Baseline 95th percentile of max(|z|)",
+      "monitored_channels": 150
+    },
+    "usable_windows": 220,
+    "excluded_windows": 0,
+    "in_sample_baseline_fpr": 0.0519,
+    "in_sample_baseline_fp": 14,
+    "pre_baseline_buffer_fp": 9,
+    "held_out_metrics": {
+      "n_windows": 220,
+      "n_pos": 66,
+      "n_neg": 154,
+      "tp": 57,
+      "fp": 102,
+      "tn": 52,
+      "fn": 9,
+      "accuracy": 0.4955,
+      "precision": 0.3585,
+      "recall": 0.8636,
+      "f1": 0.5067,
+      "fpr": 0.6623,
+      "null_accuracy": 0.7,
+      "false_alarms_per_hour": 55.64
+    },
+    "episode_detection": {
+      "episodes_total": 6,
+      "episodes_detected": 6,
+      "detection_rate": 1.0,
+      "mean_start_based_delay_seconds": 25.0,
+      "mean_end_based_delay_seconds": 40.2
+    }
+  },
+  "per_channel_shewhart_3sigma": {
+    "method_name": "Per-Channel Shewhart (Fixed 3-Sigma)",
+    "model_family": "Univariate Statistical Process Control",
+    "parameters": {
+      "tau_threshold": 3.0,
+      "calibration": "Fixed 3-sigma standard normal limit",
+      "monitored_channels": 150
+    },
+    "usable_windows": 220,
+    "excluded_windows": 0,
+    "in_sample_baseline_fpr": 0.3852,
+    "in_sample_baseline_fp": 104,
+    "pre_baseline_buffer_fp": 10,
+    "held_out_metrics": {
+      "n_windows": 220,
+      "n_pos": 66,
+      "n_neg": 154,
+      "tp": 60,
+      "fp": 118,
+      "tn": 36,
+      "fn": 6,
+      "accuracy": 0.4364,
+      "precision": 0.3371,
+      "recall": 0.9091,
+      "f1": 0.4918,
+      "fpr": 0.7662,
+      "null_accuracy": 0.7,
+      "false_alarms_per_hour": 64.36
+    },
+    "episode_detection": {
+      "episodes_total": 6,
+      "episodes_detected": 6,
+      "detection_rate": 1.0,
+      "mean_start_based_delay_seconds": 25.0,
+      "mean_end_based_delay_seconds": 40.2
+    }
+  }
+}

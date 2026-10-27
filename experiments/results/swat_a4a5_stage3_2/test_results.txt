@@ -1,0 +1,203 @@
+TCMIM Stage 3.2 Test Verification Execution Log
+============================================================
+
+COMMAND: pytest tests/unit/test_swat_a4a5_stage3_2.py -v
+DESCRIPTION: Focused Stage 3.2 Regression Suite
+EXIT CODE: 0
+OUTPUT:
+============================= test session starts =============================
+platform win32 -- Python 3.13.12, pytest-9.1.1, pluggy-1.5.0 -- C:\Users\SKSOH\miniconda3\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\SKSOH\OneDrive\Desktop\Project1-new\tcmim
+configfile: pyproject.toml
+plugins: anyio-4.10.0, Faker-40.36.0, asyncio-1.4.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 17 items
+
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_mv201_open_satisfied PASSED [  5%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_mv201_closed_rejected PASSED [ 11%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_missing_actuator_state_rejected PASSED [ 17%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_unknown_actuator_value_rejected PASSED [ 23%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_stale_state_evidence_rejected PASSED [ 29%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_malformed_conditional_predicate_fails_closed PASSED [ 35%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_unconditional_allowed_edge_preserved PASSED [ 41%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_disallowed_edge_always_rejected PASSED [ 47%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_allow_unknown_policy_cannot_bypass_conditional PASSED [ 52%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_gating_pipeline_integration PASSED [ 58%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestCorrectedScientificEvaluationReporting::test_attack_a6_labeled_in_sample_descriptive_fit PASSED [ 64%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestCorrectedScientificEvaluationReporting::test_normal_startup_score_from_independent_episodes_only PASSED [ 70%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestCorrectedScientificEvaluationReporting::test_headline_startup_score_disqualified PASSED [ 76%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestCorrectedScientificEvaluationReporting::test_closing_failure_episode_visible_per_episode PASSED [ 82%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestCorrectedScientificEvaluationReporting::test_validation_status_register_authoritative_categories PASSED [ 88%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestShadowModeSafety::test_production_gating_config_default_unmodified PASSED [ 94%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestShadowModeSafety::test_production_safety_contract_flags PASSED [100%]
+
+============================= 17 passed in 0.09s ==============================
+------------------------------------------------------------
+
+COMMAND: pytest tests/unit/test_swat_a4a5_stage3.py tests/unit/test_swat_a4a5_stage3_2.py -v
+DESCRIPTION: Combined Stage 3 and Stage 3.2 Suites
+EXIT CODE: 0
+OUTPUT:
+============================= test session starts =============================
+platform win32 -- Python 3.13.12, pytest-9.1.1, pluggy-1.5.0 -- C:\Users\SKSOH\miniconda3\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\SKSOH\OneDrive\Desktop\Project1-new\tcmim
+configfile: pyproject.toml
+plugins: anyio-4.10.0, Faker-40.36.0, asyncio-1.4.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 32 items
+
+tests/unit/test_swat_a4a5_stage3.py::TestTopologyRegisterAudit::test_original_register_preserved_unmodified PASSED [  3%]
+tests/unit/test_swat_a4a5_stage3.py::TestTopologyRegisterAudit::test_proposed_register_structure_and_provenance PASSED [  6%]
+tests/unit/test_swat_a4a5_stage3.py::TestTopologyRegisterAudit::test_p101_to_fit101_disallowed_in_proposed_register PASSED [  9%]
+tests/unit/test_swat_a4a5_stage3.py::TestTopologyRegisterAudit::test_p101_to_fit201_permitted_conditionally_in_proposed_register PASSED [ 12%]
+tests/unit/test_swat_a4a5_stage3.py::TestTopologyRegisterAudit::test_unknown_pairs_remain_unknown PASSED [ 15%]
+tests/unit/test_swat_a4a5_stage3.py::TestTopologyRegisterAudit::test_topology_proposal_csv_validity PASSED [ 18%]
+tests/unit/test_swat_a4a5_stage3.py::TestMV201DynamicsFormalization::test_opening_closing_parameter_separation PASSED [ 21%]
+tests/unit/test_swat_a4a5_stage3.py::TestMV201DynamicsFormalization::test_mv201_held_out_validation_metrics PASSED [ 25%]
+tests/unit/test_swat_a4a5_stage3.py::TestMV201DynamicsFormalization::test_investigation_delay_range_validity PASSED [ 28%]
+tests/unit/test_swat_a4a5_stage3.py::TestP301StateConditionedModeling::test_reproduced_attack_a6_negative_r2 PASSED [ 31%]
+tests/unit/test_swat_a4a5_stage3.py::TestP301StateConditionedModeling::test_state_conditioned_reconciliation PASSED [ 34%]
+tests/unit/test_swat_a4a5_stage3.py::TestP301StateConditionedModeling::test_normal_cycle_held_out_reproducibility PASSED [ 37%]
+tests/unit/test_swat_a4a5_stage3.py::TestP301StateConditionedModeling::test_delay_range_5_to_55s_conditional PASSED [ 40%]
+tests/unit/test_swat_a4a5_stage3.py::TestExperimentalModelInterfaceSafety::test_safety_contract_flags PASSED [ 43%]
+tests/unit/test_swat_a4a5_stage3.py::TestExperimentalModelInterfaceSafety::test_quarantined_and_unresolved_edges PASSED [ 46%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_mv201_open_satisfied PASSED [ 50%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_mv201_closed_rejected PASSED [ 53%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_missing_actuator_state_rejected PASSED [ 56%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_unknown_actuator_value_rejected PASSED [ 59%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_stale_state_evidence_rejected PASSED [ 62%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_malformed_conditional_predicate_fails_closed PASSED [ 65%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_unconditional_allowed_edge_preserved PASSED [ 68%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_disallowed_edge_always_rejected PASSED [ 71%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_allow_unknown_policy_cannot_bypass_conditional PASSED [ 75%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestSafeConditionalConnectivity::test_gating_pipeline_integration PASSED [ 78%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestCorrectedScientificEvaluationReporting::test_attack_a6_labeled_in_sample_descriptive_fit PASSED [ 81%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestCorrectedScientificEvaluationReporting::test_normal_startup_score_from_independent_episodes_only PASSED [ 84%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestCorrectedScientificEvaluationReporting::test_headline_startup_score_disqualified PASSED [ 87%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestCorrectedScientificEvaluationReporting::test_closing_failure_episode_visible_per_episode PASSED [ 90%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestCorrectedScientificEvaluationReporting::test_validation_status_register_authoritative_categories PASSED [ 93%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestShadowModeSafety::test_production_gating_config_default_unmodified PASSED [ 96%]
+tests/unit/test_swat_a4a5_stage3_2.py::TestShadowModeSafety::test_production_safety_contract_flags PASSED [100%]
+
+============================= 32 passed in 0.10s ==============================
+------------------------------------------------------------
+
+COMMAND: pytest tests/unit/test_structural_mask_gate.py tests/unit/test_gating.py -q
+DESCRIPTION: Structural Mask and Gating Pipeline Tests
+EXIT CODE: 0
+OUTPUT:
+============================= test session starts =============================
+platform win32 -- Python 3.13.12, pytest-9.1.1, pluggy-1.5.0
+rootdir: C:\Users\SKSOH\OneDrive\Desktop\Project1-new\tcmim
+configfile: pyproject.toml
+plugins: anyio-4.10.0, Faker-40.36.0, asyncio-1.4.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 59 items
+
+tests\unit\test_structural_mask_gate.py .............................    [ 49%]
+tests\unit\test_gating.py ..............................                 [100%]
+
+============================= 59 passed in 4.72s ==============================
+------------------------------------------------------------
+
+COMMAND: pytest -q
+DESCRIPTION: Full Repository Test Suite
+EXIT CODE: 0
+OUTPUT:
+============================= test session starts =============================
+platform win32 -- Python 3.13.12, pytest-9.1.1, pluggy-1.5.0
+rootdir: C:\Users\SKSOH\OneDrive\Desktop\Project1-new\tcmim
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.10.0, Faker-40.36.0, asyncio-1.4.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 932 items
+
+tests\integration\test_m3_health_events.py ............                  [  1%]
+tests\integration\test_m5_propagation_fixture.py .............           [  2%]
+tests\integration\test_m6_lifecycle_and_ccd.py ..........                [  3%]
+tests\integration\test_m7_graph_cri.py .....................             [  6%]
+tests\integration\test_metropt3_pipeline.py ..........                   [  7%]
+tests\integration\test_stage1_real_anomaly.py .............              [  8%]
+tests\integration\test_swat_pipeline.py sssssss                          [  9%]
+tests\unit\test_anomaly_detector.py ...................                  [ 11%]
+tests\unit\test_benchmark.py .................................           [ 14%]
+tests\unit\test_cri_calculator.py .........................              [ 17%]
+tests\unit\test_cusum.py ........................                        [ 20%]
+tests\unit\test_data.py ..................                               [ 21%]
+tests\unit\test_delay.py ...................                             [ 24%]
+tests\unit\test_dynamic_graph.py ......................                  [ 26%]
+tests\unit\test_edge_lifecycle.py ..............................         [ 29%]
+tests\unit\test_event_adapter.py ....................................... [ 33%]
+...................                                                      [ 35%]
+tests\unit\test_event_detector.py .............                          [ 37%]
+tests\unit\test_features.py ............................................ [ 41%]
+.                                                                        [ 42%]
+tests\unit\test_gating.py ..............................                 [ 45%]
+tests\unit\test_ground_truth_isolation.py ...............                [ 46%]
+tests\unit\test_health_baseline.py ...............                       [ 48%]
+tests\unit\test_health_indicator.py .................                    [ 50%]
+tests\unit\test_lifecycle_and_transitive.py ..............               [ 51%]
+tests\unit\test_matcher.py .....................                         [ 54%]
+tests\unit\test_multicycle_benchmark.py ............................     [ 57%]
+tests\unit\test_occ_ccd.py ................                              [ 58%]
+tests\unit\test_orchestrator.py .......................                  [ 61%]
+tests\unit\test_path_finder.py .................                         [ 63%]
+tests\unit\test_provenance.py ...............                            [ 64%]
+tests\unit\test_reporting.py ...                                         [ 65%]
+tests\unit\test_robust_delay_and_filtered_graph.py ..................... [ 67%]
+..                                                                       [ 67%]
+tests\unit\test_schemas.py .................................             [ 71%]
+tests\unit\test_serial_ingestor.py .....                                 [ 71%]
+tests\unit\test_stage2_pipeline.py ..................................... [ 75%]
+...............                                                          [ 77%]
+tests\unit\test_structural_mask_gate.py .............................    [ 80%]
+tests\unit\test_swat_a4a5.py ..............................              [ 83%]
+tests\unit\test_swat_a4a5_detector_comparison.py ..........              [ 84%]
+tests\unit\test_swat_a4a5_g0_evaluation.py ...............               [ 86%]
+tests\unit\test_swat_a4a5_raw_dynamic_validation.py .............        [ 87%]
+tests\unit\test_swat_a4a5_stage3.py ...............                      [ 89%]
+tests\unit\test_swat_a4a5_stage3_2.py .................                  [ 90%]
+tests\unit\test_swat_data.py ........................................... [ 95%]
+......                                                                   [ 96%]
+tests\unit\test_swat_integration_readiness.py .......................    [ 98%]
+tests\unit\test_swat_runner.py ............                              [100%]
+
+============================== warnings summary ===============================
+tests/integration/test_m3_health_events.py::TestM3MetroPT3Integration::test_pipeline_produces_windows
+tests/integration/test_stage1_real_anomaly.py::TestStage1MetroPT3Integration::test_pipeline_produces_real_records
+tests/unit/test_features.py::TestPressureFeatures::test_slope_constant
+tests/unit/test_features.py::TestPressureFeatures::test_range_of_flat
+  C:\Users\SKSOH\OneDrive\Desktop\Project1-new\tcmim\src\tcmim\features\pressure.py:77: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+    kurt_val   = float(scipy_kurtosis(signal, fisher=True, bias=False))
+
+tests/integration/test_m3_health_events.py::TestM3MetroPT3Integration::test_pipeline_produces_windows
+tests/integration/test_stage1_real_anomaly.py::TestStage1MetroPT3Integration::test_pipeline_produces_real_records
+tests/unit/test_features.py::TestPressureFeatures::test_slope_constant
+tests/unit/test_features.py::TestPressureFeatures::test_range_of_flat
+  C:\Users\SKSOH\OneDrive\Desktop\Project1-new\tcmim\src\tcmim\features\pressure.py:78: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+    skew_val   = float(scipy_skew(signal, bias=False))
+
+tests/integration/test_m5_propagation_fixture.py::TestM5KnownDelayFixture::test_correct_number_of_candidates
+tests/integration/test_m6_lifecycle_and_ccd.py::TestLifecycleProgression::test_reaches_stable_after_15_obs
+tests/integration/test_m7_graph_cri.py::TestM7GraphTopology::test_all_four_nodes_in_graph
+  C:\Users\SKSOH\miniconda3\Lib\site-packages\_pytest\fixtures.py:1313: PytestRemovedIn10Warning: Class-scoped fixture defined as instance method is deprecated.
+  Instance attributes set in this fixture will NOT be visible to test methods,
+  as each test gets a new instance while the fixture runs only once per class.
+  Use @classmethod decorator and set attributes on cls instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#class-scoped-fixture-as-instance-method
+    fixturefunc = resolve_fixture_function(fixturedef, request)
+
+tests/unit/test_features.py::TestVibrationFeatures::test_std_constant_signal_zero
+  C:\Users\SKSOH\OneDrive\Desktop\Project1-new\tcmim\src\tcmim\features\vibration.py:73: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+    kurt = float(scipy_kurtosis(signal, fisher=True, bias=False))
+
+tests/unit/test_features.py::TestVibrationFeatures::test_std_constant_signal_zero
+  C:\Users\SKSOH\OneDrive\Desktop\Project1-new\tcmim\src\tcmim\features\vibration.py:74: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+    skew = float(scipy_skew(signal, bias=False))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================ 925 passed, 7 skipped, 13 warnings in 16.30s =================
+------------------------------------------------------------

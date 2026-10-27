@@ -1,0 +1,159 @@
+{
+  "milestone": "Stage 2 Candidate-Edge Gating Evaluation with G0_STRUCTURAL_MASK",
+  "timestamp_utc": "2026-10-26T14:00:37.953172+00:00",
+  "runtime_seconds": 27.56,
+  "input_dataset": {
+    "path": "C:\\Users\\SKSOH\\OneDrive\\Desktop\\Project1-new\\tcmim\\data\\raw\\SWAT_A4_A5_JULY_2019\\SWaT_dataset_Jul 19 v2.xlsx",
+    "rows": 14996,
+    "columns": 77,
+    "total_windows": 500,
+    "baseline_windows": 270,
+    "eval_windows": 220
+  },
+  "structural_register": {
+    "path": "C:\\Users\\SKSOH\\OneDrive\\Desktop\\Project1-new\\tcmim\\experiments\\results\\swat_a4a5_physical_graph_audit\\physical_connectivity_register.csv",
+    "sha256": "08e0ce5764419c6bbfbec716644b1e4bdd046c6c81548f3fd98f573e8379b3c3",
+    "total_registered_edges": 22
+  },
+  "events_summary": {
+    "total_discrete_events": 200,
+    "active_event_channels_count": 33,
+    "channel_counts": {
+      "AIT201": 2,
+      "AIT202": 2,
+      "AIT203": 2,
+      "AIT301": 4,
+      "AIT302": 4,
+      "AIT303": 2,
+      "AIT501": 3,
+      "AIT502": 4,
+      "AIT503": 13,
+      "AIT504": 1,
+      "DPIT301": 7,
+      "FIT101": 4,
+      "FIT201": 5,
+      "FIT301": 6,
+      "FIT401": 24,
+      "FIT501": 24,
+      "FIT502": 6,
+      "FIT503": 16,
+      "FIT504": 4,
+      "FIT601": 8,
+      "LIT301": 2,
+      "MV101": 4,
+      "MV201": 4,
+      "MV302": 5,
+      "MV304": 3,
+      "P101": 5,
+      "P203": 5,
+      "P205": 5,
+      "P301": 6,
+      "P3_STATE": 2,
+      "PIT501": 6,
+      "PIT502": 4,
+      "PIT503": 8
+    }
+  },
+  "candidate_counts": {
+    "initial_matched_candidates": 3852,
+    "config_a_g0_disabled": {
+      "g0_applied": false,
+      "entering_g1": 3852,
+      "accepted_surviving_all_gates": 3472,
+      "rejected_total": 380
+    },
+    "config_b_g0_enabled": {
+      "g0_applied": true,
+      "rejected_at_g0_total": 3819,
+      "rejected_at_g0_prohibited": 5,
+      "rejected_at_g0_unknown": 3814,
+      "entering_g1": 33,
+      "rejected_at_g1": 0,
+      "rejected_at_subsequent_gates": 11,
+      "accepted_surviving_all_gates": 22,
+      "rejected_total": 3830
+    },
+    "comparison": {
+      "absolute_candidate_reduction": 3450,
+      "percentage_candidate_reduction": 99.37,
+      "prohibited_edges_removed_count": 5,
+      "unverified_unknown_edges_removed_count": 3814,
+      "documented_relationships_retained_count": 0,
+      "documented_relationships_removed_count": 0,
+      "inferred_relationships_retained_count": 22,
+      "inferred_relationships_removed_count": 11
+    }
+  },
+  "per_attack_interval_summary": {
+    "A1": {
+      "initial_candidates": 15,
+      "config_a_accepted": 15,
+      "config_a_rejected": 0,
+      "config_b_accepted": 0,
+      "config_b_rejected": 15,
+      "config_b_g0_rejected": 15,
+      "config_b_g0_disallowed": 0,
+      "config_b_g0_unknown": 15
+    },
+    "A2": {
+      "initial_candidates": 125,
+      "config_a_accepted": 77,
+      "config_a_rejected": 48,
+      "config_b_accepted": 1,
+      "config_b_rejected": 124,
+      "config_b_g0_rejected": 122,
+      "config_b_g0_disallowed": 2,
+      "config_b_g0_unknown": 120
+    },
+    "A3": {
+      "initial_candidates": 187,
+      "config_a_accepted": 179,
+      "config_a_rejected": 8,
+      "config_b_accepted": 0,
+      "config_b_rejected": 187,
+      "config_b_g0_rejected": 187,
+      "config_b_g0_disallowed": 0,
+      "config_b_g0_unknown": 187
+    },
+    "A4": {
+      "initial_candidates": 540,
+      "config_a_accepted": 506,
+      "config_a_rejected": 34,
+      "config_b_accepted": 4,
+      "config_b_rejected": 536,
+      "config_b_g0_rejected": 536,
+      "config_b_g0_disallowed": 0,
+      "config_b_g0_unknown": 536
+    },
+    "A5": {
+      "initial_candidates": 44,
+      "config_a_accepted": 44,
+      "config_a_rejected": 0,
+      "config_b_accepted": 0,
+      "config_b_rejected": 44,
+      "config_b_g0_rejected": 44,
+      "config_b_g0_disallowed": 0,
+      "config_b_g0_unknown": 44
+    },
+    "A6": {
+      "initial_candidates": 531,
+      "config_a_accepted": 507,
+      "config_a_rejected": 24,
+      "config_b_accepted": 4,
+      "config_b_rejected": 527,
+      "config_b_g0_rejected": 526,
+      "config_b_g0_disallowed": 0,
+      "config_b_g0_unknown": 526
+    },
+    "outside_attacks": {
+      "initial_candidates": 2410,
+      "config_a_accepted": 2144,
+      "config_a_rejected": 266,
+      "config_b_accepted": 13,
+      "config_b_rejected": 2397,
+      "config_b_g0_rejected": 2389,
+      "config_b_g0_disallowed": 3,
+      "config_b_g0_unknown": 2386
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "data_path": "C:\\Users\\SKSOH\\OneDrive\\Desktop\\Project1-new\\tcmim\\data\\raw\\SWAT_A4_A5_JULY_2019\\SWaT_dataset_Jul 19 v2.xlsx",
+  "output_dir": "C:\\Users\\SKSOH\\OneDrive\\Desktop\\Project1-new\\tcmim\\experiments\\results\\swat_a4a5_g0_evaluation",
+  "register_path": "default_project_register",
+  "window_seconds": 30.0,
+  "step_seconds": 30.0,
+  "min_samples": 2,
+  "max_internal_gap_s": 15.0,
+  "baseline_partition": "Windows 10..279 (04:35:00 to 06:50:00 UTC)",
+  "eval_partition": "Windows 280..499 (06:50:00 to 08:40:00 UTC)",
+  "z_percentile_threshold": 95.0,
+  "min_z_threshold": 3.0,
+  "matcher_min_delay_s": 0.0,
+  "matcher_max_delay_s": 600.0,
+  "gating_min_delay_s": 0.0,
+  "gating_max_delay_s": 600.0,
+  "gating_require_positive_dt": true,
+  "gating_require_same_modality": false,
+  "allow_unknown_config_b": false,
+  "provenance": "public_dataset"
+}

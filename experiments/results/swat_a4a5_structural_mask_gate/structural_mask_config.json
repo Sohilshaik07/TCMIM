@@ -1,0 +1,80 @@
+{
+  "milestone": "G0_STRUCTURAL_MASK",
+  "created_at_utc": "2026-10-26T13:45:00Z",
+  "specification_version": "1.0",
+  "register_metadata": {
+    "relative_path": "experiments/results/swat_a4a5_physical_graph_audit/physical_connectivity_register.csv",
+    "sha256": "08e0ce5764419c6bbfbec716644b1e4bdd046c6c81548f3fd98f573e8379b3c3",
+    "total_records": 22,
+    "status_counts": {
+      "ALLOWED_1": 18,
+      "DISALLOWED_0": 3,
+      "UNKNOWN_QUESTION": 1
+    },
+    "documentary_status_counts": {
+      "DOCUMENTED": 2,
+      "INFERRED": 16,
+      "DISALLOWED": 3,
+      "UNKNOWN": 1
+    }
+  },
+  "gate_specification": {
+    "gate_name": "G0_STRUCTURAL_MASK",
+    "pipeline_position": "Primary gate, executed strictly before G1_DELAY_FEASIBILITY",
+    "encoding": {
+      "ALLOWED": "1",
+      "DISALLOWED": "0",
+      "UNKNOWN": "?"
+    },
+    "rejection_reason_templates": {
+      "DISALLOWED": "Prohibited by physical structural mask (status=0): no physical connection {source} -> {target}.",
+      "UNKNOWN_CONSERVATIVE": "Rejected under conservative policy (status=?): unverified physical connection {source} -> {target}."
+    },
+    "swat_operational_policy": {
+      "allow_unknown": false,
+      "description": "Conservative mode for SWaT A4/A5 Stage 2. Rejects unverified candidate edges to prevent correlation hallucination."
+    },
+    "legacy_compatibility_policy": {
+      "allow_unknown": true,
+      "structural_mask_default": null,
+      "description": "Preserves backward compatibility for MetroPT-3 and synthetic benchmarks without imposing SWaT physical prior."
+    }
+  },
+  "unexcited_actuator_specification": {
+    "baseline_observation_period": "Windows 10 to 279 (04:35:00 to 06:50:00 UTC, 8100 seconds)",
+    "variance_threshold": 1e-12,
+    "total_unexcited_actuators": 17,
+    "unexcited_actuator_list": [
+      "P601",
+      "MV501",
+      "P102",
+      "P201",
+      "P202",
+      "P204",
+      "P206",
+      "MV301",
+      "MV303",
+      "P302",
+      "P401",
+      "P402",
+      "UV401",
+      "P501",
+      "P502",
+      "P602",
+      "P603"
+    ],
+    "structural_prior_weight": 0.5,
+    "prior_weight_role": "Configurable design parameter representing structural piping presence, NOT an empirically validated probability or confidence."
+  },
+  "cri_safety_specification": {
+    "uncertainty_status_code": "UNCERTAIN_UNEXCITED",
+    "empirical_status_code": "VALIDATED_EMPIRICAL",
+    "triggering_conditions": [
+      "Any edge in traversed paths has is_unexcited_actuator=True or state=EdgeState.UNEXCITED_PRIOR",
+      "Any node in traversed paths is in unexcited_actuators set",
+      "Active graph has edges directly to target originating from unexcited actuators",
+      "Target node has zero active dynamic paths, but physical structural mask confirms permitted physical connection (status=1) from an unexcited actuator"
+    ],
+    "safety_guarantee": "Zero empirical variance during normal baseline never results in a silent zero-risk conclusion for downstream target machines."
+  }
+}

@@ -1,0 +1,8 @@
+attack_id,target_channels,attack_description,initial_candidates,config_a_accepted,config_a_rejected,config_b_accepted,config_b_rejected,config_b_g0_rejected,config_b_g0_prohibited,config_b_g0_unknown,absolute_reduction,percentage_reduction
+A1,FIT401,Spoof value from 0.8 to 0.5,15,15,0,0,15,15,0,15,15,100.0
+A2,LIT301,Spoof value from 835 to 1024,125,77,48,1,124,122,2,120,76,98.7
+A3,P601,Switch from OFF to ON,187,179,8,0,187,187,0,187,179,100.0
+A4,MV201;P101,Switch from CLOSE to OPEN (MV201) and OFF to ON (P101),540,506,34,4,536,536,0,536,502,99.21
+A5,MV501,Switch from OPEN to CLOSE,44,44,0,0,44,44,0,44,44,100.0
+A6,P301,Switch from ON to OFF,531,507,24,4,527,526,0,526,503,99.21
+outside_attacks,N/A,Events observed outside documented attack intervals,2410,2144,266,13,2397,2389,3,2386,2131,99.39

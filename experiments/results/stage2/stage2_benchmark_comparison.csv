@@ -1,0 +1,211 @@
+config_id,config_name,estimator,min_active_state,seed,scenario_id,scenario_name,gt_edges_count,pred_edges_count,filtered_edges_count,tp,fp,fn,tn,precision,recall,f1_score,fpr,eligible_lag_edges,finite_lag_estimates,missing_lag_rate,lag_mae_s,lag_rmse_s,execution_time_s
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,42,scenario_1_chain,Linear Chain (A -> B -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0062
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,42,scenario_2_branching,Branching Fork (A -> B and A -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.001
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,42,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,5,0,3,2,0,1,0.6,1.0,0.75,0.6667,3,3,0.0,0.0,0.0,0.0011
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,42,scenario_4_negative_control,Negative Control (Independent Streams),0,8,0,0,8,0,4,0.0,,,0.6667,0,0,0.0,,,0.0018
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,42,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,1,0,0,1,0,1,0.0,,,0.5,0,0,0.0,,,0.0004
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,42,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,3,0,0,3,0,3,0.0,,,0.5,0,0,0.0,,,0.0008
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,42,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,4,0,2,2,0,2,0.5,1.0,0.6667,0.5,2,2,0.0,113.112,114.3281,0.0011
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,43,scenario_1_chain,Linear Chain (A -> B -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,43,scenario_2_branching,Branching Fork (A -> B and A -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,43,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,5,0,3,2,0,1,0.6,1.0,0.75,0.6667,3,3,0.0,0.0,0.0,0.0009
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,43,scenario_4_negative_control,Negative Control (Independent Streams),0,7,0,0,7,0,5,0.0,,,0.5833,0,0,0.0,,,0.001
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,43,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,1,0,0,1,0,1,0.0,,,0.5,0,0,0.0,,,0.0003
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,43,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,3,0,0,3,0,3,0.0,,,0.5,0,0,0.0,,,0.0008
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,43,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,5,0,2,3,0,1,0.4,1.0,0.5714,0.75,2,2,0.0,33.3525,40.5813,0.001
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,44,scenario_1_chain,Linear Chain (A -> B -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,44,scenario_2_branching,Branching Fork (A -> B and A -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0025
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,44,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,5,0,3,2,0,1,0.6,1.0,0.75,0.6667,3,3,0.0,0.0,0.0,0.0011
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,44,scenario_4_negative_control,Negative Control (Independent Streams),0,10,0,0,10,0,2,0.0,,,0.8333,0,0,0.0,,,0.002
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,44,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,1,0,0,1,0,1,0.0,,,0.5,0,0,0.0,,,0.0003
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,44,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,3,0,0,3,0,3,0.0,,,0.5,0,0,0.0,,,0.0008
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,44,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,6,0,2,4,0,0,0.3333,1.0,0.5,1.0,2,2,0.0,2.6552,2.7072,0.0013
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,45,scenario_1_chain,Linear Chain (A -> B -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,45,scenario_2_branching,Branching Fork (A -> B and A -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,45,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,5,0,3,2,0,1,0.6,1.0,0.75,0.6667,3,3,0.0,0.0,0.0,0.0009
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,45,scenario_4_negative_control,Negative Control (Independent Streams),0,7,0,0,7,0,5,0.0,,,0.5833,0,0,0.0,,,0.001
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,45,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,1,0,0,1,0,1,0.0,,,0.5,0,0,0.0,,,0.0003
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,45,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,3,0,0,3,0,3,0.0,,,0.5,0,0,0.0,,,0.0008
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,45,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,6,0,2,4,0,0,0.3333,1.0,0.5,1.0,2,2,0.0,8.7925,12.0493,0.0015
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,46,scenario_1_chain,Linear Chain (A -> B -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,46,scenario_2_branching,Branching Fork (A -> B and A -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,46,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,5,0,3,2,0,1,0.6,1.0,0.75,0.6667,3,3,0.0,0.0,0.0,0.0009
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,46,scenario_4_negative_control,Negative Control (Independent Streams),0,10,0,0,10,0,2,0.0,,,0.8333,0,0,0.0,,,0.0014
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,46,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,1,0,0,1,0,1,0.0,,,0.5,0,0,0.0,,,0.0008
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,46,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,3,0,0,3,0,3,0.0,,,0.5,0,0,0.0,,,0.0009
+config_1_mean_candidate,Mean + Candidate Filter (Baseline),mean,CANDIDATE,46,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,6,0,2,4,0,0,0.3333,1.0,0.5,1.0,2,2,0.0,15.9364,16.0609,0.0012
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,42,scenario_1_chain,Linear Chain (A -> B -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,42,scenario_2_branching,Branching Fork (A -> B and A -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,42,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,5,0,3,2,0,1,0.6,1.0,0.75,0.6667,3,3,0.0,0.0,0.0,0.0008
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,42,scenario_4_negative_control,Negative Control (Independent Streams),0,8,0,0,8,0,4,0.0,,,0.6667,0,0,0.0,,,0.0013
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,42,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,1,0,0,1,0,1,0.0,,,0.5,0,0,0.0,,,0.0003
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,42,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,3,0,0,3,0,3,0.0,,,0.5,0,0,0.0,,,0.0008
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,42,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,4,0,2,2,0,2,0.5,1.0,0.6667,0.5,2,2,0.0,5.843,6.3166,0.0009
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,43,scenario_1_chain,Linear Chain (A -> B -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0007
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,43,scenario_2_branching,Branching Fork (A -> B and A -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0007
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,43,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,5,0,3,2,0,1,0.6,1.0,0.75,0.6667,3,3,0.0,0.0,0.0,0.0008
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,43,scenario_4_negative_control,Negative Control (Independent Streams),0,7,0,0,7,0,5,0.0,,,0.5833,0,0,0.0,,,0.001
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,43,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,1,0,0,1,0,1,0.0,,,0.5,0,0,0.0,,,0.0003
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,43,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,3,0,0,3,0,3,0.0,,,0.5,0,0,0.0,,,0.0008
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,43,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,5,0,2,3,0,1,0.4,1.0,0.5714,0.75,2,2,0.0,3.9871,4.0319,0.0017
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,44,scenario_1_chain,Linear Chain (A -> B -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,44,scenario_2_branching,Branching Fork (A -> B and A -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,44,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,5,0,3,2,0,1,0.6,1.0,0.75,0.6667,3,3,0.0,0.0,0.0,0.0011
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,44,scenario_4_negative_control,Negative Control (Independent Streams),0,10,0,0,10,0,2,0.0,,,0.8333,0,0,0.0,,,0.0013
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,44,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,1,0,0,1,0,1,0.0,,,0.5,0,0,0.0,,,0.0003
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,44,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,3,0,0,3,0,3,0.0,,,0.5,0,0,0.0,,,0.0008
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,44,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,6,0,2,4,0,0,0.3333,1.0,0.5,1.0,2,2,0.0,1.0055,1.0118,0.0012
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,45,scenario_1_chain,Linear Chain (A -> B -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0007
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,45,scenario_2_branching,Branching Fork (A -> B and A -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,45,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,5,0,3,2,0,1,0.6,1.0,0.75,0.6667,3,3,0.0,0.0,0.0,0.0008
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,45,scenario_4_negative_control,Negative Control (Independent Streams),0,7,0,0,7,0,5,0.0,,,0.5833,0,0,0.0,,,0.001
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,45,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,1,0,0,1,0,1,0.0,,,0.5,0,0,0.0,,,0.0003
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,45,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,3,0,0,3,0,3,0.0,,,0.5,0,0,0.0,,,0.0008
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,45,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,6,0,2,4,0,0,0.3333,1.0,0.5,1.0,2,2,0.0,1.425,1.4955,0.0017
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,46,scenario_1_chain,Linear Chain (A -> B -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0011
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,46,scenario_2_branching,Branching Fork (A -> B and A -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,46,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,5,0,3,2,0,1,0.6,1.0,0.75,0.6667,3,3,0.0,0.0,0.0,0.0009
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,46,scenario_4_negative_control,Negative Control (Independent Streams),0,10,0,0,10,0,2,0.0,,,0.8333,0,0,0.0,,,0.0013
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,46,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,1,0,0,1,0,1,0.0,,,0.5,0,0,0.0,,,0.0003
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,46,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,3,0,0,3,0,3,0.0,,,0.5,0,0,0.0,,,0.0008
+config_2_median_candidate,Median + Candidate Filter,median,CANDIDATE,46,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,6,0,2,4,0,0,0.3333,1.0,0.5,1.0,2,2,0.0,2.738,3.4948,0.0012
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,42,scenario_1_chain,Linear Chain (A -> B -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,42,scenario_2_branching,Branching Fork (A -> B and A -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,42,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,5,0,3,2,0,1,0.6,1.0,0.75,0.6667,3,3,0.0,0.0,0.0,0.0009
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,42,scenario_4_negative_control,Negative Control (Independent Streams),0,8,0,0,8,0,4,0.0,,,0.6667,0,0,0.0,,,0.0013
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,42,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,1,0,0,1,0,1,0.0,,,0.5,0,0,0.0,,,0.0003
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,42,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,3,0,0,3,0,3,0.0,,,0.5,0,0,0.0,,,0.0008
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,42,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,4,0,2,2,0,2,0.5,1.0,0.6667,0.5,2,2,0.0,70.2281,74.5816,0.0009
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,43,scenario_1_chain,Linear Chain (A -> B -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0011
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,43,scenario_2_branching,Branching Fork (A -> B and A -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,43,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,5,0,3,2,0,1,0.6,1.0,0.75,0.6667,3,3,0.0,0.0,0.0,0.0011
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,43,scenario_4_negative_control,Negative Control (Independent Streams),0,7,0,0,7,0,5,0.0,,,0.5833,0,0,0.0,,,0.0012
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,43,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,1,0,0,1,0,1,0.0,,,0.5,0,0,0.0,,,0.0003
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,43,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,3,0,0,3,0,3,0.0,,,0.5,0,0,0.0,,,0.0008
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,43,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,5,0,2,3,0,1,0.4,1.0,0.5714,0.75,2,2,0.0,11.6432,13.705,0.001
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,44,scenario_1_chain,Linear Chain (A -> B -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,44,scenario_2_branching,Branching Fork (A -> B and A -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,44,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,5,0,3,2,0,1,0.6,1.0,0.75,0.6667,3,3,0.0,0.0,0.0,0.0011
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,44,scenario_4_negative_control,Negative Control (Independent Streams),0,10,0,0,10,0,2,0.0,,,0.8333,0,0,0.0,,,0.0013
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,44,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,1,0,0,1,0,1,0.0,,,0.5,0,0,0.0,,,0.0003
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,44,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,3,0,0,3,0,3,0.0,,,0.5,0,0,0.0,,,0.0007
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,44,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,6,0,2,4,0,0,0.3333,1.0,0.5,1.0,2,2,0.0,1.8924,1.8994,0.0012
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,45,scenario_1_chain,Linear Chain (A -> B -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0007
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,45,scenario_2_branching,Branching Fork (A -> B and A -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0007
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,45,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,5,0,3,2,0,1,0.6,1.0,0.75,0.6667,3,3,0.0,0.0,0.0,0.0018
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,45,scenario_4_negative_control,Negative Control (Independent Streams),0,7,0,0,7,0,5,0.0,,,0.5833,0,0,0.0,,,0.0014
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,45,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,1,0,0,1,0,1,0.0,,,0.5,0,0,0.0,,,0.0007
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,45,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,3,0,0,3,0,3,0.0,,,0.5,0,0,0.0,,,0.0011
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,45,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,6,0,2,4,0,0,0.3333,1.0,0.5,1.0,2,2,0.0,1.0418,1.2129,0.0017
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,46,scenario_1_chain,Linear Chain (A -> B -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,46,scenario_2_branching,Branching Fork (A -> B and A -> C),2,3,0,2,1,0,3,0.6667,1.0,0.8,0.25,2,2,0.0,0.0,0.0,0.0008
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,46,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,5,0,3,2,0,1,0.6,1.0,0.75,0.6667,3,3,0.0,0.0,0.0,0.0008
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,46,scenario_4_negative_control,Negative Control (Independent Streams),0,10,0,0,10,0,2,0.0,,,0.8333,0,0,0.0,,,0.0013
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,46,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,1,0,0,1,0,1,0.0,,,0.5,0,0,0.0,,,0.0003
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,46,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,3,0,0,3,0,3,0.0,,,0.5,0,0,0.0,,,0.0008
+config_3_trimmed_mean_candidate,Trimmed Mean (20%) + Candidate Filter,trimmed_mean,CANDIDATE,46,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,6,0,2,4,0,0,0.3333,1.0,0.5,1.0,2,2,0.0,3.3051,3.6007,0.0012
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,42,scenario_1_chain,Linear Chain (A -> B -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0006
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,42,scenario_2_branching,Branching Fork (A -> B and A -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,42,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,0,5,0,0,3,3,,0.0,,0.0,0,0,0.0,,,0.001
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,42,scenario_4_negative_control,Negative Control (Independent Streams),0,0,8,0,0,0,12,,,,0.0,0,0,0.0,,,0.0008
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,42,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,0,1,0,0,0,2,,,,0.0,0,0,0.0,,,0.0003
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,42,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,0,3,0,0,0,6,,,,0.0,0,0,0.0,,,0.0007
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,42,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,0,4,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0008
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,43,scenario_1_chain,Linear Chain (A -> B -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0008
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,43,scenario_2_branching,Branching Fork (A -> B and A -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,43,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,0,5,0,0,3,3,,0.0,,0.0,0,0,0.0,,,0.0007
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,43,scenario_4_negative_control,Negative Control (Independent Streams),0,0,7,0,0,0,12,,,,0.0,0,0,0.0,,,0.0007
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,43,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,0,1,0,0,0,2,,,,0.0,0,0,0.0,,,0.0002
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,43,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,0,3,0,0,0,6,,,,0.0,0,0,0.0,,,0.0007
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,43,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,0,5,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0009
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,44,scenario_1_chain,Linear Chain (A -> B -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,44,scenario_2_branching,Branching Fork (A -> B and A -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,44,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,0,5,0,0,3,3,,0.0,,0.0,0,0,0.0,,,0.0007
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,44,scenario_4_negative_control,Negative Control (Independent Streams),0,0,10,0,0,0,12,,,,0.0,0,0,0.0,,,0.001
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,44,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,0,1,0,0,0,2,,,,0.0,0,0,0.0,,,0.0003
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,44,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,0,3,0,0,0,6,,,,0.0,0,0,0.0,,,0.0007
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,44,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,0,6,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0011
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,45,scenario_1_chain,Linear Chain (A -> B -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0009
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,45,scenario_2_branching,Branching Fork (A -> B and A -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,45,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,0,5,0,0,3,3,,0.0,,0.0,0,0,0.0,,,0.0007
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,45,scenario_4_negative_control,Negative Control (Independent Streams),0,0,7,0,0,0,12,,,,0.0,0,0,0.0,,,0.0008
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,45,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,0,1,0,0,0,2,,,,0.0,0,0,0.0,,,0.0003
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,45,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,0,3,0,0,0,6,,,,0.0,0,0,0.0,,,0.0007
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,45,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,0,6,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0016
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,46,scenario_1_chain,Linear Chain (A -> B -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0008
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,46,scenario_2_branching,Branching Fork (A -> B and A -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,46,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,0,5,0,0,3,3,,0.0,,0.0,0,0,0.0,,,0.0007
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,46,scenario_4_negative_control,Negative Control (Independent Streams),0,0,10,0,0,0,12,,,,0.0,0,0,0.0,,,0.001
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,46,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,0,1,0,0,0,2,,,,0.0,0,0,0.0,,,0.0003
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,46,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,0,3,0,0,0,6,,,,0.0,0,0,0.0,,,0.0007
+config_4_mean_provisional,Mean + Provisional Filter,mean,PROVISIONAL,46,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,0,6,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0011
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,42,scenario_1_chain,Linear Chain (A -> B -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,42,scenario_2_branching,Branching Fork (A -> B and A -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,42,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,0,5,0,0,3,3,,0.0,,0.0,0,0,0.0,,,0.0007
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,42,scenario_4_negative_control,Negative Control (Independent Streams),0,0,8,0,0,0,12,,,,0.0,0,0,0.0,,,0.0008
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,42,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,0,1,0,0,0,2,,,,0.0,0,0,0.0,,,0.0002
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,42,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,0,3,0,0,0,6,,,,0.0,0,0,0.0,,,0.0009
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,42,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,0,4,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0008
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,43,scenario_1_chain,Linear Chain (A -> B -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,43,scenario_2_branching,Branching Fork (A -> B and A -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0006
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,43,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,0,5,0,0,3,3,,0.0,,0.0,0,0,0.0,,,0.0007
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,43,scenario_4_negative_control,Negative Control (Independent Streams),0,0,7,0,0,0,12,,,,0.0,0,0,0.0,,,0.0007
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,43,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,0,1,0,0,0,2,,,,0.0,0,0,0.0,,,0.0003
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,43,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,0,3,0,0,0,6,,,,0.0,0,0,0.0,,,0.0008
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,43,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,0,5,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0011
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,44,scenario_1_chain,Linear Chain (A -> B -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,44,scenario_2_branching,Branching Fork (A -> B and A -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0006
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,44,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,0,5,0,0,3,3,,0.0,,0.0,0,0,0.0,,,0.0007
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,44,scenario_4_negative_control,Negative Control (Independent Streams),0,0,10,0,0,0,12,,,,0.0,0,0,0.0,,,0.001
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,44,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,0,1,0,0,0,2,,,,0.0,0,0,0.0,,,0.0003
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,44,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,0,3,0,0,0,6,,,,0.0,0,0,0.0,,,0.0007
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,44,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,0,6,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.001
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,45,scenario_1_chain,Linear Chain (A -> B -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,45,scenario_2_branching,Branching Fork (A -> B and A -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,45,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,0,5,0,0,3,3,,0.0,,0.0,0,0,0.0,,,0.0014
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,45,scenario_4_negative_control,Negative Control (Independent Streams),0,0,7,0,0,0,12,,,,0.0,0,0,0.0,,,0.0009
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,45,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,0,1,0,0,0,2,,,,0.0,0,0,0.0,,,0.0003
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,45,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,0,3,0,0,0,6,,,,0.0,0,0,0.0,,,0.0007
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,45,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,0,6,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0012
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,46,scenario_1_chain,Linear Chain (A -> B -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,46,scenario_2_branching,Branching Fork (A -> B and A -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,46,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,0,5,0,0,3,3,,0.0,,0.0,0,0,0.0,,,0.0009
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,46,scenario_4_negative_control,Negative Control (Independent Streams),0,0,10,0,0,0,12,,,,0.0,0,0,0.0,,,0.0011
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,46,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,0,1,0,0,0,2,,,,0.0,0,0,0.0,,,0.0003
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,46,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,0,3,0,0,0,6,,,,0.0,0,0,0.0,,,0.0007
+config_5_median_provisional,Median + Provisional Filter,median,PROVISIONAL,46,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,0,6,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0011
+config_6_stable_strict,Strict Stable Filter,median,STABLE,42,scenario_1_chain,Linear Chain (A -> B -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_6_stable_strict,Strict Stable Filter,median,STABLE,42,scenario_2_branching,Branching Fork (A -> B and A -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_6_stable_strict,Strict Stable Filter,median,STABLE,42,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,0,5,0,0,3,3,,0.0,,0.0,0,0,0.0,,,0.0008
+config_6_stable_strict,Strict Stable Filter,median,STABLE,42,scenario_4_negative_control,Negative Control (Independent Streams),0,0,8,0,0,0,12,,,,0.0,0,0,0.0,,,0.0009
+config_6_stable_strict,Strict Stable Filter,median,STABLE,42,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,0,1,0,0,0,2,,,,0.0,0,0,0.0,,,0.0003
+config_6_stable_strict,Strict Stable Filter,median,STABLE,42,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,0,3,0,0,0,6,,,,0.0,0,0,0.0,,,0.0007
+config_6_stable_strict,Strict Stable Filter,median,STABLE,42,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,0,4,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0023
+config_6_stable_strict,Strict Stable Filter,median,STABLE,43,scenario_1_chain,Linear Chain (A -> B -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0025
+config_6_stable_strict,Strict Stable Filter,median,STABLE,43,scenario_2_branching,Branching Fork (A -> B and A -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_6_stable_strict,Strict Stable Filter,median,STABLE,43,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,0,5,0,0,3,3,,0.0,,0.0,0,0,0.0,,,0.0007
+config_6_stable_strict,Strict Stable Filter,median,STABLE,43,scenario_4_negative_control,Negative Control (Independent Streams),0,0,7,0,0,0,12,,,,0.0,0,0,0.0,,,0.0009
+config_6_stable_strict,Strict Stable Filter,median,STABLE,43,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,0,1,0,0,0,2,,,,0.0,0,0,0.0,,,0.0004
+config_6_stable_strict,Strict Stable Filter,median,STABLE,43,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,0,3,0,0,0,6,,,,0.0,0,0,0.0,,,0.001
+config_6_stable_strict,Strict Stable Filter,median,STABLE,43,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,0,5,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0012
+config_6_stable_strict,Strict Stable Filter,median,STABLE,44,scenario_1_chain,Linear Chain (A -> B -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_6_stable_strict,Strict Stable Filter,median,STABLE,44,scenario_2_branching,Branching Fork (A -> B and A -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0007
+config_6_stable_strict,Strict Stable Filter,median,STABLE,44,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,0,5,0,0,3,3,,0.0,,0.0,0,0,0.0,,,0.0007
+config_6_stable_strict,Strict Stable Filter,median,STABLE,44,scenario_4_negative_control,Negative Control (Independent Streams),0,0,10,0,0,0,12,,,,0.0,0,0,0.0,,,0.001
+config_6_stable_strict,Strict Stable Filter,median,STABLE,44,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,0,1,0,0,0,2,,,,0.0,0,0,0.0,,,0.0002
+config_6_stable_strict,Strict Stable Filter,median,STABLE,44,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,0,3,0,0,0,6,,,,0.0,0,0,0.0,,,0.0007
+config_6_stable_strict,Strict Stable Filter,median,STABLE,44,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,0,6,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.001
+config_6_stable_strict,Strict Stable Filter,median,STABLE,45,scenario_1_chain,Linear Chain (A -> B -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0008
+config_6_stable_strict,Strict Stable Filter,median,STABLE,45,scenario_2_branching,Branching Fork (A -> B and A -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0008
+config_6_stable_strict,Strict Stable Filter,median,STABLE,45,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,0,5,0,0,3,3,,0.0,,0.0,0,0,0.0,,,0.0007
+config_6_stable_strict,Strict Stable Filter,median,STABLE,45,scenario_4_negative_control,Negative Control (Independent Streams),0,0,7,0,0,0,12,,,,0.0,0,0,0.0,,,0.0008
+config_6_stable_strict,Strict Stable Filter,median,STABLE,45,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,0,1,0,0,0,2,,,,0.0,0,0,0.0,,,0.0002
+config_6_stable_strict,Strict Stable Filter,median,STABLE,45,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,0,3,0,0,0,6,,,,0.0,0,0,0.0,,,0.0006
+config_6_stable_strict,Strict Stable Filter,median,STABLE,45,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,0,6,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0012
+config_6_stable_strict,Strict Stable Filter,median,STABLE,46,scenario_1_chain,Linear Chain (A -> B -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0009
+config_6_stable_strict,Strict Stable Filter,median,STABLE,46,scenario_2_branching,Branching Fork (A -> B and A -> C),2,0,3,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.0011
+config_6_stable_strict,Strict Stable Filter,median,STABLE,46,scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,0,5,0,0,3,3,,0.0,,0.0,0,0,0.0,,,0.0007
+config_6_stable_strict,Strict Stable Filter,median,STABLE,46,scenario_4_negative_control,Negative Control (Independent Streams),0,0,10,0,0,0,12,,,,0.0,0,0,0.0,,,0.001
+config_6_stable_strict,Strict Stable Filter,median,STABLE,46,scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),0,0,1,0,0,0,2,,,,0.0,0,0,0.0,,,0.0003
+config_6_stable_strict,Strict Stable Filter,median,STABLE,46,scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),0,0,3,0,0,0,6,,,,0.0,0,0,0.0,,,0.0007
+config_6_stable_strict,Strict Stable Filter,median,STABLE,46,scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",2,0,6,0,0,2,4,,0.0,,0.0,0,0,0.0,,,0.001

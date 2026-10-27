@@ -1,0 +1,86 @@
+{
+  "total_eligible_windows": 500,
+  "evaluated_windows": 500,
+  "excluded_windows_unobservable_attacks": 0,
+  "n_positive_windows": 66,
+  "n_negative_windows": 434,
+  "tp": 6,
+  "fp": 35,
+  "tn": 399,
+  "fn": 60,
+  "precision": 0.1463,
+  "recall": 0.0909,
+  "f1_score": 0.1121,
+  "accuracy": 0.81,
+  "observable_attack_detection": {
+    "A1": {
+      "target_tags": [
+        "FIT401"
+      ],
+      "target_stages": [
+        "P4"
+      ],
+      "overlapping_windows_count": 5,
+      "detected": false,
+      "detection_delay_seconds": null
+    },
+    "A2": {
+      "target_tags": [
+        "LIT301"
+      ],
+      "target_stages": [
+        "P3"
+      ],
+      "overlapping_windows_count": 10,
+      "detected": false,
+      "detection_delay_seconds": null
+    },
+    "A3": {
+      "target_tags": [
+        "P601"
+      ],
+      "target_stages": [
+        "P6"
+      ],
+      "overlapping_windows_count": 9,
+      "detected": true,
+      "detection_delay_seconds": 123.0
+    },
+    "A4": {
+      "target_tags": [
+        "MV201",
+        "P101"
+      ],
+      "target_stages": [
+        "P2",
+        "P1"
+      ],
+      "overlapping_windows_count": 16,
+      "detected": true,
+      "detection_delay_seconds": 340.0
+    },
+    "A5": {
+      "target_tags": [
+        "MV501"
+      ],
+      "target_stages": [
+        "P5"
+      ],
+      "overlapping_windows_count": 4,
+      "detected": true,
+      "detection_delay_seconds": 0.0
+    },
+    "A6": {
+      "target_tags": [
+        "P301"
+      ],
+      "target_stages": [
+        "P3"
+      ],
+      "overlapping_windows_count": 28,
+      "detected": true,
+      "detection_delay_seconds": 724.0
+    }
+  },
+  "unobservable_attacks_summary": {}
+}

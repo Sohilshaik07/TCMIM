@@ -1,0 +1,75 @@
+{
+  "milestone": "G0_STRUCTURAL_MASK",
+  "timestamp_utc": "2026-10-26T13:47:00Z",
+  "created_files": [
+    {
+      "path": "src/tcmim/gating/structural_mask.py",
+      "description": "Ternary physical structural mask (ALLOWED='1', DISALLOWED='0', UNKNOWN='?'), register loader, schema validation, project-relative path resolution, unexcited actuator tracking."
+    },
+    {
+      "path": "tests/unit/test_structural_mask_gate.py",
+      "description": "29 focused unit tests covering loading, validation, duplicate/conflicting record detection, ternary gate semantics, gate ordering, unexcited actuators, CRI uncertainty, and determinism."
+    },
+    {
+      "path": "experiments/results/swat_a4a5_structural_mask_gate/structural_mask_config.json",
+      "description": "Structural mask and gate configuration, input register SHA-256 hash, breakdown metrics, policy parameters, and unexcited actuator specification."
+    },
+    {
+      "path": "experiments/results/swat_a4a5_structural_mask_gate/test_results.txt",
+      "description": "Full verbose pytest trace showing 29 focused tests passing and all 865 unit/integration tests passing."
+    },
+    {
+      "path": "experiments/results/swat_a4a5_structural_mask_gate/change_manifest.json",
+      "description": "Manifest of created, modified, and preserved files."
+    },
+    {
+      "path": "experiments/results/swat_a4a5_structural_mask_gate/implementation_report.md",
+      "description": "Comprehensive engineering and scientific report for the G0_STRUCTURAL_MASK milestone."
+    }
+  ],
+  "modified_files": [
+    {
+      "path": "src/tcmim/gating/__init__.py",
+      "changes": "Exported PhysicalStructuralMask, StructuralStatus, PhysicalConnectivityRecord, StructuralMaskConfig, and gate_structural_mask."
+    },
+    {
+      "path": "src/tcmim/gating/gates.py",
+      "changes": "Integrated Gate G0_STRUCTURAL_MASK before G1_DELAY_FEASIBILITY, added structural_mask and allow_unknown to GatingConfig, preserved structural_mask_status in observation audit trail."
+    },
+    {
+      "path": "src/tcmim/schemas.py",
+      "changes": "Added structural_mask_status to PropagationObservation, added UNEXCITED_PRIOR to EdgeState, added unexcited metadata to EdgeRecord, added cri_status and unexcited_sources to CRIRecord."
+    },
+    {
+      "path": "src/tcmim/edge/lifecycle.py",
+      "changes": "Integrated EdgeState.UNEXCITED_PRIOR transitions into EdgeLifecycleStateMachine (persists on silence, promotes to CANDIDATE upon fresh evidence)."
+    },
+    {
+      "path": "src/tcmim/graph/path_finder.py",
+      "changes": "Added optional structural_mask support to PathFinderConfig and defense-in-depth pruning of prohibited edges during DFS."
+    },
+    {
+      "path": "src/tcmim/cri/calculator.py",
+      "changes": "Integrated unexcited actuator tracking and structural mask awareness into CRIConfig and CRICalculator; flags cri_status='UNCERTAIN_UNEXCITED' when upstream physical predecessors were unexcited."
+    }
+  ],
+  "preserved_reference_directories": [
+    "experiments/results/swat_a4a5/",
+    "experiments/results/swat_a4a5_detector_comparison/",
+    "experiments/results/swat_a4a5_detector_comparison_v2/",
+    "experiments/results/swat_a4a5_channel_lag_analysis/",
+    "experiments/results/swat_a4a5_physical_graph_audit/"
+  ],
+  "structural_register_input": {
+    "path": "experiments/results/swat_a4a5_physical_graph_audit/physical_connectivity_register.csv",
+    "sha256": "08e0ce5764419c6bbfbec716644b1e4bdd046c6c81548f3fd98f573e8379b3c3"
+  },
+  "test_summary": {
+    "new_focused_tests": 29,
+    "total_unit_tests": 786,
+    "total_tests_executed": 872,
+    "passed": 865,
+    "skipped": 7,
+    "failed": 0
+  }
+}

@@ -1,0 +1,32 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.12, pytest-9.1.1, pluggy-1.5.0 -- C:\Users\SKSOH\miniconda3\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\SKSOH\OneDrive\Desktop\Project1-new\tcmim
+configfile: pyproject.toml
+plugins: anyio-4.10.0, Faker-40.36.0, asyncio-1.4.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 15 items
+
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestRegisterIntegrity::test_register_file_exists PASSED [  6%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestRegisterIntegrity::test_register_sha256_unmodified PASSED [ 13%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestRegisterIntegrity::test_register_row_count_and_schema PASSED [ 20%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestEvaluationArtifacts::test_all_expected_artifacts_exist PASSED [ 26%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestEvaluationArtifacts::test_evaluation_config_parameters PASSED [ 33%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestPairedCandidateComparison::test_candidate_universe_size PASSED [ 40%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestPairedCandidateComparison::test_candidate_identities_and_temporal_invariants PASSED [ 46%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestPairedCandidateComparison::test_config_a_never_applies_g0 PASSED [ 53%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestPairedCandidateComparison::test_config_b_prohibited_edges_never_accepted PASSED [ 60%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestPairedCandidateComparison::test_config_b_unknown_edges_rejected_under_conservative_policy PASSED [ 66%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestPairedCandidateComparison::test_accepted_edges_in_config_b_are_strictly_allowed PASSED [ 73%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestMetricsAndCalculations::test_top_level_candidate_reduction PASSED [ 80%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestMetricsAndCalculations::test_all_six_attack_intervals_in_metrics PASSED [ 86%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestMetricsAndCalculations::test_per_attack_interval_csv_consistency PASSED [ 93%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestMetricsAndCalculations::test_rejection_reason_summary_gate_mappings PASSED [100%]
+
+============================= 15 passed in 0.22s ==============================
+
+=========================== full test suite summary ===========================
+Root: C:\Users\SKSOH\OneDrive\Desktop\Project1-new\tcmim
+Command: pytest tests/
+Result: 880 passed, 7 skipped, 13 warnings in 26.51s
+Status: All unit and integration test assertions passed with zero regressions.

@@ -1,0 +1,39 @@
+{
+  "manifest_version": "1.0",
+  "timestamp_utc": "2026-10-26T16:43:29.443807+00:00",
+  "stage": "STAGE_4_OPERATING_STATE_AWARE_EXPERIMENTAL_GATING",
+  "objective": "Enforce operating-state-aware experimental delay eligibility with conservative handling of unvalidated regimes",
+  "mode": "EXPERIMENTAL_LAYER_ONLY",
+  "production_changes": false,
+  "cri_evaluation_active": false,
+  "files": {
+    "operating_state_evaluation.csv": {
+      "path": "experiments/results/swat_a4a5_stage4/operating_state_evaluation.csv",
+      "sha256": "19c6e57a5c4870e3d8af116244158d4382e144049d23d9f7ba64f60fd8f18df6",
+      "size_bytes": 4306,
+      "line_count": 15,
+      "description": "Scenario evaluation matrix demonstrating state-aware gating across 14 nominal, edge, and adversarial cases."
+    },
+    "operating_state_resolver_spec.md": {
+      "path": "experiments/results/swat_a4a5_stage4/operating_state_resolver_spec.md",
+      "sha256": "59a3a304c34334ecaf49f84ec821e79eb3c89e88533e300b36cdaa696fb76b0d",
+      "size_bytes": 6968,
+      "line_count": 118,
+      "description": "Formal technical specification for OperatingStateResolver and StateAwareExperimentalGatingPipeline."
+    },
+    "stage4_design_note.md": {
+      "path": "experiments/results/swat_a4a5_stage4/stage4_design_note.md",
+      "sha256": "5aade20e2a1a793d6307fe07bbe80fc566298eae21c67a82a99c69a52588f03e",
+      "size_bytes": 7746,
+      "line_count": 99,
+      "description": "Design note verifying existing dataset semantics, actuator encoding, and decoupling architecture."
+    },
+    "test_results.txt": {
+      "path": "experiments/results/swat_a4a5_stage4/test_results.txt",
+      "sha256": "309ab5ab57ccbd59b9094d338011092af7795253ddcce9803e25096676c77308",
+      "size_bytes": 25928,
+      "line_count": 313,
+      "description": "Exact execution log and console output of unit and regression test runs for Stage 4."
+    }
+  }
+}

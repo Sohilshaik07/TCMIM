@@ -1,0 +1,54 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.12, pytest-9.1.1, pluggy-1.5.0 -- C:\Users\SKSOH\miniconda3\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\SKSOH\OneDrive\Desktop\Project1-new\tcmim
+configfile: pyproject.toml
+plugins: anyio-4.10.0, Faker-40.36.0, asyncio-1.4.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 43 items
+
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestRegisterIntegrity::test_register_file_exists PASSED [  2%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestRegisterIntegrity::test_register_sha256_unmodified PASSED [  4%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestRegisterIntegrity::test_register_row_count_and_schema PASSED [  6%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestEvaluationArtifacts::test_all_expected_artifacts_exist PASSED [  9%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestEvaluationArtifacts::test_evaluation_config_parameters PASSED [ 11%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestPairedCandidateComparison::test_candidate_universe_size PASSED [ 13%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestPairedCandidateComparison::test_candidate_identities_and_temporal_invariants PASSED [ 16%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestPairedCandidateComparison::test_config_a_never_applies_g0 PASSED [ 18%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestPairedCandidateComparison::test_config_b_prohibited_edges_never_accepted PASSED [ 20%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestPairedCandidateComparison::test_config_b_unknown_edges_rejected_under_conservative_policy PASSED [ 23%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestPairedCandidateComparison::test_accepted_edges_in_config_b_are_strictly_allowed PASSED [ 25%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestMetricsAndCalculations::test_top_level_candidate_reduction PASSED [ 27%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestMetricsAndCalculations::test_all_six_attack_intervals_in_metrics PASSED [ 30%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestMetricsAndCalculations::test_per_attack_interval_csv_consistency PASSED [ 32%]
+tests/unit/test_swat_a4a5_g0_evaluation.py::TestMetricsAndCalculations::test_rejection_reason_summary_gate_mappings PASSED [ 34%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestRawDatasetIntegrity::test_raw_dataset_exists PASSED [ 37%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestRawDatasetIntegrity::test_raw_dataset_sha256 PASSED [ 39%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestArtifactsAndCadence::test_all_expected_artifacts_exist PASSED [ 41%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestArtifactsAndCadence::test_response_curves_exist PASSED [ 44%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestArtifactsAndCadence::test_timestamp_cadence_audit PASSED [ 46%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestPhysicalResponseEpisodes::test_episode_count_and_columns PASSED [ 48%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestPhysicalResponseEpisodes::test_startup_shutdown_separation PASSED [ 51%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestPhysicalResponseEpisodes::test_no_development_validation_leakage PASSED [ 53%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestPhysicalResponseEpisodes::test_p101_marked_excluded_misidentified PASSED [ 55%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestModelFittingAndValidationMetrics::test_p301_dpit301_validation_performance PASSED [ 58%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestModelFittingAndValidationMetrics::test_mv201_fit201_validation_performance PASSED [ 60%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestModelFittingAndValidationMetrics::test_p101_fit101_diagnosed_not_identifiable PASSED [ 62%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestModelFittingAndValidationMetrics::test_parameter_estimates_units_and_sample_sizes PASSED [ 65%]
+tests/unit/test_swat_a4a5_stage3.py::TestTopologyRegisterAudit::test_original_register_preserved_unmodified PASSED [ 67%]
+tests/unit/test_swat_a4a5_stage3.py::TestTopologyRegisterAudit::test_proposed_register_structure_and_provenance PASSED [ 69%]
+tests/unit/test_swat_a4a5_stage3.py::TestTopologyRegisterAudit::test_p101_to_fit101_disallowed_in_proposed_register PASSED [ 72%]
+tests/unit/test_swat_a4a5_stage3.py::TestTopologyRegisterAudit::test_p101_to_fit201_permitted_conditionally_in_proposed_register PASSED [ 74%]
+tests/unit/test_swat_a4a5_stage3.py::TestTopologyRegisterAudit::test_unknown_pairs_remain_unknown PASSED [ 76%]
+tests/unit/test_swat_a4a5_stage3.py::TestTopologyRegisterAudit::test_topology_proposal_csv_validity PASSED [ 79%]
+tests/unit/test_swat_a4a5_stage3.py::TestMV201DynamicsFormalization::test_opening_closing_parameter_separation PASSED [ 81%]
+tests/unit/test_swat_a4a5_stage3.py::TestMV201DynamicsFormalization::test_mv201_held_out_validation_metrics PASSED [ 83%]
+tests/unit/test_swat_a4a5_stage3.py::TestMV201DynamicsFormalization::test_investigation_delay_range_validity PASSED [ 86%]
+tests/unit/test_swat_a4a5_stage3.py::TestP301StateConditionedModeling::test_reproduced_attack_a6_negative_r2 PASSED [ 88%]
+tests/unit/test_swat_a4a5_stage3.py::TestP301StateConditionedModeling::test_state_conditioned_reconciliation PASSED [ 90%]
+tests/unit/test_swat_a4a5_stage3.py::TestP301StateConditionedModeling::test_normal_cycle_held_out_reproducibility PASSED [ 93%]
+tests/unit/test_swat_a4a5_stage3.py::TestP301StateConditionedModeling::test_delay_range_5_to_55s_conditional PASSED [ 95%]
+tests/unit/test_swat_a4a5_stage3.py::TestExperimentalModelInterfaceSafety::test_safety_contract_flags PASSED [ 97%]
+tests/unit/test_swat_a4a5_stage3.py::TestExperimentalModelInterfaceSafety::test_quarantined_and_unresolved_edges PASSED [100%]
+
+============================= 43 passed in 0.35s ==============================

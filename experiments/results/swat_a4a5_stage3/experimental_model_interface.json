@@ -1,0 +1,184 @@
+{
+  "interface_version": "v1.0.0-stage3-experimental",
+  "description": "State-conditioned dynamic model interface for TCMIM candidate edge gating.",
+  "safety_contract": {
+    "allow_unvalidated_defaults": false,
+    "fallback_policy": "DISALLOW_EDGE_IF_UNKNOWN_STATE",
+    "production_gating_connected": false,
+    "plantwide_cri_enabled": false
+  },
+  "relationships": {
+    "MV201_to_FIT201": {
+      "relationship_id": "MV201 -> FIT201",
+      "eligible_for_experimental_dynamic_gating": true,
+      "required_input_signals": [
+        "MV201",
+        "P101"
+      ],
+      "target_signal": "FIT201",
+      "operating_regimes": {
+        "OPENING": {
+          "trigger": "MV201: 1 -> 0 -> 2",
+          "prerequisite_state": "P101 == 2 at MV201 == 2",
+          "model_type": "FOPDT_step",
+          "parameters": {
+            "initial_flow_m3h": 0.0158,
+            "gain_K_m3h": 2.3622,
+            "tau_s": 3.9434,
+            "dead_time_td_s": 12.9185
+          },
+          "validation_metrics": {
+            "rmse": 0.3456,
+            "mae": 0.1442,
+            "max_error": 1.5293,
+            "ss_res": 16.1203,
+            "ss_tot": 151.682,
+            "r2": 0.8937
+          },
+          "delay_window_s": [
+            5.0,
+            25.0
+          ],
+          "independent_episodes_count": 6
+        },
+        "CLOSING": {
+          "trigger": "MV201: 2 -> 0 -> 1",
+          "prerequisite_state": "P101 transitioning 2 -> 1",
+          "model_type": "FOPDT_decay",
+          "parameters": {
+            "initial_flow_m3h": 2.2187,
+            "gain_K_m3h": 2.2717,
+            "tau_s": 4.0711,
+            "dead_time_td_s": 3.7399
+          },
+          "validation_metrics": {
+            "rmse": 0.4611,
+            "mae": 0.2382,
+            "max_error": 1.5943,
+            "ss_res": 12.7564,
+            "ss_tot": 27.9374,
+            "r2": 0.5434
+          },
+          "delay_window_s": [
+            1.0,
+            15.0
+          ],
+          "independent_episodes_count": 6
+        }
+      },
+      "uncertainty_and_known_failure_modes": [
+        "If P101 fails to energize when MV201 reaches state 2, FIT201 remains at 0.0 m3/h.",
+        "If P101 shuts down more than 5s before MV201 close, flow decay precedes valve travel onset."
+      ]
+    },
+    "P301_to_DPIT301": {
+      "relationship_id": "P301 -> DPIT301",
+      "eligible_for_experimental_dynamic_gating": true,
+      "eligibility_scope": "CONDITIONALLY_ELIGIBLE_ON_OPERATING_STATE",
+      "required_input_signals": [
+        "P301",
+        "MV302"
+      ],
+      "target_signal": "DPIT301",
+      "operating_regimes": {
+        "STATE_S2_NORMAL_STARTUP": {
+          "trigger": "P301: 1 -> 2",
+          "condition": "MV302 == 1 (CLOSED)",
+          "model_type": "Two_Stage_Empirical_Sequence",
+          "phase_1": "Dead-head pressurization to ~6.1 kPa (0 to 35s)",
+          "phase_2": "Permeate valve opening to ~12.6 kPa (35 to 55s)",
+          "validation_metrics": {
+            "rmse": 0.1877,
+            "mae": 0.133,
+            "max_error": 0.5698,
+            "ss_res": 6.3438,
+            "ss_tot": 998.9783,
+            "r2": 0.9936
+          },
+          "delay_window_s": [
+            5.0,
+            55.0
+          ],
+          "independent_episodes_count": 6
+        },
+        "STATE_S3_PERMEATE_OPEN_STARTUP": {
+          "trigger": "P301: 1 -> 2",
+          "condition": "MV302 == 2 (OPEN)",
+          "model_type": "FOPDT_step_immediate",
+          "parameters": {
+            "initial_pressure_kPa": 1.8322,
+            "gain_K_kPa": 10.379,
+            "tau_s": 3.6414,
+            "dead_time_td_s": 2.5504
+          },
+          "validation_metrics": {
+            "rmse": 0.1701,
+            "mae": 0.1101,
+            "max_error": 0.5335,
+            "ss_res": 1.736,
+            "ss_tot": 443.9051,
+            "r2": 0.9961
+          },
+          "delay_window_s": [
+            1.0,
+            15.0
+          ],
+          "independent_episodes_count": 1,
+          "warning": "Observed only under cyber-attack perturbation (Attack A6)."
+        },
+        "STATE_S5_SHUTDOWN": {
+          "trigger": "P301: 2 -> 1",
+          "condition": "ANY",
+          "model_type": "FOPDT_decay",
+          "parameters": {
+            "initial_pressure_kPa": 11.924,
+            "gain_K_kPa": 10.8022,
+            "tau_s": 3.7808,
+            "dead_time_td_s": 3.1877
+          },
+          "validation_metrics": {
+            "rmse": 0.5238,
+            "mae": 0.3742,
+            "max_error": 2.1859,
+            "ss_res": 49.3819,
+            "ss_tot": 1388.4822,
+            "r2": 0.9644
+          },
+          "delay_window_s": [
+            1.0,
+            15.0
+          ],
+          "independent_episodes_count": 6
+        }
+      },
+      "uncertainty_and_known_failure_modes": [
+        "If MV302 state is unknown, model MUST NOT default to State S2.",
+        "If membrane is fouled or backwash valve MV304 is open, differential pressure dynamics will diverge."
+      ]
+    },
+    "P101_to_FIT101": {
+      "relationship_id": "P101 -> FIT101",
+      "eligible_for_experimental_dynamic_gating": false,
+      "status": "DISALLOWED",
+      "reason": "Instrumentation misidentification. Zero direct physical connection in raw telemetry."
+    },
+    "P101_to_FIT201": {
+      "relationship_id": "P101 -> FIT201",
+      "eligible_for_experimental_dynamic_gating": false,
+      "status": "SUPPORTED_DESCRIPTIVELY_CONDITIONAL",
+      "reason": "Empirically supported, but tightly coupled to MV201 state. Pending multi-input formalization."
+    },
+    "P205_to_AIT203": {
+      "relationship_id": "P205 -> AIT203",
+      "eligible_for_experimental_dynamic_gating": false,
+      "status": "UNRESOLVED",
+      "reason": "Insufficient independent excitation in single-run baseline. Requires operational pooling."
+    },
+    "FIT501_to_FIT502": {
+      "relationship_id": "FIT501 -> FIT502",
+      "eligible_for_experimental_dynamic_gating": false,
+      "status": "QUARANTINED",
+      "reason": "Steady-state mass balance hypothesis only. Dynamic causal propagation unverified."
+    }
+  }
+}

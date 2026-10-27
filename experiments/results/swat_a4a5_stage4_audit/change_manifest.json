@@ -1,0 +1,33 @@
+{
+  "manifest_version": "1.0",
+  "timestamp_utc": "2026-10-26T16:47:11.270538+00:00",
+  "stage": "STAGE_4_INDEPENDENT_IMPLEMENTATION_AUDIT",
+  "audit_verdict": "PASS",
+  "auditor": "Independent Scientific Audit Subagent",
+  "mode": "READ_ONLY",
+  "production_changes": false,
+  "cri_evaluation_active": false,
+  "files": {
+    "artifact_hash_audit.json": {
+      "path": "experiments/results/swat_a4a5_stage4_audit/artifact_hash_audit.json",
+      "sha256": "501ee24142d306b12c2d6c9336acab5661afd6974700077fd96373cce953e93d",
+      "size_bytes": 9371,
+      "line_count": 144,
+      "description": "Comparison of expected vs observed SHA-256 hashes for Stage 4, Stage 3.3, Stage 3.2, and production files."
+    },
+    "stage4_audit_report.md": {
+      "path": "experiments/results/swat_a4a5_stage4_audit/stage4_audit_report.md",
+      "sha256": "afb02349f80397b919c0e7450b46fd1f82136b19341600dc5d431c6bf98e6e22",
+      "size_bytes": 19538,
+      "line_count": 207,
+      "description": "Independent scientific and implementation audit report of TCMIM Stage 4."
+    },
+    "test_execution_log.txt": {
+      "path": "experiments/results/swat_a4a5_stage4_audit/test_execution_log.txt",
+      "sha256": "97a62439646aed9266b87091e50c293ffca6360d83c623aa1fdb3be329b0348e",
+      "size_bytes": 11696,
+      "line_count": 146,
+      "description": "Exact terminal output and exit codes for Stage 4 unit tests and full regression suite."
+    }
+  }
+}

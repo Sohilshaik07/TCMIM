@@ -1,0 +1,8 @@
+scenario_id,scenario_name,n_machines,gt_edges_count,pred_edges_count,tp,fp,fn,tn,precision,recall,f1_score,fpr,lag_mae_s,lag_rmse_s,missing_lag_rate,execution_time_s
+scenario_1_chain,Linear Chain (A -> B -> C),2,2,3,2,1,0,3,0.6667,1.0,0.8,0.25,0.0,0.0,0.0,0.0069
+scenario_2_branching,Branching Fork (A -> B and A -> C),2,2,3,2,1,0,3,0.6667,1.0,0.8,0.25,0.0,0.0,0.0,0.0019
+scenario_3_ring,Feedback Ring (A -> B -> C -> A),3,3,5,3,2,0,1,0.6,1.0,0.75,0.6667,0.0,0.0,0.0,0.0016
+scenario_4_negative_control,Negative Control (Independent Streams),4,0,8,0,8,0,4,0.0,,,0.6667,,,0.0,0.0019
+scenario_5_reversed_order,Reversed Temporal Order (Target Precedes Source),1,0,1,0,1,0,1,0.0,,,0.5,,,0.0,0.0006
+scenario_6_common_cause,Common Cause Disturbance (Shared Environmental Shock),2,0,3,0,3,0,3,0.0,,,0.5,,,0.0,0.0013
+scenario_7_noisy,"Noisy Cascade (Jitter, Dropout, Spurious Events)",3,2,4,2,2,0,2,0.5,1.0,0.6667,0.5,113.112,114.328,0.0,0.0016

@@ -1,0 +1,3072 @@
+{
+  "scenarios": {
+    "scenario_1_chain": {
+      "name": "Linear Chain (A -> B -> C)",
+      "description": "Linear 3-machine cascade where A propagates to B with 60s delay, and B propagates to C with 90s delay across 6 periodic waves.",
+      "ground_truth_edges": [
+        "A->B",
+        "B->C"
+      ],
+      "injected_delays": {
+        "A->B": 60.0,
+        "B->C": 90.0
+      },
+      "modes": {
+        "Unfiltered (Baseline)": {
+          "execution_time_s": 0.0115,
+          "n_transitive_edges_filtered": 0,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.6667,
+              "recall": 1.0,
+              "f1": 0.8,
+              "fpr": 0.25,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 1.0,
+              "recall": 0.5,
+              "f1": 0.6667,
+              "fpr": 0.0,
+              "path_recall": 0.5,
+              "gt_retention": 0.5,
+              "fp_suppression": 1.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "CONFIRMED",
+              "final_evidence": 6,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "A->C",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 5,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 5,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        },
+        "Delay-Consistent Filter (tol=15s)": {
+          "execution_time_s": 0.0088,
+          "n_transitive_edges_filtered": 0,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.6667,
+              "recall": 1.0,
+              "f1": 0.8,
+              "fpr": 0.25,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 1.0,
+              "recall": 0.5,
+              "f1": 0.6667,
+              "fpr": 0.0,
+              "path_recall": 0.5,
+              "gt_retention": 0.5,
+              "fp_suppression": 1.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "CONFIRMED",
+              "final_evidence": 6,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "A->C",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 5,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 5,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        },
+        "Topological Filter (No delay check)": {
+          "execution_time_s": 0.0061,
+          "n_transitive_edges_filtered": 1,
+          "views": {
+            "CANDIDATE": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "fpr": 0.0,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 1.0,
+              "recall": 0.5,
+              "f1": 0.6667,
+              "fpr": 0.0,
+              "path_recall": 0.5,
+              "gt_retention": 0.5,
+              "fp_suppression": 1.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "CONFIRMED",
+              "final_evidence": 6,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "A->C",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 5,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 5,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        }
+      }
+    },
+    "scenario_coexisting_consistent": {
+      "name": "Coexisting Dual - Delay Consistent (Direct A->C 90s == 40s + 50s)",
+      "description": "Dual-pathway scenario where A triggers B (40.0s), B triggers C (50.0s), and A also directly triggers C (90.0s). Both direct edge and multi-hop path are ground truth.",
+      "ground_truth_edges": [
+        "A->B",
+        "B->C",
+        "A->C"
+      ],
+      "injected_delays": {
+        "A->B": 40.0,
+        "B->C": 50.0,
+        "A->C": 90.0
+      },
+      "modes": {
+        "Unfiltered (Baseline)": {
+          "execution_time_s": 0.0075,
+          "n_transitive_edges_filtered": 0,
+          "views": {
+            "CANDIDATE": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "fpr": 0.0,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "fpr": 0.0,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": 1.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 40.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "A->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 12,
+              "final_delay_s": 90.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 12,
+              "final_delay_s": 50.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        },
+        "Delay-Consistent Filter (tol=15s)": {
+          "execution_time_s": 0.0067,
+          "n_transitive_edges_filtered": 1,
+          "views": {
+            "CANDIDATE": {
+              "precision": 1.0,
+              "recall": 0.6667,
+              "f1": 0.8,
+              "fpr": 0.0,
+              "path_recall": 0.6667,
+              "gt_retention": 0.6667,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 1.0,
+              "recall": 0.6667,
+              "f1": 0.8,
+              "fpr": 0.0,
+              "path_recall": 0.6667,
+              "gt_retention": 0.6667,
+              "fp_suppression": 1.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 40.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "A->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 12,
+              "final_delay_s": 90.0,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 12,
+              "final_delay_s": 50.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        },
+        "Topological Filter (No delay check)": {
+          "execution_time_s": 0.0075,
+          "n_transitive_edges_filtered": 1,
+          "views": {
+            "CANDIDATE": {
+              "precision": 1.0,
+              "recall": 0.6667,
+              "f1": 0.8,
+              "fpr": 0.0,
+              "path_recall": 0.6667,
+              "gt_retention": 0.6667,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 1.0,
+              "recall": 0.6667,
+              "f1": 0.8,
+              "fpr": 0.0,
+              "path_recall": 0.6667,
+              "gt_retention": 0.6667,
+              "fp_suppression": 1.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 40.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "A->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 12,
+              "final_delay_s": 90.0,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 12,
+              "final_delay_s": 50.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        }
+      }
+    },
+    "scenario_coexisting_inconsistent": {
+      "name": "Coexisting Dual - Delay Inconsistent (Direct A->C 30s != 40s + 50s)",
+      "description": "Dual-pathway scenario where A triggers B (40.0s), B triggers C (50.0s), and A also directly triggers C (30.0s). Both direct edge and multi-hop path are ground truth.",
+      "ground_truth_edges": [
+        "A->B",
+        "B->C",
+        "A->C"
+      ],
+      "injected_delays": {
+        "A->B": 40.0,
+        "B->C": 50.0,
+        "A->C": 30.0
+      },
+      "modes": {
+        "Unfiltered (Baseline)": {
+          "execution_time_s": 0.0072,
+          "n_transitive_edges_filtered": 0,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.75,
+              "recall": 1.0,
+              "f1": 0.8571,
+              "fpr": 0.3333,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 0.75,
+              "recall": 1.0,
+              "f1": 0.8571,
+              "fpr": 0.3333,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": 0.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 40.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "A->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 12,
+              "final_delay_s": 60.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 50.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 10.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        },
+        "Delay-Consistent Filter (tol=15s)": {
+          "execution_time_s": 0.0088,
+          "n_transitive_edges_filtered": 0,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.75,
+              "recall": 1.0,
+              "f1": 0.8571,
+              "fpr": 0.3333,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 0.75,
+              "recall": 1.0,
+              "f1": 0.8571,
+              "fpr": 0.3333,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": 0.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 40.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "A->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 12,
+              "final_delay_s": 60.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 50.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 10.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        },
+        "Topological Filter (No delay check)": {
+          "execution_time_s": 0.0077,
+          "n_transitive_edges_filtered": 2,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.5,
+              "recall": 0.3333,
+              "f1": 0.4,
+              "fpr": 0.3333,
+              "path_recall": 0.3333,
+              "gt_retention": 0.3333,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 0.5,
+              "recall": 0.3333,
+              "f1": 0.4,
+              "fpr": 0.3333,
+              "path_recall": 0.3333,
+              "gt_retention": 0.3333,
+              "fp_suppression": 0.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 40.0,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "A->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 12,
+              "final_delay_s": 60.0,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 50.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 10.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        }
+      }
+    },
+    "scenario_2_branching": {
+      "name": "Branching Fork (A -> B and A -> C)",
+      "description": "Single-source branching topology where machine A independently propagates to B (45s delay) and C (80s delay).",
+      "ground_truth_edges": [
+        "A->B",
+        "A->C"
+      ],
+      "injected_delays": {
+        "A->B": 45.0,
+        "A->C": 80.0
+      },
+      "modes": {
+        "Unfiltered (Baseline)": {
+          "execution_time_s": 0.0064,
+          "n_transitive_edges_filtered": 0,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.6667,
+              "recall": 1.0,
+              "f1": 0.8,
+              "fpr": 0.25,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 0.6667,
+              "recall": 1.0,
+              "f1": 0.8,
+              "fpr": 0.25,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": 0.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 45.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "A->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 80.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->C",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 35.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        },
+        "Delay-Consistent Filter (tol=15s)": {
+          "execution_time_s": 0.0064,
+          "n_transitive_edges_filtered": 1,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.5,
+              "recall": 0.5,
+              "f1": 0.5,
+              "fpr": 0.25,
+              "path_recall": 0.5,
+              "gt_retention": 0.5,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 0.5,
+              "recall": 0.5,
+              "f1": 0.5,
+              "fpr": 0.25,
+              "path_recall": 0.5,
+              "gt_retention": 0.5,
+              "fp_suppression": 0.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 45.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "A->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 80.0,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->C",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 35.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        },
+        "Topological Filter (No delay check)": {
+          "execution_time_s": 0.0062,
+          "n_transitive_edges_filtered": 1,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.5,
+              "recall": 0.5,
+              "f1": 0.5,
+              "fpr": 0.25,
+              "path_recall": 0.5,
+              "gt_retention": 0.5,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 0.5,
+              "recall": 0.5,
+              "f1": 0.5,
+              "fpr": 0.25,
+              "path_recall": 0.5,
+              "gt_retention": 0.5,
+              "fp_suppression": 0.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 45.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "A->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 80.0,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->C",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 35.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->A",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        }
+      }
+    },
+    "scenario_3_ring": {
+      "name": "Feedback Ring (A -> B -> C -> A)",
+      "description": "Cyclic feedback topology where A -> B -> C -> A propagates in closed loop with 50s delays per leg.",
+      "ground_truth_edges": [
+        "A->B",
+        "B->C",
+        "C->A"
+      ],
+      "injected_delays": {
+        "A->B": 50.0,
+        "B->C": 50.0,
+        "C->A": 50.0
+      },
+      "modes": {
+        "Unfiltered (Baseline)": {
+          "execution_time_s": 0.0035,
+          "n_transitive_edges_filtered": 0,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.6,
+              "recall": 1.0,
+              "f1": 0.75,
+              "fpr": 0.6667,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 0.6,
+              "recall": 1.0,
+              "f1": 0.75,
+              "fpr": 0.6667,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": 0.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 4,
+              "final_delay_s": 50.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "A->C",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 4,
+              "final_delay_s": 100.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 4,
+              "final_delay_s": 100.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 4,
+              "final_delay_s": 50.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "C->A",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 4,
+              "final_delay_s": 50.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        },
+        "Delay-Consistent Filter (tol=15s)": {
+          "execution_time_s": 0.0042,
+          "n_transitive_edges_filtered": 2,
+          "views": {
+            "CANDIDATE": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "fpr": 0.0,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "fpr": 0.0,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": 1.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 4,
+              "final_delay_s": 50.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "A->C",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 4,
+              "final_delay_s": 100.0,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 4,
+              "final_delay_s": 100.0,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 4,
+              "final_delay_s": 50.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->A",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 4,
+              "final_delay_s": 50.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        },
+        "Topological Filter (No delay check)": {
+          "execution_time_s": 0.0035,
+          "n_transitive_edges_filtered": 3,
+          "views": {
+            "CANDIDATE": {
+              "precision": 1.0,
+              "recall": 0.6667,
+              "f1": 0.8,
+              "fpr": 0.0,
+              "path_recall": 0.6667,
+              "gt_retention": 0.6667,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 1.0,
+              "recall": 0.6667,
+              "f1": 0.8,
+              "fpr": 0.0,
+              "path_recall": 0.6667,
+              "gt_retention": 0.6667,
+              "fp_suppression": 1.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 4,
+              "final_delay_s": 50.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "A->C",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 4,
+              "final_delay_s": 100.0,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 4,
+              "final_delay_s": 100.0,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 4,
+              "final_delay_s": 50.0,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "C->A",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 4,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 4,
+              "final_delay_s": 50.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        }
+      }
+    },
+    "scenario_6_common_cause": {
+      "name": "Common Cause Disturbance (Shared Environmental Shock)",
+      "description": "Three machines responding near-simultaneously (<10s delta) to shared external disturbances. Evaluates whether OC-CCD flags common-cause candidates and avoids false propagation claims.",
+      "ground_truth_edges": [],
+      "injected_delays": {},
+      "modes": {
+        "Unfiltered (Baseline)": {
+          "execution_time_s": 0.0057,
+          "n_transitive_edges_filtered": 0,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.0,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.5,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 0.0,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.5,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": 0.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "M1->M2",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 4.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "M1->M3",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 7.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "M2->M1",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "M2->M3",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 3.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "M3->M1",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "M3->M2",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        },
+        "Delay-Consistent Filter (tol=15s)": {
+          "execution_time_s": 0.0072,
+          "n_transitive_edges_filtered": 1,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.0,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.3333,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 0.0,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.3333,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": 0.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "M1->M2",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 4.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "M1->M3",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 7.0,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "M2->M1",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "M2->M3",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 3.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "M3->M1",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "M3->M2",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        },
+        "Topological Filter (No delay check)": {
+          "execution_time_s": 0.0063,
+          "n_transitive_edges_filtered": 1,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.0,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.3333,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 0.0,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.3333,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": 0.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "M1->M2",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 4.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "M1->M3",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 7.0,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "M2->M1",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "M2->M3",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 3.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "M3->M1",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "M3->M2",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        }
+      }
+    },
+    "scenario_5_reversed_order": {
+      "name": "Reversed Temporal Order (Target Precedes Source)",
+      "description": "Machines A and B where machine B consistently fires 60s before A. Evaluates whether A -> B is rejected by temporal direction gating.",
+      "ground_truth_edges": [],
+      "injected_delays": {
+        "A->B": -60.0
+      },
+      "modes": {
+        "Unfiltered (Baseline)": {
+          "execution_time_s": 0.0026,
+          "n_transitive_edges_filtered": 0,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.0,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.5,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 0.0,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.5,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": 0.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 60.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        },
+        "Delay-Consistent Filter (tol=15s)": {
+          "execution_time_s": 0.0032,
+          "n_transitive_edges_filtered": 0,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.0,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.5,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 0.0,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.5,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": 0.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 60.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        },
+        "Topological Filter (No delay check)": {
+          "execution_time_s": 0.0035,
+          "n_transitive_edges_filtered": 0,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.0,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.5,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 0.0,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.5,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": 0.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": null,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": null,
+              "gt_retention": null,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": false,
+              "candidate_cycle": null,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": null,
+              "final_evidence": 0,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 8,
+              "stable_cycle": null,
+              "final_state": "PROVISIONAL",
+              "final_evidence": 6,
+              "final_delay_s": 60.0,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        }
+      }
+    },
+    "scenario_7_noisy": {
+      "name": "Noisy Cascade (Jitter, Dropout, Spurious Events)",
+      "description": "Cascade chain A -> B -> C with Gaussian delay jitter (std=6.0s), 15% observation dropout probability, and spurious noise events.",
+      "ground_truth_edges": [
+        "A->B",
+        "B->C"
+      ],
+      "injected_delays": {
+        "A->B": 65.0,
+        "B->C": 85.0
+      },
+      "modes": {
+        "Unfiltered (Baseline)": {
+          "execution_time_s": 0.0097,
+          "n_transitive_edges_filtered": 0,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.4,
+              "recall": 1.0,
+              "f1": 0.5714,
+              "fpr": 0.75,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 1.0,
+              "recall": 0.5,
+              "f1": 0.6667,
+              "fpr": 0.0,
+              "path_recall": 0.5,
+              "gt_retention": 0.5,
+              "fp_suppression": 1.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 17,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 6,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "A->C",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 17,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 4,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": 25,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 1,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 13,
+              "stable_cycle": null,
+              "final_state": "CONFIRMED",
+              "final_evidence": 6,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "C->A",
+              "is_gt": false,
+              "candidate_cycle": 25,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 1,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": 12,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": "EXPIRED",
+              "final_evidence": 1,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        },
+        "Delay-Consistent Filter (tol=15s)": {
+          "execution_time_s": 0.0098,
+          "n_transitive_edges_filtered": 0,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.4,
+              "recall": 1.0,
+              "f1": 0.5714,
+              "fpr": 0.75,
+              "path_recall": 1.0,
+              "gt_retention": 1.0,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 1.0,
+              "recall": 0.5,
+              "f1": 0.6667,
+              "fpr": 0.0,
+              "path_recall": 0.5,
+              "gt_retention": 0.5,
+              "fp_suppression": 1.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 17,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 6,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "A->C",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 17,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 4,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": 25,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 1,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "B->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 13,
+              "stable_cycle": null,
+              "final_state": "CONFIRMED",
+              "final_evidence": 6,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->A",
+              "is_gt": false,
+              "candidate_cycle": 25,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 1,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": 12,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": "EXPIRED",
+              "final_evidence": 1,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        },
+        "Topological Filter (No delay check)": {
+          "execution_time_s": 0.0094,
+          "n_transitive_edges_filtered": 3,
+          "views": {
+            "CANDIDATE": {
+              "precision": 0.5,
+              "recall": 0.5,
+              "f1": 0.5,
+              "fpr": 0.25,
+              "path_recall": 0.5,
+              "gt_retention": 0.5,
+              "fp_suppression": null
+            },
+            "PROVISIONAL": {
+              "precision": 1.0,
+              "recall": 0.5,
+              "f1": 0.6667,
+              "fpr": 0.0,
+              "path_recall": 0.5,
+              "gt_retention": 0.5,
+              "fp_suppression": 1.0
+            },
+            "STABLE": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": null,
+              "fpr": 0.0,
+              "path_recall": 0.0,
+              "gt_retention": 0.0,
+              "fp_suppression": 1.0
+            }
+          },
+          "edge_lifecycles": [
+            {
+              "edge": "A->B",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 17,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 6,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "A->C",
+              "is_gt": false,
+              "candidate_cycle": 0,
+              "provisional_cycle": 17,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 4,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->A",
+              "is_gt": false,
+              "candidate_cycle": 25,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 1,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "B->C",
+              "is_gt": true,
+              "candidate_cycle": 0,
+              "provisional_cycle": 13,
+              "stable_cycle": null,
+              "final_state": "CONFIRMED",
+              "final_evidence": 6,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": true,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": true
+            },
+            {
+              "edge": "C->A",
+              "is_gt": false,
+              "candidate_cycle": 25,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": "WEAKENING",
+              "final_evidence": 1,
+              "final_delay_s": null,
+              "in_candidate_view": true,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": true,
+              "is_hypothetical_transitive": false
+            },
+            {
+              "edge": "C->B",
+              "is_gt": false,
+              "candidate_cycle": 12,
+              "provisional_cycle": null,
+              "stable_cycle": null,
+              "final_state": "EXPIRED",
+              "final_evidence": 1,
+              "final_delay_s": null,
+              "in_candidate_view": false,
+              "in_provisional_view": false,
+              "in_stable_view": false,
+              "in_valid_path": false,
+              "is_hypothetical_transitive": false
+            }
+          ]
+        }
+      }
+    }
+  },
+  "boundary_sensitivity": [
+    {
+      "direct_delay_s": 74.5,
+      "nominal_indirect_sum_s": 90.0,
+      "absolute_diff_s": 15.5,
+      "tolerance_s": 15.0,
+      "description": "Outer Lower Boundary (diff = 15.5s > 15s)",
+      "expected_filtered": false,
+      "observed_filtered": false,
+      "boundary_respected": true,
+      "n_filtered_edges": 0,
+      "candidate_precision": 1.0,
+      "candidate_recall": 1.0
+    },
+    {
+      "direct_delay_s": 75.5,
+      "nominal_indirect_sum_s": 90.0,
+      "absolute_diff_s": 14.5,
+      "tolerance_s": 15.0,
+      "description": "Inner Lower Boundary (diff = 14.5s <= 15s)",
+      "expected_filtered": true,
+      "observed_filtered": true,
+      "boundary_respected": true,
+      "n_filtered_edges": 1,
+      "candidate_precision": 1.0,
+      "candidate_recall": 0.6666666666666666
+    },
+    {
+      "direct_delay_s": 104.5,
+      "nominal_indirect_sum_s": 90.0,
+      "absolute_diff_s": 14.5,
+      "tolerance_s": 15.0,
+      "description": "Inner Upper Boundary (diff = 14.5s <= 15s)",
+      "expected_filtered": true,
+      "observed_filtered": true,
+      "boundary_respected": true,
+      "n_filtered_edges": 1,
+      "candidate_precision": 1.0,
+      "candidate_recall": 0.6666666666666666
+    },
+    {
+      "direct_delay_s": 105.5,
+      "nominal_indirect_sum_s": 90.0,
+      "absolute_diff_s": 15.5,
+      "tolerance_s": 15.0,
+      "description": "Outer Upper Boundary (diff = 15.5s > 15s)",
+      "expected_filtered": false,
+      "observed_filtered": false,
+      "boundary_respected": true,
+      "n_filtered_edges": 0,
+      "candidate_precision": 1.0,
+      "candidate_recall": 1.0
+    }
+  ],
+  "tolerance_sweep": {
+    "scenario_1_chain": [
+      {
+        "tolerance": 5.0,
+        "tolerance_label": "tol=5.0s",
+        "n_filtered": 0,
+        "candidate_precision": 0.6667,
+        "candidate_recall": 1.0,
+        "candidate_f1": 0.8
+      },
+      {
+        "tolerance": 15.0,
+        "tolerance_label": "tol=15.0s",
+        "n_filtered": 0,
+        "candidate_precision": 0.6667,
+        "candidate_recall": 1.0,
+        "candidate_f1": 0.8
+      },
+      {
+        "tolerance": 30.0,
+        "tolerance_label": "tol=30.0s",
+        "n_filtered": 0,
+        "candidate_precision": 0.6667,
+        "candidate_recall": 1.0,
+        "candidate_f1": 0.8
+      },
+      {
+        "tolerance": 60.0,
+        "tolerance_label": "tol=60.0s",
+        "n_filtered": 0,
+        "candidate_precision": 0.6667,
+        "candidate_recall": 1.0,
+        "candidate_f1": 0.8
+      },
+      {
+        "tolerance": null,
+        "tolerance_label": "tol=None (topological)",
+        "n_filtered": 1,
+        "candidate_precision": 1.0,
+        "candidate_recall": 1.0,
+        "candidate_f1": 1.0
+      }
+    ],
+    "scenario_coexisting_inconsistent": [
+      {
+        "tolerance": 5.0,
+        "tolerance_label": "tol=5.0s",
+        "n_filtered": 0,
+        "candidate_precision": 0.75,
+        "candidate_recall": 1.0,
+        "candidate_f1": 0.8571
+      },
+      {
+        "tolerance": 15.0,
+        "tolerance_label": "tol=15.0s",
+        "n_filtered": 0,
+        "candidate_precision": 0.75,
+        "candidate_recall": 1.0,
+        "candidate_f1": 0.8571
+      },
+      {
+        "tolerance": 30.0,
+        "tolerance_label": "tol=30.0s",
+        "n_filtered": 2,
+        "candidate_precision": 0.5,
+        "candidate_recall": 0.3333,
+        "candidate_f1": 0.4
+      },
+      {
+        "tolerance": 60.0,
+        "tolerance_label": "tol=60.0s",
+        "n_filtered": 2,
+        "candidate_precision": 0.5,
+        "candidate_recall": 0.3333,
+        "candidate_f1": 0.4
+      },
+      {
+        "tolerance": null,
+        "tolerance_label": "tol=None (topological)",
+        "n_filtered": 2,
+        "candidate_precision": 0.5,
+        "candidate_recall": 0.3333,
+        "candidate_f1": 0.4
+      }
+    ]
+  }
+}

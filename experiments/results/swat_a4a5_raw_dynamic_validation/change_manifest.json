@@ -1,0 +1,108 @@
+{
+  "milestone": "Stage 2 Raw Telemetry Dynamic Validation for Three Candidate Relationships",
+  "timestamp_utc": "2026-10-26T14:40:00+00:00",
+  "status": "COMPLETED",
+  "target_relationships": [
+    "P301 -> DPIT301",
+    "MV201 -> FIT201",
+    "P101 -> FIT101"
+  ],
+  "dataset_fingerprint": {
+    "source_file": "data/raw/SWAT_A4_A5_JULY_2019/SWaT_dataset_Jul 19 v2.xlsx",
+    "sha256": "39ea28e3d0e5ba1507ba551630bee232ce2cf66abdc9da978391dc00a989bbdc",
+    "total_rows": 14996,
+    "columns_count": 77
+  },
+  "created_files": [
+    {
+      "path": "experiments/swat_a4a5_raw_dynamic_validation.py",
+      "description": "Automated runner script extracting raw 1Hz episodes, performing FOPDT model fitting on development episodes, held-out validation, and plotting.",
+      "action": "CREATED"
+    },
+    {
+      "path": "tests/unit/test_swat_a4a5_raw_dynamic_validation.py",
+      "description": "Comprehensive unit tests covering dataset SHA-256 integrity, cadence audit, episode extraction, startup/shutdown separation, leakage prevention, and model metrics.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_raw_dynamic_validation/physical_response_episodes.csv",
+      "description": "Auditable event table containing all 37 extracted physical transitions across P301, MV201, and P101 with timestamps, states, delays, and inclusion status.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_raw_dynamic_validation/response_parameter_estimates.csv",
+      "description": "Estimated response parameters (onset delays, rise times, decay times, dead times, and time constants) with uncertainty and sample sizes.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_raw_dynamic_validation/episode_validation_metrics.json",
+      "description": "Machine-readable development/validation episode counts, fitted FOPDT parameters, held-out validation R2 and RMSE, cadence audit, and error diagnostics.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_raw_dynamic_validation/response_curves/p301_dpit301_startup_curves.png",
+      "description": "Raw response curves for P301 startup pressurization comparing development and held-out validation episodes against fitted FOPDT trajectory.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_raw_dynamic_validation/response_curves/p301_dpit301_shutdown_curves.png",
+      "description": "Raw response curves for P301 shutdown depressurization comparing development and validation episodes against decay model.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_raw_dynamic_validation/response_curves/mv201_fit201_opening_curves.png",
+      "description": "Raw response curves for MV201 motorized valve opening stroke and FIT201 flow acceleration.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_raw_dynamic_validation/response_curves/mv201_fit201_closing_curves.png",
+      "description": "Raw response curves for MV201 motorized valve closing stroke and FIT201 flow cutoff.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_raw_dynamic_validation/response_curves/p101_fit101_non_responsiveness.png",
+      "description": "Demonstration that FIT101 does not respond to P101 state transitions and is strictly governed by MV101.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_raw_dynamic_validation/response_curves/summary_response_dynamics.png",
+      "description": "Multi-panel executive summary plot contrasting the three relationships.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_raw_dynamic_validation/delay_bound_assessment.md",
+      "description": "Assessment of proposed candidate delay bounds against empirical raw data.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_raw_dynamic_validation/limitations_and_next_steps.md",
+      "description": "Documented limitations, process state confounding (MV302), instrumentation misidentification (P101/FIT101), and next steps.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_raw_dynamic_validation/raw_dynamic_validation_report.md",
+      "description": "Main scientific report synthesizing raw dynamic validation findings and decisions.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_raw_dynamic_validation/test_results.txt",
+      "description": "Pytest execution logs verifying 13/13 unit tests passed.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_raw_dynamic_validation/change_manifest.json",
+      "description": "This change manifest document.",
+      "action": "CREATED"
+    }
+  ],
+  "preserved_directories": [
+    "experiments/results/swat_a4a5/",
+    "experiments/results/swat_a4a5_detector_comparison/",
+    "experiments/results/swat_a4a5_detector_comparison_v2/",
+    "experiments/results/swat_a4a5_channel_lag_analysis/",
+    "experiments/results/swat_a4a5_physical_graph_audit/",
+    "experiments/results/swat_a4a5_structural_mask_gate/",
+    "experiments/results/swat_a4a5_g0_evaluation/",
+    "experiments/results/swat_a4a5_dynamic_evidence_readiness/"
+  ]
+}

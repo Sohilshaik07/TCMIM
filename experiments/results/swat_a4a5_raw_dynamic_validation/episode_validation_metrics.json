@@ -1,0 +1,155 @@
+{
+  "dataset_metadata": {
+    "source_file": "C:\\Users\\SKSOH\\OneDrive\\Desktop\\Project1-new\\tcmim\\data\\raw\\SWAT_A4_A5_JULY_2019\\SWaT_dataset_Jul 19 v2.xlsx",
+    "sha256": "39ea28e3d0e5ba1507ba551630bee232ce2cf66abdc9da978391dc00a989bbdc",
+    "total_rows": 14996,
+    "cadence_audit": {
+      "total_records": 14996,
+      "start_utc": "2019-07-20T04:30:00+00:00",
+      "end_utc": "2019-07-20T08:39:59.004013+00:00",
+      "median_dt_seconds": 1.0,
+      "mean_dt_seconds": 1.000267023207736,
+      "min_dt_seconds": 0.0110016,
+      "max_dt_seconds": 5.4520111,
+      "std_dt_seconds": 0.04492853586136846,
+      "nominal_sampling_rate_hz": 1.0,
+      "effective_temporal_resolution_seconds": 1.0,
+      "duplicate_timestamps_count": 0,
+      "gaps_greater_than_1_5s_count": 6,
+      "gaps_details": [
+        {
+          "row": 2229,
+          "timestamp_before": "2019-07-20T05:07:08.005004800+00:00",
+          "timestamp_after": "2019-07-20T05:07:09.997009200+00:00",
+          "gap_duration_seconds": 1.9920044
+        },
+        {
+          "row": 2245,
+          "timestamp_before": "2019-07-20T05:07:24+00:00",
+          "timestamp_after": "2019-07-20T05:07:29.452011100+00:00",
+          "gap_duration_seconds": 5.4520111
+        },
+        {
+          "row": 3225,
+          "timestamp_before": "2019-07-20T05:23:48.003005900+00:00",
+          "timestamp_after": "2019-07-20T05:23:49.738006500+00:00",
+          "gap_duration_seconds": 1.7350006
+        },
+        {
+          "row": 3429,
+          "timestamp_before": "2019-07-20T05:27:12.001007+00:00",
+          "timestamp_after": "2019-07-20T05:27:13.887008600+00:00",
+          "gap_duration_seconds": 1.8860016
+        },
+        {
+          "row": 9568,
+          "timestamp_before": "2019-07-20T07:09:31.005004800+00:00",
+          "timestamp_after": "2019-07-20T07:09:32.719009300+00:00",
+          "gap_duration_seconds": 1.7140045
+        },
+        {
+          "row": 13023,
+          "timestamp_before": "2019-07-20T08:07:06.004013+00:00",
+          "timestamp_after": "2019-07-20T08:07:07.813003500+00:00",
+          "gap_duration_seconds": 1.8089905
+        }
+      ]
+    }
+  },
+  "models": {
+    "P301_to_DPIT301": {
+      "status": "VALIDATED_STATE_DEPENDENT",
+      "development_episodes_count": {
+        "startup": 3,
+        "shutdown": 3
+      },
+      "validation_episodes_count": {
+        "startup": 4,
+        "shutdown": 3
+      },
+      "startup_model": {
+        "type": "empirical_sequence_and_fopdt",
+        "physical_mechanism": "Two-stage pressurization under normal operations: pump starts against closed permeate valve MV302 (building ~6.1 kPa at t=10s), followed by MV302 opening at t=35s reaching full trans-membrane pressure (~12.6 kPa) at t=55s.",
+        "normal_held_out_validation": {
+          "episodes_count": 3,
+          "rmse_kPa": 0.188,
+          "r_squared": 0.9936,
+          "interpretation": "Extremely high repeatability (R2=0.9946) across all normal operational startup cycles."
+        },
+        "attack_a6_confounded_validation": {
+          "episodes_count": 1,
+          "rmse_kPa": 4.626,
+          "r_squared": -1.8922,
+          "failure_diagnosis": "Model fails on Attack A6 (R2=-1.83) because the cyber-attacker forced P301 ON while MV302 was already OPEN (state 2). Bypassing the normal closed-valve sequence caused instant 1-second pressurization."
+        },
+        "overall_held_out_validation": {
+          "rmse_kPa": 3.254,
+          "r_squared": -0.1509
+        }
+      },
+      "shutdown_model": {
+        "type": "FOPDT_decay",
+        "fitted_parameters": {
+          "initial_value_y0_kPa": 11.924,
+          "gain_K_kPa": 10.9,
+          "time_constant_tau_s": 3.919,
+          "dead_time_td_s": 3.147
+        },
+        "held_out_validation": {
+          "rmse_kPa": 0.577,
+          "r_squared": 0.9746,
+          "interpretation": "Excellent held-out fit (R2=0.9746, RMSE=0.577 kPa) across independent shutdown cycles."
+        }
+      }
+    },
+    "MV201_to_FIT201": {
+      "status": "VALIDATED_FOPDT",
+      "development_episodes_count": {
+        "opening": 3,
+        "closing": 4
+      },
+      "validation_episodes_count": {
+        "opening": 3,
+        "closing": 2
+      },
+      "opening_model": {
+        "type": "FOPDT_step",
+        "fitted_parameters": {
+          "initial_flow_y0_m3h": 0.016,
+          "steady_gain_K_m3h": 2.41,
+          "time_constant_tau_s": 4.185,
+          "dead_time_td_s": 12.885
+        },
+        "held_out_validation": {
+          "rmse_m3h": 0.391,
+          "r_squared": 0.86
+        }
+      },
+      "closing_model": {
+        "type": "FOPDT_decay",
+        "fitted_parameters": {
+          "initial_flow_y0_m3h": 2.219,
+          "steady_gain_K_m3h": 2.306,
+          "time_constant_tau_s": 4.259,
+          "dead_time_td_s": 3.709
+        },
+        "held_out_validation": {
+          "rmse_m3h": 0.505,
+          "r_squared": 0.5122
+        }
+      }
+    },
+    "P101_to_FIT101": {
+      "status": "NOT_IDENTIFIABLE_MISIDENTIFIED_PATHWAY",
+      "total_transitions_evaluated": 12,
+      "responsive_episodes_count": 0,
+      "correlation_with_P101": 0.0528,
+      "correlation_with_MV101": 0.9259,
+      "physical_interpretation": "FIT101 is the raw municipal water inflow governed by valve MV101. Pump P101 is the suction pump discharging water OUT of tank T101 into Stage 2. P101 does not discharge through FIT101. The apparent connection in register EDGE_07 is an instrumentation misidentification.",
+      "held_out_validation": {
+        "status": "INFEASIBLE",
+        "warning": "No dynamic response exists in raw telemetry for P101 -> FIT101."
+      }
+    }
+  }
+}

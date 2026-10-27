@@ -1,0 +1,204 @@
+{
+  "schedule": {
+    "A1": {
+      "attack_id": "A1",
+      "target_tags": [
+        "FIT401"
+      ],
+      "target_stages": [
+        "P4"
+      ],
+      "action": "Spoof value from 0.8 to 0.5",
+      "intent": "To stop de-chlorination by switching off UV401",
+      "start_sgt": "15:08:46",
+      "end_sgt": "15:10:31",
+      "start_utc": "2019-07-20T07:08:46+00:00",
+      "end_utc": "2019-07-20T07:10:31+00:00",
+      "duration_seconds": 105.0,
+      "boundary_convention": "closed [start, end]"
+    },
+    "A2": {
+      "attack_id": "A2",
+      "target_tags": [
+        "LIT301"
+      ],
+      "target_stages": [
+        "P3"
+      ],
+      "action": "Spoof value from 835 to 1024",
+      "intent": "To eventually lead to underflow in T301",
+      "start_sgt": "15:15:00",
+      "end_sgt": "15:19:32",
+      "start_utc": "2019-07-20T07:15:00+00:00",
+      "end_utc": "2019-07-20T07:19:32+00:00",
+      "duration_seconds": 272.0,
+      "boundary_convention": "closed [start, end]"
+    },
+    "A3": {
+      "attack_id": "A3",
+      "target_tags": [
+        "P601"
+      ],
+      "target_stages": [
+        "P6"
+      ],
+      "action": "Switch from OFF to ON",
+      "intent": "To increase water in raw water tank",
+      "start_sgt": "15:26:57",
+      "end_sgt": "15:30:48",
+      "start_utc": "2019-07-20T07:26:57+00:00",
+      "end_utc": "2019-07-20T07:30:48+00:00",
+      "duration_seconds": 231.0,
+      "boundary_convention": "closed [start, end]"
+    },
+    "A4": {
+      "attack_id": "A4",
+      "target_tags": [
+        "MV201",
+        "P101"
+      ],
+      "target_stages": [
+        "P2",
+        "P1"
+      ],
+      "action": "Switch from CLOSE to OPEN (MV201) and OFF to ON (P101)",
+      "intent": "To overflow tank T301",
+      "start_sgt": "15:38:50",
+      "end_sgt": "15:46:20",
+      "start_utc": "2019-07-20T07:38:50+00:00",
+      "end_utc": "2019-07-20T07:46:20+00:00",
+      "duration_seconds": 450.0,
+      "boundary_convention": "closed [start, end]"
+    },
+    "A5": {
+      "attack_id": "A5",
+      "target_tags": [
+        "MV501"
+      ],
+      "target_stages": [
+        "P5"
+      ],
+      "action": "Switch from OPEN to CLOSE",
+      "intent": "To drain water from RO",
+      "start_sgt": "15:54:00",
+      "end_sgt": "15:56:00",
+      "start_utc": "2019-07-20T07:54:00+00:00",
+      "end_utc": "2019-07-20T07:56:00+00:00",
+      "duration_seconds": 120.0,
+      "boundary_convention": "closed [start, end]"
+    },
+    "A6": {
+      "attack_id": "A6",
+      "target_tags": [
+        "P301"
+      ],
+      "target_stages": [
+        "P3"
+      ],
+      "action": "Switch from ON to OFF",
+      "intent": "To halt stage 3 (UF process)",
+      "start_sgt": "16:02:56",
+      "end_sgt": "16:16:18",
+      "start_utc": "2019-07-20T08:02:56+00:00",
+      "end_utc": "2019-07-20T08:16:18+00:00",
+      "duration_seconds": 802.0,
+      "boundary_convention": "closed [start, end]"
+    }
+  },
+  "coverage": {
+    "A1": {
+      "attack_id": "A1",
+      "target_tags": [
+        "FIT401"
+      ],
+      "start_utc": "2019-07-20T07:08:46+00:00",
+      "end_utc": "2019-07-20T07:10:31+00:00",
+      "duration_seconds": 105.0,
+      "observed_rows": 105,
+      "expected_rows_at_1hz": 105,
+      "coverage_fraction": 1.0,
+      "observability": "OBSERVABLE",
+      "notes": "Attack A1 fully observable (105 rows)."
+    },
+    "A2": {
+      "attack_id": "A2",
+      "target_tags": [
+        "LIT301"
+      ],
+      "start_utc": "2019-07-20T07:15:00+00:00",
+      "end_utc": "2019-07-20T07:19:32+00:00",
+      "duration_seconds": 272.0,
+      "observed_rows": 272,
+      "expected_rows_at_1hz": 272,
+      "coverage_fraction": 1.0,
+      "observability": "OBSERVABLE",
+      "notes": "Attack A2 fully observable (272 rows)."
+    },
+    "A3": {
+      "attack_id": "A3",
+      "target_tags": [
+        "P601"
+      ],
+      "start_utc": "2019-07-20T07:26:57+00:00",
+      "end_utc": "2019-07-20T07:30:48+00:00",
+      "duration_seconds": 231.0,
+      "observed_rows": 232,
+      "expected_rows_at_1hz": 231,
+      "coverage_fraction": 1.0043,
+      "observability": "OBSERVABLE",
+      "notes": "Attack A3 fully observable (232 rows)."
+    },
+    "A4": {
+      "attack_id": "A4",
+      "target_tags": [
+        "MV201",
+        "P101"
+      ],
+      "start_utc": "2019-07-20T07:38:50+00:00",
+      "end_utc": "2019-07-20T07:46:20+00:00",
+      "duration_seconds": 450.0,
+      "observed_rows": 450,
+      "expected_rows_at_1hz": 450,
+      "coverage_fraction": 1.0,
+      "observability": "OBSERVABLE",
+      "notes": "Attack A4 fully observable (450 rows)."
+    },
+    "A5": {
+      "attack_id": "A5",
+      "target_tags": [
+        "MV501"
+      ],
+      "start_utc": "2019-07-20T07:54:00+00:00",
+      "end_utc": "2019-07-20T07:56:00+00:00",
+      "duration_seconds": 120.0,
+      "observed_rows": 120,
+      "expected_rows_at_1hz": 120,
+      "coverage_fraction": 1.0,
+      "observability": "OBSERVABLE",
+      "notes": "Attack A5 fully observable (120 rows)."
+    },
+    "A6": {
+      "attack_id": "A6",
+      "target_tags": [
+        "P301"
+      ],
+      "start_utc": "2019-07-20T08:02:56+00:00",
+      "end_utc": "2019-07-20T08:16:18+00:00",
+      "duration_seconds": 802.0,
+      "observed_rows": 802,
+      "expected_rows_at_1hz": 802,
+      "coverage_fraction": 1.0,
+      "observability": "OBSERVABLE",
+      "notes": "Attack A6 fully observable (802 rows)."
+    }
+  },
+  "operational_periods": {
+    "plant_start_utc": "2019-07-20T04:35:00+00:00",
+    "normal_end_utc": "2019-07-20T06:50:00+00:00",
+    "plant_stop_utc": "2019-07-20T08:35:00+00:00",
+    "pre_start_buffer_utc": [
+      "2019-07-20T04:30:00+00:00",
+      "2019-07-20T04:35:00+00:00"
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "audit_name": "SWaT A4/A5 Physical Graph and Connectivity Prior Audit",
+  "dataset_file": "SWaT_dataset_Jul 19 v2.xlsx",
+  "dataset_sha256": "39ea28e3d0e5ba1507ba551630bee232ce2cf66abdc9da978391dc00a989bbdc",
+  "inspected_documents": [
+    {
+      "file_name": "SWaT data collection_20-07-2019 v2.pdf",
+      "page_count": 1,
+      "contains_pid_diagrams": false,
+      "contents_summary": "Plant start/stop schedule and text descriptions/intents of 6 cyber attacks."
+    },
+    {
+      "file_name": "readme.docx",
+      "paragraph_count": 25,
+      "contains_pid_diagrams": false,
+      "contents_summary": "Timezone GMT offset notes and level switch text mapping table for tanks T201-T603."
+    },
+    {
+      "file_name": "SWaT_dataset_Jul 19 v2.xlsx",
+      "row_count": 14996,
+      "col_count": 77,
+      "contains_pid_diagrams": false,
+      "contents_summary": "1 Hz raw numerical telemetry spreadsheet."
+    }
+  ],
+  "pid_diagram_status": "MISSING_FROM_SUPPLIED_PACKAGE",
+  "missing_evidence_required": [
+    "Official iTrust / SUTD SWaT Engineering Piping and Instrumentation Diagrams (P&IDs) for Stages P1 to P6",
+    "SWaT Plant Process Description and Control Logic Functional Specifications (documenting PLC interlocks and trip setpoints)",
+    "Piping specifications and physical dimensions (pipe diameters, run lengths, nominal velocities, tank cross-sectional areas)"
+  ],
+  "registered_edges_count": 22,
+  "status_breakdown": {
+    "DOCUMENTED": 2,
+    "INFERRED": 16,
+    "UNKNOWN": 1,
+    "DISALLOWED": 3
+  },
+  "audited_candidate_pairs": [
+    "P301->DPIT301",
+    "FIT501->PIT501",
+    "FIT501->FIT502",
+    "FIT201->LIT301",
+    "MV501->PIT502"
+  ],
+  "unexcited_actuators": [
+    "P601",
+    "MV501",
+    "P102",
+    "P201",
+    "P202",
+    "P204",
+    "P206",
+    "MV301",
+    "MV303",
+    "P302",
+    "P401",
+    "P402",
+    "UV401",
+    "P501",
+    "P502",
+    "P602",
+    "P603"
+  ],
+  "structural_mask_policy": "Only edges with status DOCUMENTED or INFERRED may be considered by Stage 2 gating; all DISALLOWED edges are masked to zero. Edges involving unexcited actuators are marked UNIDENTIFIABLE_UNEXCITED."
+}

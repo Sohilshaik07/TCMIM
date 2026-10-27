@@ -1,0 +1,71 @@
+{
+  "milestone": "Stage 2 Candidate-Edge Gating Evaluation with G0_STRUCTURAL_MASK",
+  "timestamp_utc": "2026-10-26T14:05:00+00:00",
+  "status": "COMPLETED",
+  "new_files": [
+    {
+      "path": "experiments/swat_a4a5_g0_evaluation.py",
+      "description": "Paired evaluation runner executing Stage 2 candidate matching and gating on SWaT A4/A5 with G0 enabled vs disabled.",
+      "action": "CREATED"
+    },
+    {
+      "path": "tests/unit/test_swat_a4a5_g0_evaluation.py",
+      "description": "Comprehensive unit tests verifying register SHA-256 integrity, gate ordering, prohibition filtering, conservative policy enforcement, metric calculations, and artifact existence.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_g0_evaluation/evaluation_config.json",
+      "description": "Machine-readable evaluation parameters including windowing, thresholds, delay bounds, and register configuration.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_g0_evaluation/g0_off_vs_on_metrics.json",
+      "description": "Overall and per-attack paired gating metrics, reduction statistics, and channel event counts.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_g0_evaluation/candidate_edge_comparison.csv",
+      "description": "Full tabular comparison of all 3,852 candidate edges with Config A vs Config B gate decisions, reject reasons, and register metadata.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_g0_evaluation/per_attack_interval_metrics.csv",
+      "description": "Breakdown of candidate counts, accepted/rejected totals, and reduction percentages across all 6 attack intervals and outside intervals.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_g0_evaluation/rejection_reason_summary.csv",
+      "description": "Frequencies of each rejection reason across Config A and Config B mapped to their respective gating stages.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_g0_evaluation/test_results.txt",
+      "description": "Pytest execution log verifying test suite pass.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_g0_evaluation/evaluation_report.md",
+      "description": "Comprehensive scientific evaluation report documenting paired gating findings, edge reductions, surviving physical relationships, limitations, and recommendations.",
+      "action": "CREATED"
+    },
+    {
+      "path": "experiments/results/swat_a4a5_g0_evaluation/change_manifest.json",
+      "description": "Machine-readable manifest of all changes and preserved reference directories.",
+      "action": "CREATED"
+    }
+  ],
+  "preserved_directories": [
+    "experiments/results/swat_a4a5/",
+    "experiments/results/swat_a4a5_detector_comparison/",
+    "experiments/results/swat_a4a5_detector_comparison_v2/",
+    "experiments/results/swat_a4a5_channel_lag_analysis/",
+    "experiments/results/swat_a4a5_physical_graph_audit/",
+    "experiments/results/swat_a4a5_structural_mask_gate/"
+  ],
+  "register_integrity": {
+    "path": "experiments/results/swat_a4a5_physical_graph_audit/physical_connectivity_register.csv",
+    "expected_sha256": "08e0ce5764419c6bbfbec716644b1e4bdd046c6c81548f3fd98f573e8379b3c3",
+    "actual_sha256": "08e0ce5764419c6bbfbec716644b1e4bdd046c6c81548f3fd98f573e8379b3c3",
+    "verified_identical": true
+  }
+}

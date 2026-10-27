@@ -1,0 +1,134 @@
+{
+  "manifest_version": "v1.0.0-stage3",
+  "generated_utc": "2026-10-26T14:58:55.766187+00:00",
+  "dataset_provenance": {
+    "file_name": "SWaT_dataset_Jul 19 v2.xlsx",
+    "sha256": "39ea28e3d0e5ba1507ba551630bee232ce2cf66abdc9da978391dc00a989bbdc",
+    "total_records": 14996,
+    "duration_hours": 4.165
+  },
+  "original_register_preservation": {
+    "file_name": "physical_connectivity_register.csv",
+    "sha256": "08e0ce5764419c6bbfbec716644b1e4bdd046c6c81548f3fd98f573e8379b3c3",
+    "preserved_unchanged": true
+  },
+  "artifacts": {
+    "stage3_scientific_report.md": {
+      "size_bytes": 19156,
+      "sha256": "9ba5cf3f862716756dfe44f970ea78087d62cfbba9f4c25057dae1e15ce6f0c6",
+      "relative_path": "experiments/results/swat_a4a5_stage3/stage3_scientific_report.md"
+    },
+    "topology_change_proposal.csv": {
+      "size_bytes": 1510,
+      "sha256": "6046d92d608b7cfbfb1a76c0dc76b73b5f524373202075e4cf38766757b879ba",
+      "relative_path": "experiments/results/swat_a4a5_stage3/topology_change_proposal.csv"
+    },
+    "proposed_connectivity_register.csv": {
+      "size_bytes": 9536,
+      "sha256": "166db3b38cdd693e805f2f926169114e6bfed0749d41fa005dfb44be5fda6276",
+      "relative_path": "experiments/results/swat_a4a5_stage3/proposed_connectivity_register.csv"
+    },
+    "model_comparison.json": {
+      "size_bytes": 5604,
+      "sha256": "0733e154e5ea71fcef2ea836ddf19bce0f58fe485f5082589e909624847ebc3a",
+      "relative_path": "experiments/results/swat_a4a5_stage3/model_comparison.json"
+    },
+    "state_conditioned_episode_metrics.csv": {
+      "size_bytes": 4627,
+      "sha256": "fd6b85b96c29ff27b1503fdf459471d48a523da4c7c76f9003b3ff2233edcab4",
+      "relative_path": "experiments/results/swat_a4a5_stage3/state_conditioned_episode_metrics.csv"
+    },
+    "parameter_stability_report.md": {
+      "size_bytes": 10611,
+      "sha256": "3935a09fa97614772aaa890b69c9e28f353f6bdc29178eee8bdef800fa8f7388",
+      "relative_path": "experiments/results/swat_a4a5_stage3/parameter_stability_report.md"
+    },
+    "experimental_model_interface.json": {
+      "size_bytes": 6298,
+      "sha256": "57c6f5f228493bffe17c1037919c22688cc335971f18118286a6758c2d5a0872",
+      "relative_path": "experiments/results/swat_a4a5_stage3/experimental_model_interface.json"
+    },
+    "limitations_and_next_steps.md": {
+      "size_bytes": 5337,
+      "sha256": "657b72442d32a277edee3a8ae3914e3aad8b606f57590739bb455ef5cb0a54ae",
+      "relative_path": "experiments/results/swat_a4a5_stage3/limitations_and_next_steps.md"
+    },
+    "test_results.txt": {
+      "size_bytes": 6043,
+      "sha256": "7b1b70c1377bb7e17e169c22dd41e320add7e2209946c57b5efc372374be17a8",
+      "relative_path": "experiments/results/swat_a4a5_stage3/test_results.txt"
+    }
+  },
+  "response_curve_plots": {
+    "mv201_close_episode_11047.png": {
+      "size_bytes": 49272,
+      "sha256": "dc10b73e590542a8e6fa64a57defdd70e7b705faee90e25bf96c6c6e2c9a28fe",
+      "relative_path": "experiments/results/swat_a4a5_stage3/response_curves/mv201_close_episode_11047.png"
+    },
+    "mv201_close_episode_11692.png": {
+      "size_bytes": 47512,
+      "sha256": "6e04768472c65bd05ffbef6fb0ab7739597280e0c22e5c6d6d790858da8e0cfa",
+      "relative_path": "experiments/results/swat_a4a5_stage3/response_curves/mv201_close_episode_11692.png"
+    },
+    "mv201_fit201_opening_closing_comparison.png": {
+      "size_bytes": 167255,
+      "sha256": "8d4e23836b28b627e0d063a0c7104eebd686709a50bb91ee40ba2022dfdfe70c",
+      "relative_path": "experiments/results/swat_a4a5_stage3/response_curves/mv201_fit201_opening_closing_comparison.png"
+    },
+    "mv201_open_episode_10066.png": {
+      "size_bytes": 50249,
+      "sha256": "a868cf24844269177fc8045353207ee240b492801aee552d57db4e56e4044c68",
+      "relative_path": "experiments/results/swat_a4a5_stage3/response_curves/mv201_open_episode_10066.png"
+    },
+    "mv201_open_episode_11221.png": {
+      "size_bytes": 50952,
+      "sha256": "eb30feff3e953a22804a6c96d0821d7b50da1d1c3ffd98e27045b2c175371efb",
+      "relative_path": "experiments/results/swat_a4a5_stage3/response_curves/mv201_open_episode_11221.png"
+    },
+    "mv201_open_episode_14247.png": {
+      "size_bytes": 50779,
+      "sha256": "2acad621994e5b6994ee5aad984f5acf54d56a6cddf7e9e32cea64df0af182c5",
+      "relative_path": "experiments/results/swat_a4a5_stage3/response_curves/mv201_open_episode_14247.png"
+    },
+    "p301_dpit301_state_conditioned_reconciliation.png": {
+      "size_bytes": 160843,
+      "sha256": "b19c99cdcbb13768a82a34381873eac6dfb458c882b8d41ae68e02b9b086b7de",
+      "relative_path": "experiments/results/swat_a4a5_stage3/response_curves/p301_dpit301_state_conditioned_reconciliation.png"
+    },
+    "p301_shutdown_episode_10736.png": {
+      "size_bytes": 48504,
+      "sha256": "ccfae19c103ae795ba4f6cd8cf5de1933a67e2794ab87c299d5641c07cf6439c",
+      "relative_path": "experiments/results/swat_a4a5_stage3/response_curves/p301_shutdown_episode_10736.png"
+    },
+    "p301_shutdown_episode_12662.png": {
+      "size_bytes": 47098,
+      "sha256": "4872a9f9e0377d87a70452f724f1ec5fe90eadde69cc02732e5ca31bc3c0aae7",
+      "relative_path": "experiments/results/swat_a4a5_stage3/response_curves/p301_shutdown_episode_12662.png"
+    },
+    "p301_shutdown_episode_13940.png": {
+      "size_bytes": 50883,
+      "sha256": "7dd3516cc81972e297f10e46da6757444f44b752ccbd35acc6e7b61a1e07260b",
+      "relative_path": "experiments/results/swat_a4a5_stage3/response_curves/p301_shutdown_episode_13940.png"
+    },
+    "p301_start_attack_a6_episode_13504.png": {
+      "size_bytes": 60954,
+      "sha256": "2aeab68cc0e84c2011f75a11d44ac6625d4bfbe79c886e57788a10af6cd79fa2",
+      "relative_path": "experiments/results/swat_a4a5_stage3/response_curves/p301_start_attack_a6_episode_13504.png"
+    },
+    "p301_start_normal_episode_12124.png": {
+      "size_bytes": 49070,
+      "sha256": "d7549faefde4c7890f64825761e4fd5b80bc5ed605d7ffe2aa7ccc82534caa4a",
+      "relative_path": "experiments/results/swat_a4a5_stage3/response_curves/p301_start_normal_episode_12124.png"
+    },
+    "p301_start_normal_episode_14024.png": {
+      "size_bytes": 50490,
+      "sha256": "85f3f2d4d4dc0466cd34cfa6148462eb8dd169835f2390422bef537e7e208ffd",
+      "relative_path": "experiments/results/swat_a4a5_stage3/response_curves/p301_start_normal_episode_14024.png"
+    },
+    "p301_start_normal_episode_9419.png": {
+      "size_bytes": 47095,
+      "sha256": "d9eedf81d238f0d856b846635ac225b13ad62fda8cb75edea9b2c94bf441afa2",
+      "relative_path": "experiments/results/swat_a4a5_stage3/response_curves/p301_start_normal_episode_9419.png"
+    }
+  }
+}

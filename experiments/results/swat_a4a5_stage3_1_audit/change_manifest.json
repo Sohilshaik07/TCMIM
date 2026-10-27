@@ -1,0 +1,52 @@
+{
+  "manifest_version": "v1.0.0-stage3.1-audit",
+  "generated_utc": "2026-10-26T15:34:19.800504+00:00",
+  "audit_target": {
+    "dataset_name": "SWaT_dataset_Jul 19 v2.xlsx",
+    "dataset_sha256": "39ea28e3d0e5ba1507ba551630bee232ce2cf66abdc9da978391dc00a989bbdc",
+    "original_register_sha256": "08e0ce5764419c6bbfbec716644b1e4bdd046c6c81548f3fd98f573e8379b3c3",
+    "stage3_report_sha256": "9ba5cf3f862716756dfe44f970ea78087d62cfbba9f4c25057dae1e15ce6f0c6"
+  },
+  "artifacts": {
+    "independent_verification_report.md": {
+      "size_bytes": 15564,
+      "sha256": "1e068cf814941860688d2c3ce118be9e59a1844d27b8660489dfacfe1e5fb6b2",
+      "relative_path": "experiments/results/swat_a4a5_stage3_1_audit/independent_verification_report.md"
+    },
+    "model_evaluation_reconciliation.csv": {
+      "size_bytes": 3868,
+      "sha256": "4925cd305239ff235a02c71cfc2ada56b747ed76ab36c012488235569e80146c",
+      "relative_path": "experiments/results/swat_a4a5_stage3_1_audit/model_evaluation_reconciliation.csv"
+    },
+    "event_leakage_audit.csv": {
+      "size_bytes": 6588,
+      "sha256": "85dfbf36948ec99586ef991c1b098869edaba9bd136e68b4f13ea656080fe9f2",
+      "relative_path": "experiments/results/swat_a4a5_stage3_1_audit/event_leakage_audit.csv"
+    },
+    "topology_condition_audit.md": {
+      "size_bytes": 9098,
+      "sha256": "c55c7096f0ce511699c2bc4879d60ac648992ff4ae6a2acb0a9d4202d57dca0d",
+      "relative_path": "experiments/results/swat_a4a5_stage3_1_audit/topology_condition_audit.md"
+    },
+    "test_coverage_audit.md": {
+      "size_bytes": 7325,
+      "sha256": "b3c019bf9255644c41a5b8cfc465a2a66c81e58004f59d5b2bb9b7c705b75089",
+      "relative_path": "experiments/results/swat_a4a5_stage3_1_audit/test_coverage_audit.md"
+    },
+    "claim_evidence_matrix.csv": {
+      "size_bytes": 2936,
+      "sha256": "01ce41065955c168e2965bf15a7bf09a84bc2b2dce2d98fd169e3560e853f018",
+      "relative_path": "experiments/results/swat_a4a5_stage3_1_audit/claim_evidence_matrix.csv"
+    },
+    "stage4_readiness_decision.md": {
+      "size_bytes": 7394,
+      "sha256": "761a09d01dde57997afc7d076a2bf65b72afe6737b8daf21c3c44a795385a33f",
+      "relative_path": "experiments/results/swat_a4a5_stage3_1_audit/stage4_readiness_decision.md"
+    },
+    "test_results.txt": {
+      "size_bytes": 6043,
+      "sha256": "5eb170bbec4de50143f18f20d0e6cd48009e70af0be11236f7fbc911b458c645",
+      "relative_path": "experiments/results/swat_a4a5_stage3_1_audit/test_results.txt"
+    }
+  }
+}

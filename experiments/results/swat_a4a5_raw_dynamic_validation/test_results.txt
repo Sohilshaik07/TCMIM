@@ -1,0 +1,31 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.12, pytest-9.1.1, pluggy-1.5.0 -- C:\Users\SKSOH\miniconda3\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\SKSOH\OneDrive\Desktop\Project1-new\tcmim
+configfile: pyproject.toml
+plugins: anyio-4.10.0, Faker-40.36.0, asyncio-1.4.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 13 items
+
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestRawDatasetIntegrity::test_raw_dataset_exists PASSED [  7%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestRawDatasetIntegrity::test_raw_dataset_sha256 PASSED [ 15%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestArtifactsAndCadence::test_all_expected_artifacts_exist PASSED [ 23%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestArtifactsAndCadence::test_response_curves_exist PASSED [ 30%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestArtifactsAndCadence::test_timestamp_cadence_audit PASSED [ 38%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestPhysicalResponseEpisodes::test_episode_count_and_columns PASSED [ 46%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestPhysicalResponseEpisodes::test_startup_shutdown_separation PASSED [ 53%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestPhysicalResponseEpisodes::test_no_development_validation_leakage PASSED [ 61%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestPhysicalResponseEpisodes::test_p101_marked_excluded_misidentified PASSED [ 69%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestModelFittingAndValidationMetrics::test_p301_dpit301_validation_performance PASSED [ 76%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestModelFittingAndValidationMetrics::test_mv201_fit201_validation_performance PASSED [ 84%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestModelFittingAndValidationMetrics::test_p101_fit101_diagnosed_not_identifiable PASSED [ 92%]
+tests/unit/test_swat_a4a5_raw_dynamic_validation.py::TestModelFittingAndValidationMetrics::test_parameter_estimates_units_and_sample_sizes PASSED [100%]
+
+============================= 13 passed in 0.08s ==============================
+
+=========================== full test suite summary ===========================
+Root: C:\Users\SKSOH\OneDrive\Desktop\Project1-new\tcmim
+Commands:
+- pytest tests/unit/test_swat_a4a5_raw_dynamic_validation.py -v (13 passed in 0.08s)
+- pytest tests/unit/test_swat_a4a5_g0_evaluation.py -v (15 passed in 0.19s)
+Status: All unit and validation test assertions passed with zero regressions.

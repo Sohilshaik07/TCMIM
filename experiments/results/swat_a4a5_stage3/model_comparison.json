@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "dataset_sha256": "39ea28e3d0e5ba1507ba551630bee232ce2cf66abdc9da978391dc00a989bbdc",
+    "timestamp_utc": "2026-10-26T14:51:53.374215+00:00",
+    "total_rows": 14996,
+    "original_register_sha256": "08e0ce5764419c6bbfbec716644b1e4bdd046c6c81548f3fd98f573e8379b3c3",
+    "proposed_register_sha256": "166db3b38cdd693e805f2f926169114e6bfed0749d41fa005dfb44be5fda6276"
+  },
+  "part_a_topology_audit": {
+    "p101_to_fit101": {
+      "decision": "DISALLOWED",
+      "previous_status": "INFERRED",
+      "correlation_p101_fit101": 0.05280716213398496,
+      "correlation_mv101_fit101": 0.9258526358369987,
+      "transitions_evaluated": 12,
+      "responsive_transitions_count": 0,
+      "mean_flow_when_mv101_closed_p101_on": 0.0,
+      "mean_flow_when_mv101_open_p101_off": 4.382,
+      "physical_finding": "FIT101 is municipal inlet flow into T101 modulated by MV101. P101 discharges out of T101 to Stage 2."
+    },
+    "p101_to_fit201": {
+      "decision": "DYNAMICALLY_SUPPORTED",
+      "proposed_status": "INFERRED",
+      "correlation_p101_fit201": 0.9869943175837534,
+      "transitions_evaluated": 12,
+      "responsive_transitions_count": 12,
+      "flow_when_p101_on_mv201_open": 2.301,
+      "flow_when_p101_off_mv201_closed": 0.002,
+      "physical_finding": "P101 provides motive hydraulic head into Stage 2 pipe; flow FIT201 requires MV201 == 2 (OPEN)."
+    }
+  },
+  "part_b_mv201_to_fit201": {
+    "opening_model": {
+      "type": "FOPDT_step",
+      "parameters": {
+        "y0_m3h": 0.0158,
+        "K_m3h": 2.3622,
+        "tau_s": 3.9434,
+        "td_s": 12.9185,
+        "td_std_s": 0.0827
+      },
+      "development_episodes_count": 3,
+      "validation_episodes_count": 3,
+      "held_out_metrics": {
+        "rmse": 0.3456,
+        "mae": 0.1442,
+        "max_error": 1.5293,
+        "ss_res": 16.1203,
+        "ss_tot": 151.682,
+        "r2": 0.8937
+      },
+      "delay_investigation_range_5_to_25s_valid": true,
+      "delay_assessment": "Under normal operations, onset is 12-14s and settling is 20-22s. Encompassed by 5-25s bounds."
+    },
+    "closing_model": {
+      "type": "FOPDT_decay",
+      "parameters": {
+        "y0_m3h": 2.2187,
+        "K_m3h": 2.2717,
+        "tau_s": 4.0711,
+        "td_s": 3.7399,
+        "td_std_s": 0.0875
+      },
+      "development_episodes_count": 4,
+      "validation_episodes_count": 2,
+      "held_out_metrics": {
+        "rmse": 0.4611,
+        "mae": 0.2382,
+        "max_error": 1.5943,
+        "ss_res": 12.7564,
+        "ss_tot": 27.9374,
+        "r2": 0.5434
+      },
+      "delay_assessment": "Closing dead time is 3.71s with 11-12s settling. Dependent on pump P101 de-energization lead time."
+    },
+    "opening_closing_separation_justified": true
+  },
+  "part_c_p301_to_dpit301": {
+    "operating_state_counts": {
+      "S1_OFF": 7835,
+      "S2_START_MV302_CLOSED": 6,
+      "S3_START_MV302_OPEN": 1,
+      "S4_RUNNING_MV302_OPEN": 6921,
+      "S5_SHUTDOWN": 6
+    },
+    "model_comparison": {
+      "model_1_siso_unconditioned": {
+        "normal_val_metrics": {
+          "rmse": 0.1877,
+          "mae": 0.133,
+          "max_error": 0.5698,
+          "ss_res": 6.3438,
+          "ss_tot": 998.9783,
+          "r2": 0.9936
+        },
+        "attack_a6_val_metrics": {
+          "rmse": 4.6258,
+          "mae": 4.1471,
+          "max_error": 6.0386,
+          "ss_res": 1283.8609,
+          "ss_tot": 443.9051,
+          "r2": -1.8922
+        },
+        "overall_val_metrics": {
+          "rmse": 2.3186,
+          "mae": 1.1365,
+          "max_error": 6.0386,
+          "ss_res": 1290.2048,
+          "ss_tot": 2207.6614,
+          "r2": 0.4156
+        },
+        "reproduced_attack_r2": -1.8922,
+        "reproduced_attack_rmse_kpa": 4.6258,
+        "failure_explanation": "SS_res=1283.8609 > SS_tot=443.9051. Normal profile expects 35s dead-head plateau at 6.1 kPa. Under Attack A6, MV302 was already open, producing immediate 1s rise to 12.2 kPa."
+      },
+      "model_2_miso_state_conditioned": {
+        "normal_val_metrics": {
+          "rmse": 0.1877,
+          "mae": 0.133,
+          "max_error": 0.5698,
+          "ss_res": 6.3438,
+          "ss_tot": 998.9783,
+          "r2": 0.9936
+        },
+        "attack_a6_val_metrics": {
+          "rmse": 0.1701,
+          "mae": 0.1101,
+          "max_error": 0.5335,
+          "ss_res": 1.736,
+          "ss_tot": 443.9051,
+          "r2": 0.9961
+        },
+        "overall_val_metrics": {
+          "rmse": 0.1835,
+          "mae": 0.1273,
+          "max_error": 0.5698,
+          "ss_res": 8.0799,
+          "ss_tot": 2207.6614,
+          "r2": 0.9963
+        },
+        "reconciliation_finding": "Conditioning on MV302 state reconciles the Attack A6 failure: When MV302=2, the model switches to immediate FOPDT pressurization (td=1.0s, tau=4.0s), recovering R2 from -1.8922 to 0.9961."
+      }
+    },
+    "shutdown_model": {
+      "type": "FOPDT_decay",
+      "parameters": {
+        "y0_kPa": 11.924,
+        "K_kPa": 10.8022,
+        "tau_s": 3.7808,
+        "td_s": 3.1877
+      },
+      "held_out_metrics": {
+        "rmse": 0.5238,
+        "mae": 0.3742,
+        "max_error": 2.1859,
+        "ss_res": 49.3819,
+        "ss_tot": 1388.4822,
+        "r2": 0.9644
+      }
+    },
+    "normal_cycle_range_5_to_55s_conditional": true,
+    "delay_assessment": "The 5-55s delay bound is strictly conditional on State S2 (MV302=1 at start). Under State S3, delay is 1-10s."
+  }
+}

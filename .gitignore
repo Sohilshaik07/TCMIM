@@ -1,0 +1,38 @@
+﻿__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# Raw research datasets - retain locally
+data/raw/
+
+# Python-generated caches
+**/__pycache__/
+
+# Temporary audit and analysis scripts
+scratch/
+
+# Temporary root-level analysis scripts
+scratch_audit_reconcile.py
+scratch_check_metrics.py
+scratch_inspect_fpr.py
+
+# Local editor and operating-system files
+.vscode/
+.idea/
+
+# Generated Python packaging metadata
+*.egg-info/
+
+# Build outputs
+build/
+dist/

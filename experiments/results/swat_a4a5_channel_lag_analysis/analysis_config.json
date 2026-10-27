@@ -1,0 +1,190 @@
+{
+  "analysis_name": "SWaT A4/A5 Channel Attribution and Lagged Cross-Correlation Analysis",
+  "dataset_file": "SWaT_dataset_Jul 19 v2.xlsx",
+  "dataset_sha256": "39ea28e3d0e5ba1507ba551630bee232ce2cf66abdc9da978391dc00a989bbdc",
+  "evaluation_partition": {
+    "pre_baseline_buffer": "Windows 0..9 (N=10, 04:30 - 04:35 UTC)",
+    "baseline_training_period": "Windows 10..279 (N=270, 04:35 - 06:50 UTC)",
+    "primary_held_out_operational_evaluation": "Windows 280..499 (N=220, 06:50 - 08:40 UTC)"
+  },
+  "feature_schema": {
+    "total_extracted_features": 335,
+    "valid_non_constant_features": 150,
+    "excluded_constant_features": 185
+  },
+  "evaluated_detectors": [
+    "Multivariate Isolation Forest (Existing)",
+    "CUSUM Detector on Mean Absolute Z-Scores (Partition Reset)",
+    "Per-Channel Max-Z (Baseline Calibrated)",
+    "Per-Channel Shewhart (Fixed 3-Sigma)"
+  ],
+  "attack_schedule": {
+    "A1": {
+      "attack_id": "A1",
+      "target_tags": [
+        "FIT401"
+      ],
+      "target_stages": [
+        "P4"
+      ],
+      "action": "Spoof value from 0.8 to 0.5",
+      "intent": "To stop de-chlorination by switching off UV401",
+      "start_sgt": "15:08:46",
+      "end_sgt": "15:10:31",
+      "start_utc": "2019-07-20T07:08:46+00:00",
+      "end_utc": "2019-07-20T07:10:31+00:00",
+      "duration_seconds": 105.0,
+      "boundary_convention": "closed [start, end]"
+    },
+    "A2": {
+      "attack_id": "A2",
+      "target_tags": [
+        "LIT301"
+      ],
+      "target_stages": [
+        "P3"
+      ],
+      "action": "Spoof value from 835 to 1024",
+      "intent": "To eventually lead to underflow in T301",
+      "start_sgt": "15:15:00",
+      "end_sgt": "15:19:32",
+      "start_utc": "2019-07-20T07:15:00+00:00",
+      "end_utc": "2019-07-20T07:19:32+00:00",
+      "duration_seconds": 272.0,
+      "boundary_convention": "closed [start, end]"
+    },
+    "A3": {
+      "attack_id": "A3",
+      "target_tags": [
+        "P601"
+      ],
+      "target_stages": [
+        "P6"
+      ],
+      "action": "Switch from OFF to ON",
+      "intent": "To increase water in raw water tank",
+      "start_sgt": "15:26:57",
+      "end_sgt": "15:30:48",
+      "start_utc": "2019-07-20T07:26:57+00:00",
+      "end_utc": "2019-07-20T07:30:48+00:00",
+      "duration_seconds": 231.0,
+      "boundary_convention": "closed [start, end]"
+    },
+    "A4": {
+      "attack_id": "A4",
+      "target_tags": [
+        "MV201",
+        "P101"
+      ],
+      "target_stages": [
+        "P2",
+        "P1"
+      ],
+      "action": "Switch from CLOSE to OPEN (MV201) and OFF to ON (P101)",
+      "intent": "To overflow tank T301",
+      "start_sgt": "15:38:50",
+      "end_sgt": "15:46:20",
+      "start_utc": "2019-07-20T07:38:50+00:00",
+      "end_utc": "2019-07-20T07:46:20+00:00",
+      "duration_seconds": 450.0,
+      "boundary_convention": "closed [start, end]"
+    },
+    "A5": {
+      "attack_id": "A5",
+      "target_tags": [
+        "MV501"
+      ],
+      "target_stages": [
+        "P5"
+      ],
+      "action": "Switch from OPEN to CLOSE",
+      "intent": "To drain water from RO",
+      "start_sgt": "15:54:00",
+      "end_sgt": "15:56:00",
+      "start_utc": "2019-07-20T07:54:00+00:00",
+      "end_utc": "2019-07-20T07:56:00+00:00",
+      "duration_seconds": 120.0,
+      "boundary_convention": "closed [start, end]"
+    },
+    "A6": {
+      "attack_id": "A6",
+      "target_tags": [
+        "P301"
+      ],
+      "target_stages": [
+        "P3"
+      ],
+      "action": "Switch from ON to OFF",
+      "intent": "To halt stage 3 (UF process)",
+      "start_sgt": "16:02:56",
+      "end_sgt": "16:16:18",
+      "start_utc": "2019-07-20T08:02:56+00:00",
+      "end_utc": "2019-07-20T08:16:18+00:00",
+      "duration_seconds": 802.0,
+      "boundary_convention": "closed [start, end]"
+    }
+  },
+  "candidate_sensor_pairs": [
+    {
+      "pair_id": "PAIR_01",
+      "name": "P301_to_DPIT301",
+      "stage_source": "P3",
+      "stage_target": "P3",
+      "channel_source": "P301",
+      "channel_target": "DPIT301",
+      "units_source": "state (1=OFF, 2=ON)",
+      "units_target": "kPa",
+      "physical_mechanism": "UF feed pump actuation generates trans-membrane differential pressure",
+      "predeclared_max_lag_s": 30
+    },
+    {
+      "pair_id": "PAIR_02",
+      "name": "FIT501_to_PIT501",
+      "stage_source": "P5",
+      "stage_target": "P5",
+      "channel_source": "FIT501",
+      "channel_target": "PIT501",
+      "units_source": "m3/h",
+      "units_target": "bar/kPa",
+      "physical_mechanism": "Pump P501 discharge flow directly builds inlet membrane pressure",
+      "predeclared_max_lag_s": 30
+    },
+    {
+      "pair_id": "PAIR_03",
+      "name": "FIT501_to_FIT502",
+      "stage_source": "P5",
+      "stage_target": "P5",
+      "channel_source": "FIT501",
+      "channel_target": "FIT502",
+      "units_source": "m3/h",
+      "units_target": "m3/h",
+      "physical_mechanism": "Conservation of mass across RO membrane separation (Feed to Permeate)",
+      "predeclared_max_lag_s": 60
+    },
+    {
+      "pair_id": "PAIR_04",
+      "name": "FIT201_to_LIT301",
+      "stage_source": "P2",
+      "stage_target": "P3",
+      "channel_source": "FIT201",
+      "channel_target": "LIT301",
+      "units_source": "m3/h",
+      "units_target": "mm",
+      "physical_mechanism": "Cross-stage inflow from Stage 2 fills tank T301 (hydraulic mass accumulation)",
+      "predeclared_max_lag_s": 120
+    },
+    {
+      "pair_id": "PAIR_05",
+      "name": "MV501_to_PIT502",
+      "stage_source": "P5",
+      "stage_target": "P5",
+      "channel_source": "MV501",
+      "channel_target": "PIT502",
+      "units_source": "state (1=OPEN, 2=CLOSE)",
+      "units_target": "bar/kPa",
+      "physical_mechanism": "Reject valve closure induces hydraulic backpressure surge in RO vessel",
+      "predeclared_max_lag_s": 30
+    }
+  ],
+  "sign_convention": "lag > 0 indicates source channel leads target channel by lag seconds (x_t correlated with y_{t+lag})"
+}

@@ -1,0 +1,54 @@
+{
+  "manifest_version": "1.0",
+  "timestamp_utc": "2026-10-26T16:18:13.768403+00:00",
+  "audit_root": "experiments/results/swat_a4a5_stage3_3_audit",
+  "audit_objective": "TCMIM Stage 3.2 Read-Only Implementation and Scientific Validity Audit",
+  "auditor": "Independent Scientific Audit Subagent",
+  "mode": "READ_ONLY",
+  "production_changes": false,
+  "cri_evaluation_active": false,
+  "files": {
+    "dynamic_validation_eligibility_audit.csv": {
+      "path": "experiments/results/swat_a4a5_stage3_3_audit/dynamic_validation_eligibility_audit.csv",
+      "sha256": "b6ecfd30b0837f594ee4b6f9a1a9419335b202edde9b113bbdd3bf0b80e65e14",
+      "size_bytes": 4815,
+      "line_count": 10,
+      "description": "Audit table separating physical connectivity from dynamic validity across 9 operating regimes."
+    },
+    "gate_path_audit.csv": {
+      "path": "experiments/results/swat_a4a5_stage3_3_audit/gate_path_audit.csv",
+      "sha256": "cf530b91cdfc5957df0431a5c4f797bafde089945617cdc89b94e594e23df400",
+      "size_bytes": 7403,
+      "line_count": 24,
+      "description": "Trace table verifying fail-closed execution paths in Gate G0."
+    },
+    "implementation_audit.md": {
+      "path": "experiments/results/swat_a4a5_stage3_3_audit/implementation_audit.md",
+      "sha256": "9d8c449d38f0975f75fef1a6b442964e162aa8f411773ec24c241a6d2622e9b2",
+      "size_bytes": 23783,
+      "line_count": 260,
+      "description": "Comprehensive independent implementation audit report of TCMIM Stage 3.2."
+    },
+    "metric_reproduction_audit.csv": {
+      "path": "experiments/results/swat_a4a5_stage3_3_audit/metric_reproduction_audit.csv",
+      "sha256": "02d2d03305eed20839fea1b9f7b911db300b693a79e36f8091cabe65a1aeb78b",
+      "size_bytes": 5351,
+      "line_count": 21,
+      "description": "Independent recomputations and reconciliation of all Stage 3 and 3.2 metrics from raw Excel telemetry."
+    },
+    "test_coverage_gaps.md": {
+      "path": "experiments/results/swat_a4a5_stage3_3_audit/test_coverage_gaps.md",
+      "sha256": "c36f99b3927cd1ce15ad30aa8026c5e04490d95757f03983566043bc925e8f83",
+      "size_bytes": 13042,
+      "line_count": 120,
+      "description": "Adversarial critique of test suites contrasting behavioral tests vs static artifact checks."
+    },
+    "test_results.txt": {
+      "path": "experiments/results/swat_a4a5_stage3_3_audit/test_results.txt",
+      "sha256": "37bdf55a9369cbcbb3ac90f55bcaa64095f69295dd7faf8a632e274ced322a38",
+      "size_bytes": 22621,
+      "line_count": 275,
+      "description": "Exact execution log and console output of unit and integration test runs."
+    }
+  }
+}
